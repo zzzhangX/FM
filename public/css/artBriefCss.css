@@ -1,0 +1,217 @@
+*{
+    margin:0;
+    padding:0;
+}
+header{
+    height: 218px;
+    width: 100%;
+    background-color: #1b6d85;
+}
+
+/*艺术家照片*/
+.body-artist-main{
+    /*text-align: center;*/
+}
+.body-artist-photo{
+    margin-top: 100px;
+    text-align: center;
+}
+.body-artist-photo img{
+    width: 465px;
+}
+.body-artist-info{
+    margin: 0 auto;
+    padding-top: 100px;
+    width: 1100px;
+}
+.body-artist-briefName{
+    margin: 20px auto;
+    text-align: center;
+    font-size: 14px;
+    color: grey;
+}
+.body-artist-briefInfo{
+    margin: 50px auto;
+    width: 570px;
+    color: #9e9e9e;
+    font-size: 14px;
+}
+
+/*艺术作品展示*/
+.exhibit-list{
+    padding-top: 100px;
+    width: 1100px;
+    margin:0 auto;
+}
+.exhibit-list-logo{
+    text-align: center;
+    color: grey;
+    font-size: 14px;
+    font-style: oblique;
+}
+.exhibit-list-logo img{
+    width: 50px;
+}
+
+
+/*艺术家动态*/
+.exhibit-list-static{
+    width: 1100px;
+    margin: 80px auto 0;
+    overflow: hidden;
+}
+.exhibit-list-static>div{
+    width: 830px;
+    margin:0 auto;
+}
+.exhibit-list-staticLeft,.exhibit-list-staticLeft-shade,
+.exhibit-list-staticRight,.exhibit-list-staticRight-shade
+{
+    border: 1px solid rgba(228, 228, 228, 0.87);
+    width: 352px;
+    height: 440px;
+}
+.exhibit-list-staticLeft,.exhibit-list-staticRight{
+    float: left;
+    position: relative;
+    left:0;
+    top:0;
+}
+.exhibit-list-staticRight{
+    margin-left: 100px;
+}
+
+.exhibit-list-staticRight{
+    background: url("../images/art/mobai/s2048_1467946277_4334.jpg");
+    background-size: cover;
+}
+.exhibit-list-staticLeft-shade,
+.exhibit-list-staticRight-shade{
+    position: absolute;
+    left:0;
+    top:0;
+    background-color: rgba(255, 251, 249, 0.62);
+    text-align: center;
+    font-size: 16px;
+    color: #6b6b6b;
+    opacity: 0;
+    font-family: FZSongKeBenXiuKaiS-R-GB,PingFangSC-Light,Helvetica Neue,Helvetica,STHeiTi,sans-serif;
+}
+.exhibit-list-staticLeft-shade div:nth-child(1),
+.exhibit-list-staticRight-shade div:nth-child(1){
+    margin-top: 160px;
+    font-style: oblique;
+}
+.exhibit-list-staticLeft-shade div:nth-child(2),
+.exhibit-list-staticRight-shade div:nth-child(2){
+    margin-top: 10px;
+}
+.exhibit-list-staticLeft-shade div:nth-child(3),
+.exhibit-list-staticRight-shade div:nth-child(3){
+    margin-top: 60px;
+    font-size: 14px;
+}
+.exhibit-list-staticLeft:hover .exhibit-list-staticLeft-shade,
+.exhibit-list-staticRight:hover .exhibit-list-staticRight-shade{
+    opacity: 100;
+}
+
+/*状态下面的线*/
+.exhibit-list-line{
+    font-style: oblique;
+    font-size: 12px;
+    width: 480px;
+    height: 50px;
+    margin: 40px auto 0;
+}
+.exhibit-list-line-left{
+    float: left;
+    width: 100px;
+    text-align: center;
+    margin-left: -50px;
+}
+.exhibit-list-point{
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color: black;
+    margin: 12px 0 0 50px;
+}
+.exhibit-list-line-right{
+    float: right;
+    width: 100px;
+    text-align: center;
+    margin-right: -50px;
+}
+.exhibit-list-line-bottom{
+    width: 480px;
+    padding: 0 211px 0 0;
+    position: relative;
+    top: 38px;
+}
+.exhibit-list-line-bottom>div{
+    width: 480px;
+    border-bottom: 1px solid rgb(51, 51, 51);
+    padding-top: 10px;
+}
+/*作品展示*/
+.exhibit-list-work{
+    width: 1100px;
+    margin: 0 auto;
+    padding-top: 140px;
+    text-align: center;
+    font-size: 0.5em ;
+    color: grey;
+}
+.exhibit-list-work>div:nth-child(2) span{
+    font-style: oblique;
+}
+/*作品图片展示*/
+.exhibit-list-work-show{
+    width: 1100px;
+    overflow: hidden;
+    margin:0 auto;
+    padding-top: 130px;
+}
+.exhibit-list-work-show>div{
+    width:326px;
+    height: 400px;
+    margin: 20px;
+    float: left;
+}
+.exhibit-list-work-show>div div:nth-child(1){
+    width: 326px;
+    height: 240px;
+    text-align: center;
+}
+.exhibit-list-work-show>div div:nth-child(2){
+    margin-top: 30px;
+    width: 326px;
+    height: 62px;
+    font-size: 14px;
+    text-align: center;
+    color: grey;
+}
+.moreWorkDiv{
+    text-align: center;
+}
+.moreWork{
+    width: 100px;
+    height: 40px;
+    border: 1px solid lightgray;
+    letter-spacing: 4px;
+    background-color: transparent;
+}
+
+/*页脚的部分============================*/
+.allFooter{
+    margin-top: 100px;
+    height: 413px;
+    width: 100%;
+    background-color: #327580;
+}
+
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}

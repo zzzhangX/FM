@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>艺术家简介</title>
+  <link rel="stylesheet" href="css/artBriefCss.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+  <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+  <!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+<%-include('common/nav.ejs')%>
+
+<div class=".container-fluid ">
+  <div class="body-artist-main row">
+    <div class="body-artist-photo col-s-12"><!--艺术家照片-->
+      <img src="<%=photo%>" alt="">
+    </div>
+    <div class="body-artist-info col-s-12">
+      <!--艺术家的名称-->
+      <div class="body-artist-briefName">
+        <span><span><%=name%></span>简历</span>
+        <br>
+        <span>PROFILE</span>
+      </div>
+      <!--艺术家的详细简介-->
+      <div class="body-artist-briefInfo">
+        <p>
+          <%-profile%>
+        </p>
+      </div>
+    </div>
+    <!--interview --- exhibit-->
+    <div class="exhibit-list col-s-12">
+      <div class="exhibit-list-logo">
+        <img src="../images/art/mobai/artist-magazine.jpg" alt="">
+        <div><span>MAGAZINE/艺术家动态</span></div>
+      </div>
+      <div class="exhibit-list-static">
+        <div>
+          <div class="exhibit-list-staticLeft" onclick="goToTalk()">
+            <div class="exhibit-list-staticLeft-shade">
+              <div>FNJI INTERVIEW</div>
+              <div></div>
+              <div class="exhibit-list-date-left"></div>
+            </div>
+          </div>
+          <div class="exhibit-list-staticRight" onclick="goToExhibit()">
+            <div class="exhibit-list-staticRight-shade">
+              <div>FNJI EXHIBITION</div>
+              <div></div>
+              <div class="exhibit-list-date-right"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="exhibit-list-line">
+        <div class="exhibit-list-line-left">
+          <div><span>talk</span></div>
+          <div><span class="exhibit-list-date-left"></span></div>
+          <div class="exhibit-list-point"></div>
+        </div>
+        <div class="exhibit-list-line-right">
+          <div><span>exhibition</span></div>
+          <div><span class="exhibit-list-date-right"></span></div>
+          <div class="exhibit-list-point"></div>
+        </div>
+        <div class="exhibit-list-line-bottom">
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <!--作品 logo-->
+    <div class="exhibit-list-work col-s-12">
+      <div>
+        <img src="../images/art/mobai/workslogo.png" alt="">
+      </div>
+      <div>
+        <span>works/作品</span>
+      </div>
+      <div>
+        <span>即日起梵几线上艺术平台将不提供艺术品贩售之服务，欲购买艺术作品可电洽或亲访梵几各门店。</span>
+      </div>
+
+    </div>
+    <!--作品 展示-->
+    <div class="exhibit-list-work-show col-s-12">
+
+    </div>
+    <div class="moreWorkDiv">
+      <button class="moreWork" onclick="moreWorks()">MORE</button>
+    </div>
+  </div>
+</div>
+
+
+
+<!--尾部-->
+<%-include('common/footer.ejs')%>
+<!--右侧悬浮按钮-->
+<div class="right_button">
+  <a href="" class="iconfont top">&#xe765;</a>
+  <a href="" class="iconfont contact">&#xe610;</a>
+</div>
+
+
+<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/artBriefJs.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

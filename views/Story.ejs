@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/story.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<%-include('common/nav.ejs')%>
+<!--品牌故事head-->
+<div id="Shead">
+  <nav>品牌故事</nav>
+  <nav id="E">BRAND STORY</nav>
+  <nav>____</nav>
+</div>
+<!--body故事内容-->
+<div id="body">
+  <nav id="Bleft">
+    <nav id="text">
+            <span>
+                " 梵 " 是净空与安静的意思， "几"是家具，意为净空安静的家
+                <br>具，同时梵几的谐音是“凡几“--平凡的家具。做些实实在在为生
+                <br>活所用，并自然融合在生活当中的家具，这就是梵几的哲学
+            </span>
+      <br>
+      <br>
+      <span>
+                自品牌诞生以来，梵几一直都在潜心探寻如何将传统手工艺赋
+                <br>予新的设计语言，思考传承的多元可能。重返当代中国人的日
+                <br>常生活。并以家具设计为起点，创造多一种生活方式的可能，
+                <br>希望籍此慢慢影响至生活更多层面的审美情趣。
+            </span>
+      <br>
+      <br>
+      <span id="sing">
+                 ------ Founder,Designer
+            </span>
+    </nav>
+    <img id="ceo" src="../images/Story/ceo.png" alt="">
+  </nav>
+  <!--右边轮播-->
+  <nav id="Bright">
+    <div id="focus">
+      <div id="focus_bg"></div>
+      <div id="focus_show"></div>
+      <div id="focus_img">
+        <div name="focus_img" id="focus_1">../images/story/story1.jpg</div>
+        <div name="focus_img" id="focus_2">../images/story/story2.jpg</div>
+      </div>
+    </div>
+  </nav>
+</div>
+<div id="foot">
+  <a href="New%20Things.html">更多品牌故事</a>
+</div>
+<%-include('common/footer.ejs')%>
+<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/Story.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

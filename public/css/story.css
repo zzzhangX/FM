@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#Shead{
+    color: #888888;
+    font-weight: inherit;
+    text-align: center;
+    font-family: 楷体;
+}
+#E{
+    font-style: italic;
+}
+#body{
+    margin: 0 auto;
+    margin-top: 50px;
+    /*border: red 1px solid;*/
+    width: 900px;
+    height: 300px;
+}
+/*Bleft*/
+#Bleft{
+    display: inline-block;
+    color: #888888;
+    font-size: 12px;
+    width: 450px;
+    height: 300px;
+    background-color: rgb(38, 43, 41);
+}
+#text{
+    padding: 62px;
+}
+#sing{
+    margin-left: 189px;
+}
+#ceo{
+    width: 60px;
+    height: 60px;
+    position: relative;
+    left: 330px;
+    top: -60px;
+}
+/*Bright*/
+#Bright{
+    display: inline-block;
+    width:450px;
+    height:300px;
+    /*background-color: red;*/
+    float: right;
+}
+#focus{
+    width:450px;
+    height:300px;
+    margin:0 auto;
+}
+#focus div{
+    position:absolute;
+    width:450px;
+    height:300px;
+    overflow:hidden;
+}
+#focus img{
+    width:450px;
+    height:300px;
+}
+#focus #focus_img{
+    display:none;
+}
+
+/*foot*/
+#foot{
+    text-align: center;
+    margin-top: 50px;
+}
+#foot a{
+    text-decoration: none;
+    color: #ffb617;
+}
+#foot a:hover{
+    font-weight: bolder;
+}

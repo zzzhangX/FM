@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+    <style type="text/css">
+        /*名字、价格、规格*/
+        .contentDetails{
+            height: 600px;
+        }
+        .contentDetails>.left{
+            width: 900px;
+            height: 600px;
+            float: left;
+            background-color: gainsboro;
+            background-size: 900px 600px;
+            background-image: url("../images/1_1.png");
+        }
+        .contentDetails>.right{
+            padding: 40px;
+            width: 369px;
+            height: 520px;
+            float: left;
+        }
+        .contentDetails>.right>.top>div{
+            margin-top: 20px;
+        }
+        .contentDetails>.right>.top>.name{
+            font-size: 20px;
+            line-height: 50px;
+        }
+        .contentDetails>.right>.top>.price{
+            line-height: 50px;
+            font-size: 20px;
+            border-bottom: 1px solid #959595;
+        }
+        .contentDetails>.right .Material{
+            line-height: 25px;
+        }
+        .contentDetails>.right .Material-name{
+            color: #73696B;
+        }
+        .contentDetails>.right .Material-name span{
+            color: black;
+            font-size: 14px;
+        }
+        .contentDetails>.right .Material-list{
+            margin-top: 5px;
+            color: #73696B;
+            font-size: 13px;
+        }
+        .contentDetails>.right .Material-list span{
+            padding: 3px;
+            border: 1px solid #b4b4b4;
+            cursor: pointer;
+        }
+        .contentDetails>.right .Material-list span:nth-child(1)~span{
+            margin-left: 10px;
+        }
+        .contentDetails>.right .Quantity-name{
+            color: #73696B;
+        }
+        .contentDetails>.right .Quantity-name span{
+            color: black;
+            font-size: 14px;
+        }
+        .contentDetails>.right .Quantity-list{
+            margin-top: 5px;
+            color: black;
+        }
+        .contentDetails>.right .Quantity-list span{
+            display: inline-block;
+            text-align: center;
+            line-height: 18px;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        .contentDetails>.right .Quantity-list input{
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            border-right-width: 0;
+            border-left-width: 0;
+            text-align: center;
+            outline: none;
+            width: 40px;
+            height: 20px;
+            margin: 0;
+            font-size: 12px;
+        }
+        .contentDetails>.right .Delivery-name{
+            color: #73696B;
+        }
+        .contentDetails>.right .Delivery-name span{
+            color: black;
+            font-size: 14px;
+        }
+        .contentDetails>.right .Delivery-list{
+            color: #a9a9a9;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+        .contentDetails>.right .bottom{
+            margin-top: 80px;
+        }
+        .contentDetails>.right .operate{
+            width: 300px;
+            height: 40px;
+        }
+        .contentDetails>.right .operate a{
+            display: inline-block;
+            width: 135px;
+            height: 40px;
+            text-decoration: none;
+            border: none;
+            color: white;
+            background-color: black;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        .contentDetails>.right .other{
+            margin-top: 30px;
+            font-size: 12px;
+            color: grey;
+        }
+        .contentDetails>.right .other a{
+            color: #D9C0AD;
+        }
+        .contentDetails>.right .other a:hover{
+            color: #ff912a;
+        }
+
+        /*设计*/
+        .contentDesign .header{
+            width: 500px;
+            height: 500px;
+            margin: 200px auto 0;
+            text-align: center;
+        }
+        .contentDesign .header>img{
+            width: 73px;
+            height: 40px;
+        }
+        .contentDesign .header>div{
+            margin-top: 30px;
+        }
+        .contentDesign .header>div:nth-child(2){
+            height: 60px;
+            line-height: 30px;
+        }
+        .contentDesign .header>div:nth-child(2) span:nth-child(1){
+            color: #B56939;
+        }
+        .contentDesign .header>div:nth-child(2) span:nth-child(3){
+            font-size: 13px;
+        }
+        .contentDesign .header>div:nth-child(3){
+            color: #d6d6d6;
+        }
+        .contentDesign .header>div:nth-child(4){
+            letter-spacing: 2px;
+            font-size: 12px;
+            color: #d6d6d6;
+        }
+        .contentDesign .content{
+            width: 1100px;
+            height: 640px;
+            margin: 0 auto;
+        }
+        .contentDesign .content .left{
+            width: 640px;
+            height: 640px;
+            background-color: gainsboro;
+            float: left;
+            position: relative;
+        }
+        .contentDesign .content .right{
+            float: left;
+            padding: 50px 0 50px 50px;
+            width: 410px;
+            height: 540px;
+        }
+        .contentDesign .content .left .bg{
+            width: 100px;
+            height: 640px;
+            background-color: #EFEBE6;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .contentDesign .content .left .img{
+            background-image: url("../images/1_12.png");
+            background-size: 640px 640px;
+            width: 640px;
+            height: 640px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .contentDesign .content .right>div:nth-child(1)~div{
+            margin-top: 40px;
+        }
+        .contentDesign .content .right>div>img{
+            width: 23px;
+            height: 23px;
+        }
+        .contentDesign .content .right .Parameter-name span{
+            color: #73696B;
+        }
+        .contentDesign .content .right .Parameter-list{
+            margin-top: 10px;
+        }
+        .contentDesign .content .right .Parameter-list span{
+            color: #73696B;
+            font-size: 12px;
+        }
+        .contentDesign .content .right .Material-name span{
+            color: #73696B;
+        }
+        .contentDesign .content .right .Material-list{
+            margin-top: 10px;
+        }
+        .contentDesign .content .right .Material-list span{
+            color: #73696B;
+            font-size: 12px;
+        }
+        .contentDesign .content .right .Place-name span{
+            color: #73696B;
+        }
+        .contentDesign .content .right .Place-list{
+            margin-top: 10px;
+        }
+        .contentDesign .content .right .Place-list span{
+            color: #73696B;
+            font-size: 12px;
+        }
+        .contentDesign .content .right .Method-name span{
+            color: #73696B;
+        }
+        .contentDesign .content .right .Method-list{
+            margin-top: 10px;
+        }
+        .contentDesign .content .right .Method-list span{
+            color: #73696B;
+            font-size: 12px;
+        }
+
+        /*特点*/
+        .contentFeature{
+            margin-top: 100px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .contentFeature>div:nth-child(1){
+            margin-top: 100px;
+        }
+        .contentFeature>div:nth-child(1)>img{
+            width: 240px;
+            height: 120px;
+        }
+        .contentFeature>div:nth-child(2){
+            margin-top: 100px;
+        }
+        .contentFeature>div:nth-child(2)>img{
+            width: 1100px;
+            height: 730px;
+        }
+        .contentFeature .contentFeatureCon{
+            width: 900px;
+            height: 300px;
+            margin: 200px auto 0;
+        }
+        .contentFeature .contentFeatureCon .words{
+            color: #696969;
+            padding-top: 50px;
+            height: 250px;
+            width: 360px;
+            text-align: left;
+        }
+        .contentFeature .contentFeatureCon .words>div:nth-child(1)~div{
+            margin-top: 20px;
+        }
+        .contentFeature .contentFeatureCon .words>div:last-child{
+            font-size: 12px;
+            color: #a8a8a8;
+        }
+        .contentFeature .contentFeatureCon .words .name{
+            display: inline-block;
+            margin-top: 15px;
+        }
+        .contentFeature .img{
+            width: 450px;
+            height: 300px;
+            background-size: 450px 300px;
+        }
+        .contentFeature .FL{
+            float: left;
+        }
+        .contentFeature .FR{
+            float: right;
+        }
+        .contentFeature .contentFeatureCon{
+            margin-top: 150px;
+        }
+        .contentFeature .contentFeatureCon .one{
+            background-image: url("../images/1_20.jpg");
+        }
+        .contentFeature .contentFeatureCon .two{
+            background-image: url("../images/1_22.jpg");
+        }
+        .contentFeature .contentFeatureCon .three{
+            background-image: url("../images/1_25.jpg");
+        }
+        .contentFeature .introduce{
+            margin-top: 100px;
+            height: 770px;
+            position: relative;
+            background-color: #FCF7F1;
+        }
+        .contentFeature .introduce img{
+            cursor: pointer;
+            position: absolute;
+        }
+        .contentFeature .introduce .one{
+            width: 200px;
+            height: 230px;
+            top: 150px;
+            left: 100px;
+        }
+        .contentFeature .introduce .two{
+            width: 120px;
+            height: 150px;
+            top: 50px;
+        }
+        .contentFeature .introduce .three{
+            width: 200px;
+            height: 230px;
+            top: 500px;
+            left: 520px;
+        }
+        .contentFeature .introduce .four{
+            width: 290px;
+            height: 170px;
+            top: 280px;
+            left: 1000px;
+        }
+        .contentFeature .introduce .words{
+            width: 480px;
+            position: absolute;
+            top: 630px;
+            text-align: center;
+            left: 50%;
+            margin-left: -240px;
+            opacity: 0;
+        }
+        .contentFeature .introduce .words .words-list{
+            font-size: 14px;
+            color: #b6b6b6;
+            margin-top: 10px;
+        }
+
+        /*灵感*/
+        .inspiration{
+            overflow: hidden;
+        }
+        .inspiration>div{
+            margin: 150px auto 0;
+        }
+        .inspiration .one{
+            background-image: url("../images/1_30.png");
+            width: 340px;
+            height: 120px;
+            background-size: 340px 120px;
+        }
+        .inspiration .two{
+            background-image: url("../images/1_31.jpg");
+        }
+        .inspiration .three{
+            background-image: url("../images/1_32.jpg");
+        }
+        .inspiration .four{
+            background-image: url("../images/1_33.jpg");
+        }
+        .inspiration .five{
+            background-image: url("../images/1_34.jpg");
+        }
+        .inspiration .two,.inspiration .four{
+            width: 1100px;
+            height: 730px;
+            background-size: 1100px 730px;
+        }
+        .inspiration .three,.inspiration .five{
+            width: 880px;
+            height: 580px;
+            background-size: 880px 580px;
+        }
+
+        /*保养提示*/
+        .USING{
+            width: 1100px;
+            height: 360px;
+            margin:200px auto 0;
+        }
+        .USING .left{
+            width: 510px;
+            float: left;
+        }
+        .USING .USING-name span{
+            font-size: 12px;
+        }
+        .USING .USING-list{
+            margin-top: 170px;
+            font-size: 12px;
+            color: #a8a8a8;
+        }
+        .USING .right{
+            float: right;
+        }
+        .USING .right img{
+            width: 540px;
+            height: 360px;
+        }
+        /*产品详情*/
+        .productKnowledge{
+            background-color: #F2F2F2;
+            margin-top: 200px;
+            overflow: hidden;
+            padding-bottom: 100px;
+        }
+        .productKnowledge>.header{
+            width: 250px;
+            height: 120px;
+            background-image: url("../images/1_36.png");
+            background-size: 250px 120px;
+            margin: 100px auto 0;
+        }
+        .productKnowledge>.content{
+            margin-top: 70px;
+        }
+        .productKnowledge>.content>.common{
+            padding: 0 124px;
+            height: 100px;
+        }
+        .productKnowledge>.content>.common>div{
+            cursor: pointer;
+            float: left;
+            width: 530px;
+            height: 99px;
+            border-bottom: 1px solid grey;
+        }
+        .productKnowledge>.content>.common>div:nth-child(1){
+            margin-right: 40px;
+        }
+        .productKnowledge .right{
+            height: 100px;
+            line-height: 100px;
+            font-size: 20px;
+            float: right;
+        }
+        .productKnowledge .left{
+            padding-top: 25px;
+            height: 70px;
+            float: left;
+        }
+        .productKnowledge .left img{
+            float: left;
+            width: 50px;
+            height: 50px;
+        }
+        .productKnowledge .left>div{
+            margin-top: 5px;
+            margin-left: 20px;
+            float: left;
+        }
+        .productKnowledge .left>div span:first-child{
+            color: #846241;
+        }
+        .productKnowledge .left>div span:last-child{
+            font-size: 13px;
+        }
+
+
+
+        .productKnowledge>.content>.details{
+            height: auto;
+            padding: 150px 0;
+            background-color: white;
+        }
+        .productKnowledge .details .img{
+            width: 750px;
+            height: 500px;
+            margin: 0 auto;
+            background-size: 750px 500px;
+            background-image: url("../images/1_43.jpg");
+        }
+        .productKnowledge .details .words{
+            margin: 50px auto 0;
+            width: 750px;
+            font-size: 12px;
+            color: #7a7a7a;
+        }
+
+        /*更多商品*/
+        .moreProducts{
+            padding: 70px 0;
+            height: 300px;
+        }
+        .moreProducts>div{
+            width: 1100px;
+        }
+        .moreProducts .header{
+            margin: 0 auto;
+        }
+        .moreProducts .header span{
+            font-size: 12px;
+        }
+        .moreProducts .content{
+            margin: 30px auto 0;
+        }
+        .moreProducts .content>div{
+            position: relative;
+            width: 260px;
+            height: 260px;
+            background-color: #EFEBE6;
+            float: left;
+            background-size: 140px 140px;
+            background-repeat: no-repeat;
+            background-position: 60px 60px;
+            cursor: pointer;
+        }
+        .moreProducts .content>div:hover>div{
+            opacity: 1;
+        }
+        .moreProducts .content>div:first-child~div{
+            margin-left: 20px;
+        }
+        .moreProducts .content>.one{
+            background-image: url("../images/1_47.png");
+        }
+        .moreProducts .content>.two{
+            background-image: url("../images/1_47.png");
+        }
+        .moreProducts .content>.three{
+             background-image: url("../images/1_47.png");
+         }
+        .moreProducts .content>.four{
+              background-image: url("../images/1_48.png");
+          }
+        .moreProducts .content>div>a{
+            display: inline-block;
+            width: 260px;
+            height: 260px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .moreProducts .content>div>div{
+            position: absolute;
+            width: 260px;
+            height: 45px;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.75);
+            text-align: center;
+            padding-top: 5px;
+            opacity: 0;
+        }
+        .moreProducts .content>div>div .price{
+            font-size: 12px;
+        }
+        .clear{
+            clear: both;
+        }
+        .modal-content{
+            margin-top: 200px;
+            margin-left: 150px;
+            width: 400px;
+        }
+        .modal-body{
+            text-align: center;
+        }
+        .modal-footer{
+            text-align: center;
+        }
+        .btn-primary{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <!--顶部文字-->
+    <div class="navTop">
+        <div class="containerO">
+            <ul class="right">
+                <li><a href="">实体店</a></li>
+                <li><a href="">商业合作</a></li>
+            </ul>
+            <div class="middle">
+                <span>长生于野</span><span>安于堂</span>
+            </div>
+        </div>
+    </div>
+    <!--顶部导航-->
+    <div class="navContent">
+        <div class="contentO">
+            <div class="left">Three</div>
+            <div class="right">
+                <a href="" class="iconfont">&#xe52a;</a>
+                <a href="" class="iconfont">&#xe507;</a>
+                <a href="personal.html" class="iconfont">&#xe60c;</a>
+                <a href="" class="iconfont">&#xe6c0;</a>
+            </div>
+            <div class="middle">
+                <ul>
+                    <li>
+                        <a href="furnitureRecommend.html">家具</a>
+                        <div></div>
+                        <ul>
+                            <li><a href="">椅</a></li>
+                            <li><a href="">桌</a></li>
+                            <li><a href="">床</a></li>
+                            <li><a href="">几</a></li>
+                            <li><a href="">柜</a></li>
+                            <li><a href="">沙发</a></li>
+                            <li><a href="">一枚板</a></li>
+                            <li><a href="">其他</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="grocery.html">家居</a>
+                        <div></div>
+                        <ul>
+                            <li><a href="">餐厨</a></li>
+                            <li><a href="">家居</a></li>
+                            <li><a href="">摆件</a></li>
+                            <li><a href="">养护</a></li>
+                            <li><a href="">园艺</a></li>
+                            <li><a href="">数码</a></li>
+                            <li><a href="">文具</a></li>
+                            <li><a href="">配饰</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../html/art.html">艺术</a>
+                        <div></div>
+                        <ul>
+                            <li><a href="">艺术家</a></li>
+                            <li><a href="">展览</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../html/lanmu.html">栏目</a>
+                        <div></div>
+                        <ul>
+                            <li><a href="">梵几在家</a></li>
+                            <li><a href="">串门</a></li>
+                            <li><a href="">ARTSTAGE</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../html/NewThings.html">新事</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--名称、价格、规格-->
+    <div class="contentDetails">
+        <div class="left"></div>
+        <div class="right">
+            <div class="top">
+                <div class="name">两用麻将桌</div>
+                <div class="price">¥12800.00</div>
+                <div class="Material">
+                    <div class="Material-name">木色 <span>Material</span></div>
+                    <div class="Material-list"><span>美国白蜡木</span><span>美国黑胡桃</span></div>
+                </div>
+                <div class="Quantity">
+                    <div class="Quantity-name">选购数量 <span>Quantity</span></div>
+                    <div class="Quantity-list"><span class="sub">-</span><input type="text" class="amount"value="1"><span class="add">+</span> 件 / piece</div>
+                </div>
+                <div class="Delivery">
+                    <div class="Delivery-name">发货周期 <span>Delivery</span></div>
+                    <div class="Delivery-list">家具制作周期为6-8周</div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="operate">
+                    <a href="" class="addCart" data-toggle="modal" data-target="#addCart">加入购物车</a>
+                    <a class="buy">立即购买</a>
+                </div>
+                <div class="other">
+                    点击查看 <a href="">配送详情</a> 或 <a href="vip.html">会员制度</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--设计-->
+    <div class="contentDesign">
+        <div class="header">
+            <img src="../images/1_11.png" alt="">
+            <div><span></span>梵几设计<br><span>DESIGNED BY FNJI</span></div>
+            <div>/</div>
+            <div>在居住空间有限的时代，人们对娱乐的需求是不变的，设计一款美观麻将桌的同<br>时，加入用餐功能，实现有限空间里的功能最大化。</div>
+        </div>
+        <div class="content">
+            <div class="left">
+                <div class="bg"></div>
+                <div class="img"></div>
+            </div>
+            <div class="right">
+                <div>
+                    <img src="../images/1_14.png" alt="">
+                    <div class="Parameter-name"><span>产品参数</span> Product Parameter</div>
+                    <div class="Parameter-list">
+                        <span>产品尺寸(cm)：W/L96 P/D96 H74（不含脚垫）</span><br>
+                        <span>重量(kg)：86</span><br>
+                        <span>包装体积(m³)：0.69</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="../images/1_15.png" alt="">
+                    <div class="Material-name"><span>材质</span> Material</div>
+                    <div class="Material-list">
+                        <span>主体材质：美国黑胡桃木</span><br>
+                        <span>桌面材质：意大利Fenice羊毛布、卡拉卡塔石烧纹磨砂面板</span>
+                    </div>
+                </div>
+                <div>
+                <img src="../images/1_16.png" alt="">
+                <div class="Place-name"><span>产地</span> Production Place</div>
+                <div class="Place-list">
+                    <span>北京</span>
+                </div>
+            </div>
+                <div>
+                    <img src="../images/1_17.png" alt="">
+                    <div class="Method-name"><span>安装方式</span> Production Place</div>
+                    <div class="Method-list">
+                        <span>组装。中国大陆梵几销售物流覆盖区域内，梵几提供此件家具的免费安装服务，无需自行组装。</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--特点-->
+    <div class="contentFeature">
+        <div>
+            <img src="../images/1_18.png" alt="">
+        </div>
+        <div>
+            <img src="../images/1_19.jpg" alt="">
+        </div>
+        <div class="contentFeatureCon">
+           <div class="words FL">
+           <div>
+               <span class="num">1/3</span><br>
+               <span class="name">餐桌、麻将桌集于一体</span><br>
+           </div>
+           <div>-</div>
+           <div>两用麻将桌是一款集合用餐、打麻将两用的桌子，桌面为双面设计，可以取下并且翻转，完成打麻将与用餐的双重用途。桌面板与桌体间内置磁吸，贴合自然且具有质感。麻将桌面布采用意大利Fenice羊毛布，触摸舒适，用餐面选择白色卡拉卡塔石烧纹磨砂面板，纹理自然宛如水墨，增添空间高级感。</div>
+       </div>
+           <div class="img FR one">
+           </div>
+       </div>
+        <div class="contentFeatureCon">
+            <div class="words FR">
+                <div>
+                    <span class="num">2/3</span><br>
+                    <span class="name">自带储物功能</span><br>
+                </div>
+                <div>-</div>
+                <div>桌体四面各有一枚抽屉，用来收纳临时存放的小型物件，桌面取下后，内部设有隔板分层，可用于收纳麻将或其他物件，是一款自带多种储物功能的两用桌。</div>
+            </div>
+            <div class="img FL two">
+            </div>
+        </div>
+        <div class="contentFeatureCon">
+            <div class="words FL">
+                <div>
+                    <span class="num">3/3</span><br>
+                    <span class="name">蘑菇形实木桌体设计</span><br>
+                </div>
+                <div>-</div>
+                <div>麻将桌底座以最简洁的上小下大的形式满足其站立功能，配合内置配重使其结构更加稳固。实木底座与桌面框架采用同样的设计语言，工艺缝细节增添视觉灵动性与呼吸感，整体和谐统一。
+                </div>
+            </div>
+            <div class="img FR three">
+            </div>
+        </div>
+        <div class="introduce">
+            <img src="../images/1_26.jpg" alt="" class="one">
+            <img src="../images/1_27.jpg" alt="" class="two">
+            <img src="../images/1_28.jpg" alt="" class="three">
+            <img src="../images/1_29.jpg" alt="" class="four">
+            <div class="words">
+                <div class="words-name">材料解析 <br><span>Material Description</span></div>
+                <div class="words-list">* <br><span>光标移至材质区域可以查看材料解析</span></div>
+            </div>
+        </div>
+    </div>
+    <!--灵感搭配-->
+    <div class="inspiration">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five"></div>
+    </div>
+    <!--保养提示 -->
+    <div class="USING ">
+        <div class="left">
+            <div class="USING-name">保养贴士 <br>
+                - <br>
+            <span>USING TIPS</span>
+            </div>
+            <div class="USING-list">
+                1. 请勿将家具放置户外使用，尽量保持室内的干湿度稳定在35%-65%之间，避免长时间阳光暴<br>晒
+                <br>2. 搬运或摆放家具时请勿大力拖拽；
+                <br>3. 避免尖锐物体划伤家具表面；
+                <br>4.注意避免水渍、油污长期浸泡，餐后请及时用拧干的抹布清理桌面，不建议使用强力去污产品清洁桌面；
+                <br>5. 此款家具软体部分不可拆洗，如被污损，请尽快用拧干的抹布或软体专用清洁剂清洁。也可以请专业的软体清洁公司上门养护。
+            </div>
+        </div>
+
+        <div class="right">
+            <img src="../images/1_35.jpg" alt="">
+        </div>
+    </div>
+    <!--产品详情-->
+    <div class="productKnowledge">
+        <div class="header"></div>
+        <div class="content">
+            <div class="one common">
+                <div class="Environmental">
+                    <div class="left">
+                        <img src="../images/1_37.png" alt="">
+                        <div>
+                            <span class="CN">环保选材</span><br>
+                            <span class="EN">Environmental protection</span>
+                        </div>
+                    </div>
+                    <div class="right">+</div>
+                </div>
+                <div class="wood">
+                    <div class="left">
+                        <img src="../images/1_38.png" alt="">
+                        <div>
+                            <span class="CN">环保选材</span><br>
+                            <span class="EN">Environmental protection</span>
+                        </div>
+                    </div>
+                    <div class="right">+</div>
+                </div>
+            </div>
+            <div class="two common">
+                <div class="Craftsman">
+                    <div class="left">
+                        <img src="../images/1_39.png" alt="">
+                        <div>
+                            <span class="CN">环保选材</span><br>
+                            <span class="EN">Environmental protection</span>
+                        </div>
+                    </div>
+                    <div class="right">+</div>
+                </div>
+                <div class="Coating">
+                    <div class="left">
+                        <img src="../images/1_40.png" alt="">
+                        <div>
+                            <span class="CN">环保选材</span><br>
+                            <span class="EN">Environmental protection</span>
+                        </div>
+                    </div>
+                    <div class="right">+</div>
+                </div>
+            </div>
+            <div class="three common">
+                <div class="Package">
+                    <div class="left">
+                        <img src="../images/1_41.png" alt="">
+                        <div>
+                            <span class="CN">环保选材</span><br>
+                            <span class="EN">Environmental protection</span>
+                        </div>
+                    </div>
+                    <div class="right">+</div>
+                </div>
+                <div class="Delivery">
+                    <div class="left">
+                        <img src="../images/1_42.png" alt="">
+                        <div>
+                            <span class="CN">环保选材</span><br>
+                            <span class="EN">Environmental protection</span>
+                        </div>
+                    </div>
+                    <div class="right">+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--更多产品-->
+    <div class="moreProducts">
+        <div class="header">
+            更多产品<br>
+            <span>FIND OUT FOR MORE</span>
+        </div>
+        <div class="content">
+            <div class="one">
+                <a href="detailsTwo.html"></a>
+                <div class="bottom">
+                    <span class="name">四柱餐桌1.6米版</span><br>
+                    <span class="price">¥8600.00</span>
+                </div>
+            </div>
+            <div class="two">
+                <a href=""></a>
+                <div class="bottom">
+                    <span class="name">四柱餐桌1.6米版</span><br>
+                    <span class="price">¥8600.00</span>
+                </div>
+            </div>
+            <div class="three">
+                <a href=""></a>
+                <div class="bottom">
+                    <span class="name">四柱餐桌1.6米版</span><br>
+                    <span class="price">¥8600.00</span>
+                </div>
+            </div>
+            <div class="four">
+                <a href=""></a>
+                <div class="bottom">
+                    <span class="name">四柱餐桌1.6米版</span><br>
+                    <span class="price">¥8600.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <!--尾部-->
+    <footer>
+        <nav>
+            <ul>
+                <li>
+                    <span>关于我们</span>
+                    <ul>
+                        <li><a href="">梵几STORY</a></li>
+                        <li><a href="">梵几实体店</a></li>
+                        <li><a href="">媒体报道</a></li>
+                        <li><a href="">招聘信息</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span>购物指南</span>
+                    <ul>
+                        <li><a href="">购物流程</a></li>
+                        <li><a href="">会员制度</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span>关于配送</span>
+                    <ul>
+                        <li><a href="">家具配送</a></li>
+                        <li><a href="">家居配送</a></li>
+                        <li><a href="">一枚板配送</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span>售后服务</span>
+                    <ul>
+                        <li><a href="">家具售后</a></li>
+                        <li><a href="">家居售后</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span>商业合作</span>
+                    <ul>
+                        <li><a href="">项目批量采购</a></li>
+                        <li><a href="">设计公司合作</a></li>
+                        <li><a href="">家居品牌合作</a></li>
+                        <li><a href="">市场&媒体合作</a></li>
+                        <li><a href="">艺术品合作</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="footer">
+            <div class="footer_left">
+                梵几独立家居品牌 © 2017 Fnji Interior design Co. Ltd. Beijing, China 京ICP备13004049号-3
+            </div>
+            <div class="footer_right">
+                <div>
+                    <span>微信</span>
+                    <span>新浪</span>
+                </div>
+                <div>
+                    客服邮箱 service@fnji.com / TEL 400-641-6399
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--右侧悬浮按钮-->
+    <div class="right_button">
+        <a href="" class="iconfont top">&#xe765;</a>
+        <a href="" class="iconfont contact">&#xe610;</a>
+    </div>
+    <!--加入购物车-->
+    <div class="modal fade" id="addCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    加入购物车成功!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">继续购物</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="../bootstrap/js/jquery-1.11.3.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../js/nav.js"></script>
+    <script>
+        $(window).scroll(function () {
+            console.log($(window).scrollTop());
+
+            /*设计图片*/
+            if ($(window).scrollTop()>=845){
+                $(".contentDesign .content .left .bg").css({
+                    "width":"640px",
+                    "transition":"all 1.5s linear"
+                });
+                $(".contentDesign .content .left .img").css({
+                    "background-image":"url(../images/1_13.png)",
+                    "transition":"all 1s linear 1.5s"
+                });
+            }
+            else {
+                $(".contentDesign .content .left .bg").css({
+                    "width":"100px",
+                    "transition":""
+                });
+                $(".contentDesign .content .left .img").css({
+                    "background-image":"url(../images/1_12.png)"
+                });
+            }
+
+            /*特点图片*/
+            if ($(window).scrollTop()>=4040){
+                $(".contentFeature .introduce .one").css({
+                    "left":"500px",
+                    "transition":"all 1.5s linear"
+                });
+                $(".contentFeature .introduce .two").css({
+                    "top":"200px",
+                    "transition":"all 1.5s linear"
+                });
+                $(".contentFeature .introduce .three").css({
+                    "top":"360px",
+                    "transition":"all 1.5s linear"
+                });
+                $(".contentFeature .introduce .four").css({
+                    "left":"600px",
+                    "transition":"all 1.5s linear"
+                });
+                $(".contentFeature .introduce .words").css({
+                    "opacity":"1",
+                    "transition":"all .5s linear 1.7s"
+                });
+            }
+            else {
+                $(".contentFeature .introduce .one").css({
+                    "left":"100px"
+                });
+                $(".contentFeature .introduce .two").css({
+                    "top":"50px"
+                });
+                $(".contentFeature .introduce .three").css({
+                    "top":"500px"
+                });
+                $(".contentFeature .introduce .four").css({
+                    "left":"1000px"
+                });
+                $(".contentFeature .introduce .words").css({
+                    "opacity":"0"
+                });
+            }
+        });
+
+
+        /*材质选择*/
+        $(".contentDetails>.right .Material-list span").click(function () {
+           $(this).css({
+               "border":"1px solid black"
+           }).siblings().css({
+               "border":"1px solid #b4b4b4"
+           })
+        });
+        /*数量加减*/
+        var goodsNum = 1;
+        $(".contentDetails>.right .Quantity-list .add").click(function () {
+            goodsNum++;
+            $(".contentDetails>.right .Quantity-list .amount").val(goodsNum);
+        });
+        $(".contentDetails>.right .Quantity-list .sub").click(function () {
+            goodsNum--;
+            if (goodsNum<1){
+                goodsNum=1;
+            }
+            $(".contentDetails>.right .Quantity-list .amount").val(goodsNum);
+        });
+        $(".operate .buy").on("click",function () {
+           window.location.href="shoping.html?id=147&num="+goodsNum;
+        });
+
+        /*材料介绍*/
+        $(".contentFeature .introduce .one").mouseover(function () {
+            $(".contentFeature .introduce .words").html("<div class='words-name'>美国白蜡木 <br><span>Material Description</span></div>"+
+            "<div class='words-list'><span>白蜡木主要产地为北美，光泽柔和，疤结较少，纹理粗犷，具有一定禅意，白蜡木质地坚韧，硬度高，坚固耐用，稳定性较高。</span></div>'");
+        });
+        $(".contentFeature .introduce .two").mouseover(function () {
+            $(".contentFeature .introduce .words").html("<div class='words-name'>富美家卡拉卡塔石烧纹磨砂面板 <br><span>Material Description</span></div>"+
+                "<div class='words-list'><span>一款卡拉卡塔装饰面，表面经过磨砂处理，色彩温润， 纹路自然，有着耐火、防潮、耐高温等特性。 </span></div>'");
+        });
+        $(".contentFeature .introduce .three").mouseover(function () {
+            $(".contentFeature .introduce .words").html("<div class='words-name'>意大利PUGI R.G.羊毛布料一橄榄绿色 <br><span>Material Description</span></div>"+
+                "<div class='words-list'><span>意大利品牌PUGI R.G.牌旗下的Fenice系列布料，由优质羊毛制成，羊毛量75%，通过传统工艺的稳定化处理获得特定表面效果，赋予特别统一平滑而柔软的手感，能够实现优异的耐起毛起球性和耐磨性。</span></div>'");
+        });
+        $(".contentFeature .introduce .four").mouseover(function () {
+            $(".contentFeature .introduce .words").html("<div class='words-name'>美国黑胡桃 <br><span>Material Description</span></div>"+
+                "<div class='words-list'><span>黑胡桃木主要产地为北美，外观优美，颜色深沉雅致，纹理清晰，稳定性高，且在同等坚韧度的木材中密度较小，比较轻便。</span></div>'");
+        });
+        $(".contentFeature .introduce img").mouseout(function () {
+            $(".contentFeature .introduce .words").html("<div class='words-name'>材料解析 <br><span>Material Description</span></div>"+
+            "<div class='words-list'>* <br><span>光标移至材质区域可以查看材料解析</span></div>'");
+        });
+
+        /*底部详细介绍*/
+        var one =true;
+        var two =true;
+        var three =true;
+        var four =true;
+        var five =true;
+        var six =true;
+        $(".productKnowledge>.content>.common>div:nth-child(1)").click(function () {
+            two=true;
+            if ($(this).parent().next().attr("class")=="details"&&one==true){
+                $(this).parent().next().remove();
+                if (one==true){
+                    one=false;
+                    $(this).parent().after(
+                        "<div class='details'>"+
+                        "<div class='img'></div>"+
+                        "<div class='words'>"+
+                        "我们采用天然的的可持续木材，做“对环境与人负责任”的设计。梵几家具的结构采用榫卯结构连接为主，胶合与五金件辅助加固。所有涂层均不含苯、重金属等有害物质，符合欧盟DIN53160标准和EN71标准，也达到欧盟认证的儿童玩具级别。"+
+                        "</div>"+
+                        "</div>");
+                    $(".productKnowledge .details .img").css({
+                        "background-image":"url(../images/1_43.jpg)"
+                    });
+                    $(this).children().eq(1).html("-");
+                    $(this).siblings().children().eq(1).html("+");
+                }
+            }
+            else if (one==true){
+                one=false;
+                $(this).parent().after(
+                    "<div class='details'>"+
+                    "<div class='img'></div>"+
+                    "<div class='words'>"+
+                    "我们采用天然的的可持续木材，做“对环境与人负责任”的设计。梵几家具的结构采用榫卯结构连接为主，胶合与五金件辅助加固。所有涂层均不含苯、重金属等有害物质，符合欧盟DIN53160标准和EN71标准，也达到欧盟认证的儿童玩具级别。"+
+                    "</div>"+
+                    "</div>");
+                $(".productKnowledge .details .img").css({
+                    "background-image":"url(../images/1_43.jpg)"
+                });
+                $(this).children().eq(1).html("-");
+                $(this).siblings().children().eq(1).html("+");
+            }
+            else if (one==false){
+                $(this).parent().next().remove();
+                $(this).children().eq(1).html("+");
+                one=true;
+            }
+
+        });
+        $(".productKnowledge>.content>.common>div:nth-child(2)").click(function () {
+            one=true;
+            if ($(this).parent().next().attr("class")=="details"&&two==true){
+                $(this).parent().next().remove();
+
+                $(this).parent().after(
+                    "<div class='details'>"+
+                    "<div class='img'></div>"+
+                    "<div class='words'>"+
+                    "我们采用天然的的可持续木材，做“对环境与人负责任”的设计。梵几家具的结构采用榫卯结构连接为主，胶合与五金件辅助加固。所有涂层均不含苯、重金属等有害物质，符合欧盟DIN53160标准和EN71标准，也达到欧盟认证的儿童玩具级别。"+
+                    "</div>"+
+                    "</div>");
+                $(".productKnowledge .details .img").css({
+                    "background-image":"url(../images/1_44.jpg)"
+                });
+                $(this).children().eq(1).html("-");
+                $(this).siblings().children().eq(1).html("+");
+                two=false;
+            }
+            else if (two==true){
+                two=false;
+                $(this).parent().after(
+                    "<div class='details'>"+
+                    "<div class='img'></div>"+
+                    "<div class='words'>"+
+                    "梵几家具为实木家具，采用符合FSC森林认证的可持续木材，包括所有侧板、层板（除柜体背板、抽屉底板、罗汉床底板及软包家具采用符合欧洲E0级标准实木多层板）均为实木原木。较之市场上常见的仿实木家具，实木家具更加结实、耐用、环保。 "+
+                    "</div>"+
+                    "<div class='words'>"+
+                    "梵几家具精选北美进口黑胡桃木或白蜡木，面板及框架选材高于全美硬木板材协会制定的NHLA特级选材标准，确保产品耐用而美观。 白蜡木主要产地为北美，纹理粗犷，光泽柔和，具有一定禅意。白蜡木质地坚韧，硬度高，坚固耐用，稳定性较高； 黑胡桃木主要产地为北美，颜色深沉雅致，纹理清晰，稳定性高，且在同等坚韧度的木材中密度较小，比较轻便。"+
+                    "</div>"+
+                    "<div class='words'>"+
+                    " 实木来源于自然，木材的自然特性决定它会因湿度的变化出现发胀或收缩。使用实木家具时，环境湿度最好在35％-65％之间。详细请点击 实木特性。"+
+                    "</div>"+
+                    "</div>");
+                $(".productKnowledge .details .img").css({
+                    "background-image":"url(../images/1_44.jpg)"
+                });
+                $(this).children().eq(1).html("-");
+                $(this).siblings().children().eq(1).html("+");
+            }
+            else if (two==false){
+                $(this).parent().next().remove();
+                $(this).children().eq(1).html("+");
+                two=true;
+            }
+
+        });
+    </script>
+</body>
+</html>

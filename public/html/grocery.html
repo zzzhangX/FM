@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grocery</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link rel="stylesheet" href="../css/banner.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+        input[type="button"],button{
+            cursor: pointer;
+        }
+        .clear{
+            clear: both;
+        }
+        /*轮播样式开始*/
+        .banner{
+            height: 500px;
+            width: 100%;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .banner .banner_content #imgBanner{
+            height: 500px;
+            width:100%;
+            transition: all 1s linear;
+            background-size: 100% 100%;
+        }
+        .circle{
+            background-color:#CCC!important;
+        }
+        .span{
+            width: 5px;
+            height: 5px;
+            display: inline-block;
+            background-color: #000000;
+            margin-left: 15px;
+            border-radius: 5px;
+
+        }
+        #divCircle{
+            font-size: 15px;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+        }
+        /*轮播样式结束*/
+
+        /*商品列表样式开始*/
+        .grocery_img{
+            width: 249px;
+            height: 250px;
+            position: relative;
+            float: left;
+            margin: 10px;
+            color: black;
+
+        }
+        .grocery_img>img{
+            width: 100%;
+            height: 100%;
+        }
+        .grocery_img:hover .grocery_img_after{
+            visibility: visible;
+        }
+        .grocery_img_after{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.56);
+            text-align: center;
+            padding-bottom: 15px;
+            padding-top: 15px;
+            visibility: hidden;
+            transition: all .1s linear;
+        }
+        .grocery_img_after>p{
+            margin: -15px 0 0;
+        }
+        .content_goods{
+            width: 80%;
+            margin: 20px auto 0;
+           /* margin-top: 20px;*/
+            /*background-color: red;
+            border: 1px solid blue;*/
+        }
+        .grocery_img_more{
+            border: 1px solid rgba(0, 0, 0, 0.33);
+            text-align: center;
+            line-height: 250px;
+        }
+        /*商品列表样式结束*/
+        /*!*footer样式开始*!
+        .footer{
+            height: calc(420px - 80px );
+            background-color: rgb(245,245,245);
+            width: calc(100% - 100px);
+            padding-top: 80px;
+            padding-left: 100px;
+            margin-top: 100px;
+        }
+        .footer .footer_t>div{
+            float: left;
+            margin-left: 20px;
+            width: 120px;
+            text-align: center;
+            !*background-color: rgba(255, 0, 0, 0.14);*!
+        }
+        .clear{
+            clear: both;
+        }
+        .footer .footer_t>div>ul>li{
+            list-style: none;
+            margin-bottom: 10px;
+            text-align: center;
+            margin-left: 10px;
+
+            font-size: 12px;
+        }
+        .footer  .footer_t>div>ul>li>a{
+            color: rgba(0,0,0,0.5);
+            text-decoration: none;
+        }
+        .footer .footer_t>div>ul>li:hover{
+            color: #000000;
+            text-decoration: underline;
+
+        }
+        .footer .footer_t>div>p{
+            border-right: 1px solid #000;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: rgba(0,0,0,0.7);
+        }
+        .footer  .footer_t>div>p.lastp{
+            border-right: none;
+        }
+        .footer .leftb{
+            margin-top: 120px;
+            float: left;
+            font-size: 10px;
+        }
+        .footer .rightb{
+            margin-top: 120px;
+            float: right;
+            margin-right: 120px;
+            font-size: 13px;
+        }
+        .footer .footer_b{
+            color: rgba(0,0,0,0.4);
+            position: relative;
+        }
+        .footer .footer_b span{
+            position: absolute;
+            right: 120px;
+            bottom: -75px;
+        }
+        .footer .footer_b span.span1{
+            position: absolute;
+            right: 190px;
+            bottom: -75px;
+        }
+        .footer .font span img{
+            width: 40px;
+            height: 25px;
+        }
+        !*footer样式结束*!*/
+
+        /*nav*/
+        .nav_ul{
+            width: 500px;
+            height: 50px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.59);
+            border-top: 1px solid rgba(0, 0, 0, 0.59);
+            margin-top: 30px;
+            /*position: absolute;*/
+            left: calc(50% - 250px);
+            z-index: 33;
+        }
+        .nav_ul>ul>li{
+            list-style: none;
+            float: left;
+            width: 33%;
+            text-align: center;
+            line-height: 50px;
+
+
+        }
+        .nav_ul>ul>li>ul{
+            visibility: hidden;
+            display: none;
+            position: absolute;
+        }
+        .ul_2{
+            left: calc(50% - 30px);
+            z-index: 2;
+        } .ul_3{
+            left:  calc(60% - 8px);
+        }
+        /* .nav_ul>ul>li:hover{
+             border-bottom: 2px solid red;
+        }*/
+        .nav_ul>ul>li:hover .nav_ul>ul>li>ul{
+            visibility: hidden;
+        }
+        .nav_ul>ul>li>ul>li{
+            list-style: none;
+            line-height: 30px;
+
+        }
+        .nav_ul>ul>li>ul>li>a{
+            color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+<!--顶部文字-->
+<div class="navTop">
+    <div class="containerO">
+        <ul class="right">
+            <li><a href="">实体店</a></li>
+            <li><a href="">商业合作</a></li>
+        </ul>
+        <div class="middle">
+            <span>长生于野</span><span>安于堂</span>
+        </div>
+    </div>
+</div>
+<!--顶部导航-->
+<div class="navContent">
+    <div class="contentO">
+        <div class="left">Three</div>
+        <div class="right">
+            <a href="" class="iconfont">&#xe52a;</a>
+            <a href="" class="iconfont">&#xe507;</a>
+            <a href="personal.html" class="iconfont" id="orderbtn">&#xe60c;</a><!--订单-->
+            <!--<button data-toggle="modal" data-target="#myLogin">1111</button>-->
+            <a href="" class="iconfont" data-toggle="modal" data-target="#myLogin" >&#xe6c0;</a>
+        </div>
+        <div class="middle">
+            <ul>
+                <li>
+                    <a href="furnitureRecommend.html">家具</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">椅</a></li>
+                        <li><a href="">桌</a></li>
+                        <li><a href="">床</a></li>
+                        <li><a href="">几</a></li>
+                        <li><a href="">柜</a></li>
+                        <li><a href="">沙发</a></li>
+                        <li><a href="">一枚板</a></li>
+                        <li><a href="">其他</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="grocery.html">家居</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">餐厨</a></li>
+                        <li><a href="">家居</a></li>
+                        <li><a href="">摆件</a></li>
+                        <li><a href="">养护</a></li>
+                        <li><a href="">园艺</a></li>
+                        <li><a href="">数码</a></li>
+                        <li><a href="">文具</a></li>
+                        <li><a href="">配饰</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/art.html">艺术</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">艺术家</a></li>
+                        <li><a href="">展览</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/lanmu.html">栏目</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">梵几在家</a></li>
+                        <li><a href="">串门</a></li>
+                        <li><a href="">ARTSTAGE</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/NewThings.html">新事</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<banner>
+    <div class="banner">
+        <!-- 显示图片-->
+        <div class="banner_content">
+            <div id="imgBanner"></div>
+        </div>
+        <!--小圆点 -->
+        <div id="divCircle"></div>
+    </div>
+</banner>
+<div class="nav_ul">
+    <ul>
+        <li>推荐</li>
+        <li class="li_2">全部分类
+            <ul class="ul_2" >
+                <li><a href="">椅</a></li>
+                <li><a href="">桌</a></li>
+                <li><a href="">床</a></li>
+                <li><a href="">几</a></li>
+                <li><a href="">柜</a></li>
+                <li><a href="">沙发</a></li>
+                <li><a href="">一枚板</a></li>
+                <li><a href="">其他</a></li>
+            </ul>
+        </li>
+        <li>产品线
+            <ul class="ul_2 ul_3">
+                <li><a href="">本线</a></li>
+                <li><a href="">FF线</a></li>
+                <li><a href="">一枚板</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="clear"></div>
+<div class="content_goods" id="content">
+</div>
+<div class="clear"></div>
+<!--尾部-->
+<footer>
+    <nav>
+        <ul>
+            <li>
+                <span>关于我们</span>
+                <ul>
+                    <li><a href="">梵几STORY</a></li>
+                    <li><a href="">梵几实体店</a></li>
+                    <li><a href="">媒体报道</a></li>
+                    <li><a href="">招聘信息</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>购物指南</span>
+                <ul>
+                    <li><a href="">购物流程</a></li>
+                    <li><a href="">会员制度</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>关于配送</span>
+                <ul>
+                    <li><a href="">家具配送</a></li>
+                    <li><a href="">家居配送</a></li>
+                    <li><a href="">一枚板配送</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>售后服务</span>
+                <ul>
+                    <li><a href="">家具售后</a></li>
+                    <li><a href="">家居售后</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>商业合作</span>
+                <ul>
+                    <li><a href="">项目批量采购</a></li>
+                    <li><a href="">设计公司合作</a></li>
+                    <li><a href="">家居品牌合作</a></li>
+                    <li><a href="">市场&媒体合作</a></li>
+                    <li><a href="">艺术品合作</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="footer">
+        <div class="footer_left">
+            梵几独立家居品牌 © 2017 Fnji Interior design Co. Ltd. Beijing, China 京ICP备13004049号-3
+        </div>
+        <div class="footer_right">
+            <div>
+                <span>微信</span>
+                <span>新浪</span>
+            </div>
+            <div>
+                客服邮箱 service@fnji.com / TEL 400-641-6399
+            </div>
+        </div>
+    </div>
+</footer>
+<!--右侧悬浮按钮-->
+<div class="right_button">
+    <a href="" class="iconfont top">&#xe765;</a>
+    <a href="" class="iconfont contact">&#xe610;</a>
+</div>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script src="../js/arr.js"></script>
+<script src="../js/nav.js"></script>
+<script>
+    //商品列表js开始
+    {
+   var content=document.getElementById("content");
+   //图片路径数组imgarr
+   function oload() {
+       for (var i=0;i<31;i++){
+           content.innerHTML+=" <a href='grocery_detail.html?id="+i+"'><div class='grocery_img'>"+
+               "  <img src="+imgarr[i]+">"+
+               " <div class='grocery_img_after'>"+
+               " <p><span class='goods_name'>"+goods_name_arr[i]+"</span><span class='goods_color'>颜色</span><br>￥<span class='goods_price'>"+goods_price_arr[i]+"</span></p>"+
+               " </div>"+
+               " </div></a>"
+       }
+       content.innerHTML+="<div class=' grocery_img grocery_img_more' id='grocery_img_more'>MORE</div>";
+       document.getElementById("grocery_img_more").onclick=function () {
+           this.style.display="none";
+           for (var i=31;i<63;i++){
+               content.innerHTML+="<a href='grocery_detail.html?id="+i+"'><div class='grocery_img'>"+
+                   "  <img src="+imgarr[i]+">"+
+                   " <div class='grocery_img_after'>"+
+                   " <p><span class='goods_name'>"+goods_name_arr[i]+"</span><span class='goods_color'>颜色</span><br>￥<span class='goods_price'>"+goods_price_arr[i]+"</span></p>"+
+                   " </div>"+
+                   " </div></a>"
+           }
+           content.innerHTML+="<div class=' grocery_img grocery_img_more' id='grocery_img_more1'>剩下全部</div>";
+           document.getElementById("grocery_img_more1").onclick=function () {
+               this.style.display="none";
+               for (var i=62;i<imgarr.length;i++){
+                   content.innerHTML+="<a href='grocery_detail.html?id="+i+"'><div class='grocery_img'>"+
+                       "  <img src="+imgarr[i]+">"+
+                       " <div class='grocery_img_after'>"+
+                       " <p><span class='goods_name'>"+goods_name_arr[i]+"</span><span class='goods_color'>颜色</span><br>￥<span class='goods_price'>"+goods_price_arr[i]+"</span></p>"+
+                       " </div>"+
+                       " </div></a>"
+               }
+           }
+       }
+   }
+   oload();}
+   //商品列表js结束
+   //banner.js开始
+   {
+   //普通轮播
+   var imgBanner=document.getElementById("imgBanner");
+   var arr=["../images/grocery1.jpg","../images/grocery2.jpg","../images/grocery3.jpg","../images/grocery4.jpg","../images/grocery5.jpg",];
+   var index=0;
+   imgBanner.style.backgroundImage="url("+arr[index]+")";
+   clearInterval(time)
+   var time=setInterval(dis,3000);
+   imgBanner.onmouseover=function () {
+       clearInterval(time)
+   }
+   imgBanner.onmouseout=function () {
+       clearInterval(time)
+       time=setInterval(dis,3000);
+   }
+   function dis() {//自动改变背景图片
+       index++;
+       if(index==arr.length){
+           index=0;
+       }
+       imgBanner.style.backgroundImage="url("+arr[index]+")";
+       //图片对应的小圆点
+       disCirCleSyle();
+   }
+   //生成控制小圆点
+   var divCircle=document.getElementById("divCircle");
+   for(var i=0;i<arr.length;i++){
+       divCircle.innerHTML+="<span class='span'></span>";
+   }
+   disCirCleSyle();
+   function disCirCleSyle() {//给当前小圆点添加类名
+       var spanArr=divCircle.getElementsByClassName("span");
+       for(var i=0;i<spanArr.length;i++){
+           spanArr[i].classList.remove("circle");
+       }
+       divCircle.getElementsByClassName("span")[index].classList.add("circle");
+   }
+   for(var i=0;i<arr.length;i++){//绑定小圆点的单击事件
+       document.getElementsByClassName("span")[i].index=i;
+       document.getElementsByClassName("span")[i].onclick=function () {
+           index=this.index;
+           clearInterval(time);
+           console.log("111")
+           document.getElementById("imgBanner").style.backgroundImage="url("+arr[index]+")";
+           disCirCleSyle();
+           time=setInterval(dis,3000);
+       }
+   }
+   }
+   //banner.js结束
+</script>
+</body>
+</html>

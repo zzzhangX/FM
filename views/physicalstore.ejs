@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实体店</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .ps-section1{
+            width: 100%;
+            height: 697.11px;
+            display: flex;
+            /*outline: solid 1px yellow;*/
+        }
+        .ps-section2{
+            width: 100%;
+            height: 2200px;
+            /*outline: solid 1px red;*/
+        }
+        .ps-img1{
+            height: 597.11px;
+            width: 800px;
+            align-self: center;
+            margin: 0 auto;
+        }
+        .ps-img2{
+            height: 377px;
+            width: 587px;
+            align-self: center;
+            margin: 0 auto;
+            /*outline: solid 1px gold;*/
+        }
+        .ps-img3{
+            width: 150px;
+            height: 150px;
+            margin-top: 12px;
+            margin-left: 123px;
+        }
+        .ps-block1{
+            width: 1200px;
+            height: 417px;
+            display: flex;
+            margin: 0 auto;
+            /*outline: solid 1px palevioletred;*/
+        }
+        .ps-word1{
+            font-size: 14px;
+            text-align: center;
+            line-height: 30px;
+            margin-top: 30px;
+            margin-right: 55px;
+            font-weight: 600;
+        }
+        .ps-word2{
+            font-size: 12px;
+            color: gray;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 55px;
+        }
+        .ps-word3{
+            font-size: 14px;
+            text-align: center;
+            line-height: 30px;
+            margin-top: 130px;
+            margin-right: 55px;
+            font-weight: 600;
+        }
+        .ps-wordBlock1{
+            width: 450px;
+            height: 100%;
+            /*outline: solid 1px coral;*/
+        }
+    </style>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<%-include('common/nav.ejs')%>
+<section class="ps-section1">
+    <img src="../images/shop.png" class="ps-img1"/>
+</section>
+<section class="ps-section2">
+    <div class="ps-block1">
+        <img src="../images/s1024_1537854625_2579.jpg" class="ps-img2"/>
+        <div class="ps-wordBlock1">
+            <p class="ps-word1">「梵几上海客厅」</p>
+            <p class="ps-word2">上海市徐汇区武康路近湖南路</p>
+            <p class="ps-word2">/</p>
+            <p class="ps-word2">11:00~19:30（周一定休）</p>
+            <p class="ps-word2">TEL：021-54961966</p>
+            <img src="../images/weixin-service.jpg" class="ps-img3"/>
+            <p class="ps-word2">微信扫描二维码关注梵几服务号</p>
+            <p class="ps-word2">可以进行预约</p>
+        </div>
+    </div>
+    <div class="ps-block1">
+        <img src="../images/s1024_1447805201_7794.jpg" class="ps-img2"/>
+        <div class="ps-wordBlock1">
+            <p class="ps-word3">「梵几客厅 北京国子监店」</p>
+            <p class="ps-word2">北京市东城区安定门内国子监街41号</p>
+            <p class="ps-word2">/</p>
+            <p class="ps-word2">10:30~19:00（周日至周四）</p>
+            <p class="ps-word2">10:30~20:00（周五、周六）</p>
+            <p class="ps-word2">TEL：010-53672899</p>
+        </div>
+    </div>
+    <div class="ps-block1">
+        <img src="../images/s20480_1517294641_1968.jpg" class="ps-img2"/>
+        <div class="ps-wordBlock1">
+            <p class="ps-word3">「梵几深圳深业上城店」</p>
+            <p class="ps-word2">
+                深圳市福田区皇岗路5001号深业上城小镇<br>
+                L3层T3062铺-00L4层T4006铺<br>
+                /<br>
+                10:00~22:00（周一至周日）<br>
+                TEL：0755-82799649
+            </p>
+        </div>
+    </div>
+    <div class="ps-block1">
+        <img src="../images/s1024_1447805338_6192.jpg" class="ps-img2"/>
+        <div class="ps-wordBlock1">
+            <p class="ps-word3">「梵几客厅杭州留和路店」</p>
+            <p class="ps-word2">
+                杭州市西湖区留和路139号东信和创园15栋<br>
+                /<br>
+                10:00~18:00 （周一至周日）<br>
+                TEL：0571-88963099
+            </p>
+        </div>
+    </div>
+    <div class="ps-block1">
+        <img src="../images/s1024_1447806238_3839.jpg" class="ps-img2"/>
+        <div class="ps-wordBlock1">
+            <p class="ps-word3">「梵几客厅西安美术馆店」</p>
+            <p class="ps-word2">
+                西安市曲江新区大唐不夜城西安美术馆南侧下沉广场<br>
+                /<br>
+                10:00~20:00 （周一定休）<br>
+                TEL：029-89356399
+            </p>
+        </div>
+    </div>
+</section>
+<%-include('common/footer.ejs')%>
+<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/Story.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    .ad-section1{
+      width: 1100px;
+      height: 200px;
+      margin: 0 auto;
+      overflow: hidden;
+      /*outline: solid 1px yellow;*/
+    }
+    .ad-block1{
+      text-align: center;
+      font-family: FZSongKeBenXiuKaiS-R-GB,PingFangSC-Light,Helvetica Neue,Helvetica,STHeiTi,sans-serif;
+      color: #8a8a8a;
+      margin-top: 50px;
+      margin-bottom: 40px;
+      /*outline: solid 1px tomato;*/
+    }
+    .ad-block2{
+      height: 40px;
+      margin-top: 20px;
+      border-top: solid 1px #EEEEEE;
+      border-bottom: solid 1px #EEEEEE;
+      color: #8a8a8a;
+    }
+    .ad-block3{
+      width: 800px;
+      color: #8a8a8a;
+      margin: 0 auto;
+      display: flex;
+      /*outline: solid 1px teal;*/
+    }
+    .ad-word1{
+      font-family:楷体;
+      line-height: 30px;
+      font-size: 16px;
+    }
+    .ad-word2{
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .ad-word3{
+      font-size: 12px;
+      padding-top: 70px;
+      height: 220px;
+      display: none;
+    }
+    .ad-wordSet1{
+      padding-top: 60px;
+      height: 200px;
+      display: none;
+    }
+    .ad-wordSet2{
+      height: 260px;
+      display: none;
+    }
+    .ad-wordSet-ok{
+      display: block;
+      color: black;
+    }
+
+    .ad-span{
+      width: 30px;
+      display: inline-block;
+      border-bottom: solid 1px #8a8a8a;
+    }
+    .ad-span1{
+      width: 60px;
+      display: inline-block;
+      border-bottom: solid 2.5px #000000;
+      float: left;
+      margin-top: -2.5px;
+      margin-left: 270px;
+      display: none;
+    }
+    .ad-spanSet{
+      width: 60px;
+      margin-left: 520px;
+      display: none;
+    }
+    .ad-spanSet1{
+      width: 75px;
+      margin-left: 763px;
+      display: none;
+    }
+    .ad-block2>ul{
+      width: 750px;
+      height: 40px;
+      margin: 0 auto;
+      /*outline: solid 1px orange;*/
+    }
+    .ad-block2>ul>li{
+      text-align: center;
+      height: 40px;
+      width: 250px;
+      float: left;
+      font-size: 14px;
+      line-height: 40px;
+      list-style:none;
+      /*outline: solid 1px orangered;*/
+    }
+    .ad-li-ok{
+      color: black;
+    }
+    .ad-span1-ok{
+      display: block;
+    }
+  </style>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<%-include('common/nav.ejs')%>
+<section class="ad-section1">
+  <div class="ad-block1">
+    <p class="ad-word1">关于配送</p>
+    <p class="ad-word2">ABOUT DELIVER</p>
+    <span class="ad-span"></span>
+  </div>
+  <div class="ad-block2">
+    <ul>
+      <li class="ad-li">家具配送</li>
+      <li class="ad-li">家居配送</li>
+      <li class="ad-li ad-li-ok">一枚板配送</li>
+    </ul>
+    <span class="ad-span1"></span>
+    <span class="ad-span1 ad-spanSet"></span>
+    <span class="ad-span1 ad-spanSet1 ad-span1-ok"></span>
+  </div>
+</section>
+<div class="ad-block3">
+  <p class="ad-word3">
+    1）客户下单后将享受免费包装及配送服务。<br><br>
+    2）新疆、西藏、青海、海南、香港、澳门等偏远地区，物流费每立方减免300元。请收到家具确认无误后先支付物流费，并在三个工作日内联系梵几客<br>
+    服，客服人员将按每立方300元为您退回减免部分的物流费用。非德邦物流配送覆盖的区域，默认配送至最近的德邦物流站点。<br><br>
+    3）我们将为您免费配送家具入户（七楼以上无电梯或电梯无法使用时除外），因部分家具尺寸较大，请在购买前进行尺寸测量，确认能否上楼入户。
+  </p>
+  <p class="ad-word3 ad-wordSet1">
+    1)中国大陆地区单笔订单消费满200元可免费顺丰配送；未满200元，收取10元/单配送费。<br><br>
+    2)下单后48小时内发货（如遇周末及国家法定节假日,商品的配送将推迟到下一工作日处理）。<br><br>
+    3)发货后，您可在登陆账户查询相应订单的配送状态。
+  </p>
+  <p class="ad-word3 ad-wordSet2 ad-wordSet-ok">
+    1）客户下单后将享受免费包装及配送服务。<br><br>
+    2）我们将为您免费配送家具入户（七楼以上无电梯或电梯无法使用时除外），因部分家具尺寸较大，请在购买前进行尺寸测量，确认能否上楼入户。送<br>
+    货时如无电梯或电梯不能进入，梵几只能提供七层以下且长度在2.2米以下的一枚板有偿搬运服务。请您确认电梯尺寸或自行请人搬运上楼。<br><br>
+    3）新疆、西藏、青海、海南、香港、澳门等偏远地区，物流费每立方减免300元。请收到家具确认无误后先支付物流费，并在三个工作日内联系梵几客<br>
+    服，客服人员将按每立方300元为您退回减免部分的物流费用。非德邦物流配送覆盖的区域，默认配送至最近的德邦物流站点。<br><br>
+    4） 如同时购买梵几一枚板桌腿，北京地区送货时工人师傅可为您摆放好，外地客户需自行摆放（注意桌腿和桌面间需放置赠送的防滑垫）。
+  </p>
+</div>
+<%-include('common/footer.ejs')%>
+<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/Story.js"></script>
+<script src="js/nav.js"></script>
+<script>
+    var li=document.getElementsByClassName("ad-li");
+    var span=document.getElementsByClassName("ad-span1");
+    var p=document.getElementsByClassName("ad-word3");
+    for(var i=0;i<li.length;i++){
+        li[i].index=i;
+        li[i].onclick=function(){
+            for(var j=0;j<li.length;j++){
+                li[j].classList.remove("ad-li-ok");
+                span[j].classList.remove("ad-span1-ok");
+                p[j].classList.remove("ad-wordSet-ok")
+            }
+            li[this.index].classList.add("ad-li-ok");
+            span[this.index].classList.add("ad-span1-ok");
+            p[this.index].classList.add("ad-wordSet-ok")
+        }
+    }
+</script>
+</body>
+</html>

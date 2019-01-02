@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/artTalk.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<%-include('common/nav.ejs')%>
+
+<div class="artTalkTitle">
+    <h2><%= name %></h2>
+    <span><%= time %></span>
+</div>
+<div class="talkLogo">
+    <img src="images/art/nav-l1.png" alt="">
+    <p class="mainTalkBrief">
+        <%= talkBrief %>
+    </p>
+</div>
+<div class="mainPart">
+
+</div>
+
+
+<!--尾部-->
+<%-include('common/footer.ejs')%>
+<!--右侧悬浮按钮-->
+<div class="right_button">
+    <a href="" class="iconfont top">&#xe765;</a>
+    <a href="" class="iconfont contact">&#xe610;</a>
+</div>
+
+<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+<script>
+    var id = "<%= id %>";
+    console.log(id);
+    var name = "<%= name %>";
+    var speaksName = (name.slice(0, 1));
+    $.ajax({
+        type: "get",
+        url: "/getInterviewPhoto.do",
+        data: {
+            id: id
+        },
+        success: function (data) {
+            console.log(data);
+
+            for (var i = 0; i < data.length; i++) {
+                $(".mainPart").append("<div>" +
+                        "<div>" +
+                            "<img src='../images/art/speaker_a.gif' alt=''>" +
+                            "<p>梵:</p>" +
+                            "<p class='fnjiTalk'>"+data[i].fnji+"</p>" +
+                        "</div>" +
+                        "<div>" +
+                            "<img src='../images/art/speaker_b.gif' alt=''>" +
+                            "<p>"+speaksName+":</p>" +
+                            "<p class='artistTalk'>"+data[i].artist+"</p>" +
+                        "</div> " +
+                        "<div class='talkImg'>" +
+                             "<img src='"+data[i].selfImg+"' alt=''>" +
+                        " </div>" +
+                    "</div>")
+
+
+                $(".mainPart>div>div .fnjiTalk").css({
+                    "position": "relative",
+                    "top":"-50px",
+                    "left":"80px"
+                })
+                $(".mainPart>div>div .artistTalk").css({
+                    "position": "relative",
+                    "top":"-50px",
+                    "left":"80px"
+                })
+            }
+
+        },
+        err: function (data) {
+            console.log(data);
+        }
+    })
+</script>
+</body>
+</html>

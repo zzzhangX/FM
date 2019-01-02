@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width= device-width, initial-scale=1">
+    <title>栏目</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/banner.css">
+    <!--<link rel="stylesheet" href="css/modal.css">-->
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/lanmuStyle.css">
+</head>
+<body>
+<%-include('common/nav.ejs')%>
+<!--banner-->
+<div class="banner">
+    <!-- 显示图片-->
+    <div class="contentO">
+        <div id="imgBanner"></div>
+    </div>
+    <!--小圆点 -->
+    <div id="divCircle"></div>
+</div>
+<section id="page-container">
+    <div id="home" class="col-s-12">
+        <div class="left part-left">
+            <div class="col-s-12" style="text-align: left;">
+                <img src="images/lanmu/homelogo.png" style="height: 70px;">
+            </div>
+            <div class="col-s-12 homeIntro">
+                <p>
+                    [梵几在家] 是梵几品牌的自媒体栏目，透过栏目展现梵几家
+                    <br>具在不同人家中的状态，分享家具不同的搭配使用，传达家
+                    <br>具主人的生活态度......
+                </p>
+            </div>
+        </div>
+        <a href="/fnjihome-detail.do?h_id=28" id="myHome">
+        <div class="right part-right">
+            <img src="images/lanmu/corner.jpg" alt="">
+            <div class="home-first">
+                <span>NEW<br></span>
+                <span>fnji at home<br></span>
+                <span>-<br></span>
+                <span>NO.28<br></span>
+            </div>
+        </div>
+        </a>
+    </div>
+    <ul class="col-s-12 grid-s-3 fnjihome-list">
+
+    </ul>
+    <div class="col-s-12 show-more-wrapper" style="padding-bottom: 50px; text-align: center;">
+        <img src="images/lanmu/trans.png" class="trans-img transHomeImg">
+        <button class="show-more showMoreHome">MORE</button>
+    </div>
+    <div id="drop">
+        <a href="/fnjivisit-detail.do?v_id=20" id="myDrop">
+        <div class="left part-left">
+            <img src="images/lanmu/book.jpg">
+            <div class="drop-first">
+                <span>NEW<br></span>
+                <span>fnji visit friend<br></span>
+                <span>-<br></span>
+                <span>BOOK<br></span>
+            </div>
+        </div>
+        </a>
+        <div class="right part-right">
+            <div class="col-s-12" style="text-align: right;">
+                <img src="images/lanmu/droplogo.png" style="height: 90px;">
+            </div>
+            <div class="col-s-12 dropIntro">
+                <p>
+                    2009年，梵几成立的前一年，古奇（梵几创始人兼主设计 <br>
+                    师）来到北京，那时和朋友们见面不是约在咖啡管就是商场，<br>
+                    而小时候，父母友人间相互串门的方式让他难以忘怀，那时古<br>
+                    奇就在朋友圈发起了一场“串门“活动......
+                </p>
+            </div>
+        </div>
+    </div>
+    <ul class="col-s-12 grid-s-3 fnjidrop-list">
+
+    </ul>
+    <div class="col-s-12 show-more-wrapper" style="padding-bottom: 50px; text-align: center;">
+        <img src="images/lanmu/trans.png" class="trans-img transVisitImg">
+        <button class="show-more showMoreVisit">MORE</button>
+    </div>
+    <div id="lanmuartist" class="col-s-12">
+        <div class="col-s-12" >
+            <img id="lanmuArt" src="images/lanmu/artistlogo.png" style="height: 100px;">
+        </div>
+    </div>
+    <ul class="col-s-12 grid-s-1 fnjiartist-list">
+    </ul>
+    <div class="col-s-12 show-more-wrapper" style="padding-bottom: 50px; text-align: center;">
+        <img src="images/lanmu/trans.png" class="trans-img transArtistImg">
+        <button class="show-more showMoreArtist">MORE</button>
+    </div>
+</section>
+<%-include('common/footer.ejs')%>
+
+<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/lanmuJs.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/lanmuBanner.js"></script>
+</body>
+</html>

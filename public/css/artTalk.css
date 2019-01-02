@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    padding:0;
+}
+.artTalkTitle{
+    text-align: center;
+}
+.artTalkTitle>h2{
+    font-weight: 100;
+}
+.artTalkTitle>span{
+    font-size: 12px;
+}
+.talkLogo{
+    width: 650px;
+    text-align: center;
+    margin: 50px auto 0;
+    font-size: 14px;
+    color: #bdbdbd;
+}
+.mainTalkBrief{
+    width: 100%;
+    text-align: center;
+    text-indent: 2em;
+    margin-top: 50px;
+}
+
+.mainPart{
+     width: 650px;
+     margin: 20px auto;
+     font-size: 14px;
+     color: #bdbdbd;
+ }
+.mainPart>div>div{
+    position: relative;
+    left:0;
+    top:0;
+}
+.mainPart>div>div p:nth-child(2){
+    position: absolute;
+    top:20px;
+    left:20px;
+}
+.talkImg img{
+    width: 650px;
+}
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}

@@ -1,0 +1,184 @@
+*{
+    margin:0;
+    padding:0;
+}
+.allHeader{
+    height:515.63px;
+    width: 100%;
+    background-color: #ff93b7;
+}
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+/*new artist部分*/
+.body-newArtist{
+    height: 220px;
+    width: 100%;
+    position: relative;
+    left:0;
+    top:0;
+    color:grey;
+}
+.body-newArtist>div{
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color:grey;
+}
+/*new artist*/
+.body-newArtist div:nth-child(1){
+    position: absolute;
+    bottom: 20px;
+    left:0;
+}
+/*标题下面的短线*/
+.body-newArtist div:nth-child(2){
+    position: absolute;
+    bottom: 0;
+    left:0;
+}
+/*新艺术家的简介---名称和照片*/
+.body-newArtist-name{
+    height: 110px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color:grey;
+}
+.body-newArtist-photo{
+    text-align: center;
+    position:relative;
+    top:0;
+    left:0;
+}
+.body-newArtist-photo>div{
+    width: 460px;
+    height: 460px;
+    border-radius: 460px;
+    background-color: rgba(212, 219, 217, 0.5);
+    position: absolute;
+    left:calc(50% - 230px);
+    top:0;
+    color: #595959;
+    line-height: 350px;
+    opacity: 0;
+}
+.body-newArtist-photo img{
+    width: 460px;
+}
+.body-newArtist-photo div:hover{
+    opacity: 1;
+}
+
+/*所有的艺术家展示*/
+/*艺术家logo部分*/
+.body-allArtist-logo{
+    text-align: center;
+    margin-top: 200px;
+}
+.body-allArtist-logo img{
+    height: 80px;
+}
+.body-allArtist-logo span,.body-show-display span{
+    font-size: 14px;
+    color: #adadad;
+    letter-spacing: 6px;
+    font-style: oblique;
+}
+.body-allArtist-logo div:nth-child(2){
+    margin-bottom: 100px;
+}
+/*艺术家照片和名字部分*/
+.body-allArtist-show-main>div{
+    width: 1100px;
+    margin: 0 auto;
+}
+.body-allArtist-show{
+    width: 1150px;
+    overflow: hidden;
+    padding-bottom: 100px;
+    border-bottom: 2px solid rgba(238, 238, 238, 0.56);
+}
+.body-allArtist-show>div{
+    float: left;
+    margin: 40px 50px 0 0;
+    position: relative;
+    top:0;
+    left:0;
+}
+.body-allArtist-show>div a{
+    text-decoration: none;
+}
+.body-allArtist-show>div div:nth-child(1){
+    width:237.5px;
+    height: 240px;
+}
+.body-allArtist-show-shade{
+    width:237.5px;
+    height: 240px;
+    background-color: rgba(225, 227, 226, 0.58);
+    position:absolute ;
+    left:0;
+    top:0;
+    opacity: 0;
+}
+.body-allArtist-show>div div:nth-child(3){
+    font-size: 14px;
+    margin-top: 20px;
+    color: rgba(44, 44, 44, 0.65);
+}
+
+/*艺术家下面作品展示部分*/
+.body-show-display-main{
+    margin-top: 60px;
+}
+.body-show-display{
+    width: 1100px;
+    margin:0 auto;
+}
+
+
+/*展览logo*/
+.body-show-display-logo{
+    font-size: 14px;
+    text-align: center;
+}
+.body-show-display-logo img{
+    height: 80px;
+}
+.body-show-display div:nth-child(2){
+    margin-top: 30px;
+    text-align: center;
+}
+
+/*下面图片展示部分*/
+.body-show-display-photo{
+    position: relative;
+    margin: 30px auto;
+    width: 700px;
+    height: 500px;
+    transform-style: preserve-3d;
+    perspective: 1500px;
+}
+.body-show-display-photo img{
+    width: 350px;
+    height: 396px;
+    position: absolute;
+    left: calc(50% - 175px);
+    top: calc(50% - 198px);
+    border-radius: 0;
+    transition: .8s ease-in-out;
+    opacity: .96;
+    cursor: pointer
+}
+
+
+/*页脚的部分============================*/
+.allFooter{
+    margin-top: 100px;
+    height: 413px;
+    width: 100%;
+    background-color: #cba8ff;
+}

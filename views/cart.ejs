@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cart</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/city-picker.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <style>
+        *{margin: 0 auto;
+            padding: 0}
+        input[type="button"],button{
+            cursor: pointer;
+        }
+
+        /*购物车样式开始*/
+        .shoping{
+            width: 70%;
+            /*background-color: rgba(255, 0, 0, 0.13);*/
+            height: calc(400px - 50px);
+            padding-top: 70px;
+            position: relative;
+        }
+        .shoping>.divstr{
+            position: relative;
+        }
+        .shoping>div.divstr>span{
+            position: absolute;
+        }
+        .shoping .step{
+            border: 1px solid #000000;
+            position: absolute;
+            top: -27px;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .shoping .stepok{
+            background-color: #000000!important;
+        }
+        .shoping .step2{
+            left: 50%;
+        }
+        /*.shoping .step3{*/
+        /*left: 66.6%;*/
+        /*}*/
+        .shoping .step4{
+            left: 99%;
+        }
+        .shoping .step:after{
+            content: "";
+            position: absolute;
+            height: 30px;
+            top: -20px;
+        }
+        .shoping .step1:after{
+            content: "加入购物车";
+            width: 100px;
+            left: -30px;
+        }
+        .shoping .step2:after{
+            content: "生成订单";
+            width: 100px;
+            left: calc(50% - 30px);
+        }
+        /*.shoping .step3:after{*/
+        /*maincontent: "激活订单(仅限家具)";*/
+        /*width: 150px;*/
+        /*left: calc(66.6% - 60px);*/
+        /*}*/
+        .shoping .step4:after{
+            content: "付款";
+            position: absolute;
+            width: 150px;
+            left: calc(99% - 20px);
+        }
+        .shoping .goods p,.shoping .address p{
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+        }
+        .shoping .money{
+            height: 60px;
+            background-color: #e0e0e0;
+            margin-top: 10px;
+        }
+        /*.new_address{
+            height: auto;
+            background-color: #e0e0e0;
+            margin-top: 10px;
+        }*/
+        .shoping  .money>div{
+            float: left;
+            line-height: 60px;
+            margin-left: 50px;
+        }
+        .shoping  .money>div.div1{
+            margin-left: 20px;
+        }.money>div.div2{
+             margin-left: 60px;
+         }
+        .shoping .money>div.div4{
+            cursor: pointer;
+            width: 132px;
+            text-align: center;
+            background-color: #000000;
+            color: white;
+            float: right;
+        }
+        .new_address span{
+            line-height: 60px;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+        .goods_info{
+            /*margin-top: 10px;*/
+            width:100% ;
+            height: 170px;
+            position: relative;
+            border-top: 1px solid  gainsboro;
+            padding-top: 10px;
+        }
+        .goods_info>div>img{
+            width: 150px;
+            height: 150px;
+
+        }
+        .goods_info>div{
+            float: left;
+            text-align: center;
+            line-height: 150px;
+            height: 150px;
+        }
+        .close{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 20px;
+        }
+        .goods_info>div>div{
+            height: 25px;
+        }
+        .goods_info>div:nth-child(2){
+            width: 150px;
+        }.goods_info>div:nth-child(3){
+             width: 150px;
+         }.goods_info>div:nth-child(4){
+              width: 100px;
+          }.goods_info>div:nth-child(5){
+               width: 220px;
+           }
+        .goods_info>div:nth-child(6){
+            width: 100px;
+        }
+        .goods_info>div:nth-child(7){
+            width: 120px;
+        }
+        .goods_detai1t_span{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: #ffffff;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+        #add_num{
+            margin-right: 20px;
+        }
+        .goods_img img{
+            width: 100%;
+            height: 100%;
+        }
+        #num{
+            width: 30px;
+            height: 30px;
+            border: none;
+        }
+        #address_name input[type="radio"]{
+            margin-left: 30px;
+        }
+        #address_name span{
+            margin-right: 20px;
+        }
+        #address_name{
+            height: auto;
+        }
+        span.adserr{
+            margin-left: 5px;
+        }
+        /*购物车样式结束*/
+        .clear{
+            clear: both;
+        }
+        .dome-main{
+            margin-top: 10px;
+        }
+        .dome-main .city-picker-selector .selector-item{
+            width: 90px;
+            background-color: #cfcfcf;
+            outline: none;
+            border-bottom: 1px solid #afafaf;
+            color: white;
+        }
+        .dome-main .city-picker-selector .selector-item .selector-name {
+            font-size: 14px;
+        }
+        .ps_id{
+            display: none;
+        }
+        #upTips{
+            margin-top: 150px;
+            margin-left: -150px;
+        }
+    </style>
+
+</head>
+<body>
+<!--引入导航-->
+<%-include('common/nav.ejs')%>
+<div class="shoping">
+    <hr>
+    <div class="divstr">
+        <span class="step stepok step1"></span>
+        <span class="step step2 " ></span>
+        <span class="step step4"></span>
+    </div>
+    <div class="goods">
+        <p>商品信息</p>
+        <%for(var i=0;i<cartInfo.length;i++){%>
+            <div class="goods_info">
+                <div class="ps_id"><%=cartInfo[i].ps_id%></div>
+                <div><img src="/<%=cartInfo[i].imgaddress%>" class="goods_info_img"></div>
+                <div><span class="goods_name"><%=cartInfo[i].proName%></span></div>
+                <div>
+                    <%if (cartInfo[i].w_wood!=null){%>
+                        <div class="goods_color"><%=cartInfo[i].w_wood%></div>
+                    <%}%>
+                    <%if (cartInfo[i].ci_color!=null){%>
+                        <div class="goods_color"><%=cartInfo[i].ci_color%></div>
+                    <%}%>
+                    <%if (cartInfo[i].fv_name!=null){%>
+                        <div class="goods_color"><%=cartInfo[i].fv_name%></div>
+                    <%}%>
+                </div>
+                <div><span id="reduce" class="goods_detai1t_span_reduce goods_detai1t_span">-</span><span id="num" class="goods_detai1t_span goods_detai1t_span_num"><%=cartInfo[i].count%></span><span id="add_num" class="goods_detai1t_span goods_detai1t_span_add">+</span></div>
+                <div>库存：<span class="quantity"><%=cartInfo[i].quantity%></span></div>
+                <div>单价：<span class="shoping_money"><%=cartInfo[i].ps_price%></span>.00</div>
+                <div><span class="close" onclick="deleteShopingCart(this)">×</span></div>
+            </div>
+        <%}%>
+
+    </div>
+    <div class="money">
+        <div class="div1">已选购了<span id="num_num"><%=ShopingCarTotal[0].countTotal%></span>件商品</div>
+        <div class="div3">总计:<span id="moneys">￥<%=ShopingCarTotal[0].subTotal%>.00</span></div>
+        <div class="div4">提交订单</div>
+    </div>
+</div>
+<div class="clear"></div>
+<!--引入尾部-->
+<%-include('common/footer.ejs')%>
+<div class="modal fade" id="addAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel3">添加地址</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="姓名">
+                <input type="text" placeholder="联系电话">
+                <input type="text" placeholder="备份电话">
+                <div class="dome-main">
+                    <div class="city-picker-selector" id="city-picker-search"></div>
+                </div>
+                <input type="text" placeholder="详细地址">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">保存地址</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--数量超出提示-->
+<div class="modal fade" id="upTips" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                超出库存量
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="bootstrap/js/jquery-1.11.3.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/modal.js"></script>
+
+<script>
+    var currentGoodsNum;
+    var currentTotalMoney;
+    var currentOrderId;
+
+    $(".goods_info #reduce").on("click",function () {
+        currentGoodsNum = parseInt($(this).next().html())-1;
+        currentTotalMoney = parseInt($(this).parent().next().next().children().html())*currentGoodsNum;
+        $(this).next().html(currentGoodsNum);
+        $.ajax({
+            type:"get",
+            url:"/updateGoodsNum.do",
+            data:{
+                psId:$(this).parent().siblings().eq(0).html(),
+                currentGoodsNum:currentGoodsNum,
+                currentTotalMoney:currentTotalMoney
+            },
+            success:function (data) {
+                $(".money #num_num").html(data[0].countTotal);
+                $(".money #moneys").html("￥"+data[0].subTotal+".00");
+            }
+        })
+        if (currentGoodsNum<=0){
+            deleteShopingCart(this);
+        }
+    });
+    function deleteShopingCart(index) {
+        $(index).parent().parent().remove();
+        $.ajax({
+            type:"get",
+            url:"/deleteShopingCart.do",
+            data:{
+                psId:$(index).parent().siblings().eq(0).html()
+            },
+            success:function (data) {
+                console.log(data);
+                if (data[0].countTotal==null){
+                    data[0].countTotal="0";
+                }
+                if (data[0].subTotal==null){
+                    data[0].subTotal="";
+                }
+                $(".money #num_num").html(data[0].countTotal);
+                $(".money #moneys").html("￥"+data[0].subTotal+".00");
+            },
+            error:function () {
+
+            }
+        })
+    }
+
+    $(".goods_info #add_num").on("click",function () {
+        currentGoodsNum = parseInt($(this).prev().html())+1;
+        currentTotalMoney = parseInt($(this).parent().next().next().children().html())*currentGoodsNum;
+        if (currentGoodsNum>parseInt($(this).parent().next().children().html())){
+            $("#upTips").modal("show");
+        }
+        else {
+            $(this).prev().html(currentGoodsNum);
+            $.ajax({
+                type:"get",
+                url:"/updateGoodsNum.do",
+                data:{
+                    psId:$(this).parent().siblings().eq(0).html(),
+                    currentGoodsNum:currentGoodsNum,
+                    currentTotalMoney:currentTotalMoney
+                },
+                success:function (data) {
+                    console.log(data);
+                    $(".money #num_num").html(data[0].countTotal);
+                    $(".money #moneys").html("￥"+data[0].subTotal+".00");
+                }
+            })
+        }
+
+    });
+
+    $(".money .div4").on("click",function () {
+       window.location.href="/createOrder.do?"
+    });
+  /* function createOrder() {
+       $.ajax({
+           type:"get",
+           url:"/createOrder.do",
+           data:{},
+           success:function (data) {
+               console.log(data);
+           },
+           error:function (error) {
+
+           }
+       })
+   }*/
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>商品详情</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+  <!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <style>
+    *{
+      margin: 0 auto;
+      padding: 0;
+    }
+    .clear{
+      clear: both;
+    }
+    .no_more{
+      width: 100%;
+      height: 100px;
+      font-size: 24px;
+      text-align: center;
+      line-height: 100px;
+      margin-top: 50px;
+    }
+    /*轮播样式开始*/
+    .banner{
+        height: 450px;
+        width: 100%;
+        position: relative;
+        cursor: pointer;
+    }
+    .banner .contentO #imgBanner{
+        height: 450px;
+        width:100%;
+        transition: all 1s linear;
+        background-size: 100% 100%;
+    }
+    .banner .circle{
+        background-color:#CCC!important;
+    }
+    .banner .span{
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        background-color: #000000;
+        margin-left: 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 20px;
+
+    }
+    .banner #divCircle{
+        margin: 0 auto;
+        font-size: 15px;
+        width: 200px;
+        height: 30px;
+        line-height: 30px;
+    }
+    #imgBanner{
+        height: 600px;
+        width: 100%;
+    }
+    /*第一个板块的开始*/
+    .grocery_detail1,.grocery_detail2,.grocery_detail3,.grocery_detail4,.grocery_detail5,.grocery_detail7{
+      width: 90%;
+      height: 650px;
+      /*border: 1px solid red;*/
+
+    }
+    .grocery_detail1 .goods_img{
+      width: 70%;
+      /*background-color: #1b6d85;*/
+      height: 600px;
+      float: left;
+      /*margin-left: 10%;*/
+    }
+    .grocery_detail1 .goods_detail{
+      width: 30%;
+      background-color: white;
+      height: 600px;
+      float: left;
+      padding-top: 40px;
+    }
+    .goods_detai1t{
+      margin-left: 30px;
+      margin-right: 30px;
+      padding-bottom: 20px;
+      /*border-bottom: 1px solid red;*/
+    }
+    .goods_detai1t_span{
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background-color: #ffffff;
+      text-align: center;
+      line-height: 15px;
+      /*border: 1px solid rgba(0, 0, 0, 0.8);*/
+      cursor: pointer;
+    }
+    #add_num{
+      margin-right: 20px;
+    }
+    .goods_img img{
+      width: 100%;
+      height: 100%;
+    }
+    .hr{
+      border-bottom: 1px solid rgba(0, 0, 0, 0.33);
+      margin-bottom: 20px;
+    }
+    .goods_detai1t_span_num{
+      width: 40px;
+      border-left: none;
+      border-right: none;
+      margin: 0;
+    }
+    .goods_detai1t_span_add{
+    }
+    .btn_button{
+      width: 150px;
+      height: 40px;
+      background-color: black;
+      color: white;
+      border: none;
+      margin-top: 150px;
+    }
+    .grocery_detail1_lastp{
+      margin-top: 20px;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+    .grocery_detail1_lastp a{
+      color: rgba(128, 128, 0, 0.8);
+    }
+    .grocery_detail1_lastp a:hover{
+      color: rgba(255, 0, 0, 0.53);
+    }
+    /*第一个板块的结束*/
+    /*第二个板块的结束*/
+    .grocery_detail2{
+      height: 300px;
+      /*background-color: #1b6d85;*/
+    }
+    .grocery_detail2_left{
+      float: left;
+      width: 30%;
+      height: 300px;
+      /*background-color: red;*/
+    }
+    .grocery_detail2_left img{
+      width: 100%;
+      height: 100%;
+    }
+    .grocery_detail2_right{
+      float: left;
+      width: calc(70% - 80px);
+      height: 250px;
+      /*background-color: rgba(255, 0, 0, 0.28);*/
+      padding-top: 50px;
+      padding-left: 80px;
+    }
+    .grocery_detail2_right_p1{
+      line-height: 30px;
+      font-size: 18px;
+    }
+    .grocery_detail2_right_p2{
+      line-height: 30px;
+      margin-top: 20px;
+      font-size: 13px;
+      color: rgba(0, 0, 0, 0.54);
+    }
+    /*第二板块结束*/
+    /*第三板块开始*/
+    .grocery_detail3{
+      background-color: #e0e0e0;
+      margin-top: 10px;
+      height: 400px;
+    }
+    .grocery_detail3_left{
+      width: 60%;
+      height: 400px;
+      float: left;
+      /*background-color: #1b6d85;*/
+    }
+    .grocery_detail3_left img{
+      width: 100%;
+      height: 100%;
+    }
+    .grocery_detail3_right{
+      width: 40%;
+      float: left;
+      height: 400px;
+      /*background-color: red;*/
+    }
+    .grocery_detail3_right_p{
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding-left: 50px;
+      line-height: 30px;
+    }
+    .grocery_detail3_right_p span img{
+      width: 25px;
+      height: 30px;
+    }
+    /*第三板块结束*/
+    /*第四个板块开始*/
+    .grocery_detail4{
+      height: 600px;
+      background-color: white;
+    }
+    #grocery_detail4_left_img{
+
+    }
+    .grocery_detail4_left,.grocery_detail5_left,.grocery_detail6_left{
+      width: 20%;
+      height: 120px;
+      padding-top:100px;
+      margin-bottom: 100px;
+      text-align: center;
+        margin-left:45%;
+    }
+    .grocery_detail4_left img,.grocery_detail5_left img,#grocery_detail6_left_img{
+      width: 100%;
+      height: 150px;
+      text-align: center;
+
+    }
+.grocery_detail4_right{
+  width: 85%;
+  height: 500px;
+
+  /*border: 1px solid red;*/
+  margin: 150px   auto;
+  text-align: center;
+}
+    .grocery_detail4_right img{
+      width: 70%;
+      height: 80%;
+      margin-top: 100px;
+      /*border:1px solid red;*/
+
+    }
+    /*第四个板块结束*/
+    /*第六个板块开始*/
+    .grocery_detail6{
+      width: 100%;
+      background-color: rgb(242,242,242);
+      margin-top: 200px;
+    }
+    .grocery_detail6_left img{
+      padding-top: 50px;
+    }
+    .grocery_detail6_right{
+      width: 60%;
+      height: 220px;
+      /*margin-top: 50px;*/
+      /*background-color: rgba(255, 0, 0, 0.23);*/
+      padding: 50px 0;
+        margin: 0 auto;
+    }
+    #grocery_detail4_left_img{
+      padding: 30px;
+    }
+    #grocery_detail5_left_img{
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+    .grocery_detail4_right{
+      padding: 30px;
+      margin-top: 60px;
+    }
+    .float{
+      float: left;
+    }
+    .grocery_img_after>p{
+      margin: -15px 0 0;
+    }
+    .grocery_detail6_right .money{
+      /*background-color: white;*/
+      width: 260px;
+      height: 200px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .grocery_detail6_right .money img{
+      padding: 20px;
+      height: 60px;
+    }
+    .money_p{
+      font-size: 12px;
+    }
+    .money_p span{
+      font-size: 16px;
+    }
+    #pay_for,#Customer_Service,#Delivery{
+      width: 100% ;
+      padding: 100px 0 100px 300px;
+      height: 100px;
+      background-color: white;
+        /*margin-left: 300px;*/
+      display: none;
+    }
+    #Customer_Service p{
+      padding-right: 300px;
+    }
+    .visible{
+      display: block!important;
+    }
+    /*第六个板块结束*/
+    /*第七个板块开始*/
+    .grocery_detail7{
+      height: 400px;
+      width: 90%;
+      margin: 0 auto;
+      /*background-color: rgba(15, 15, 15, 0.15);*/
+    }
+    .grocery_detail7 p.more{
+      font-size: 18px;
+      padding: 40px 0;
+    }
+    .grocery_detail7 p>span{
+      font-size: 10px;
+    }
+    .grocery_img{
+      width: 280px;
+      height: 250px;
+      position: relative;
+      float: left;
+      margin: 10px;
+      /*color: black;*/
+
+    }
+    .grocery_img>img{
+      width: 100%;
+      height: 100%;
+    }
+    .grocery_img:hover .grocery_img_after{
+      visibility: visible;
+    }
+    .grocery_img_after{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      background-color: rgba(255, 255, 255, 0.56);
+      text-align: center;
+     padding-top: 30px;
+      color: #000!important;
+      visibility: hidden;
+      transition: all .1s linear;
+    }
+    .grocery_img_after>p>span{
+      /*margin: -15px 0 0;*/
+      font-size: 14px;
+    }
+    /*第七个板块结束*/
+
+    input[type="button"],button{
+      cursor: pointer;
+    }
+
+    .modal-content{
+      margin-top: 200px;
+      margin-left: 150px;
+      width: 400px;
+    }
+    .modal-body{
+      text-align: center;
+    }
+    .modal-footer{
+      text-align: center;
+    }
+    .btn-primary{
+      background-color: black;
+    }
+    #more{
+      width: 90%;
+      margin: 0 auto;
+    }
+
+
+  </style>
+
+</head>
+<body>
+<!--引入导航-->
+<%-include('common/nav.ejs')%>
+
+<div class="content_grocery_detail">
+  <!--第一个板块-->
+  <div class="grocery_detail1">
+    <div class="goods_img">
+        <!--banner-->
+        <div class="banner">
+            <!-- 显示图片-->
+                <div id="imgBanner"></div>
+            <!--小圆点 -->
+            <div id="divCircle"></div>
+        </div>
+    </div>
+    <div class="goods_detail">
+      <div class="goods_detai1t">
+        <span id="goods_name"></span>
+        <p><span id="goods_color"></span><span id="goods_model"></span><br>
+          ￥<span id="goods_money"></span> <br><br></p>
+        <div class="hr"></div>
+        <span >选购数量 quantity</span> <br><br>
+        <span id="reduce" class="goods_detai1t_span_reduce goods_detai1t_span">-</span><span id="num" class="goods_detai1t_span goods_detai1t_span_num">1</span><span id="add_num" class="goods_detai1t_span goods_detai1t_span_add">+</span><span>件/piece</span><br>
+        <br>
+        <span>发货周期 delivery</span>
+        <br><br>
+        <p>48小时内</p>
+        <div>
+          <input type="button" value="加入购物车" class="btn_button" data-toggle="modal" data-target="#addCart">
+          <input type="button" value="直接购买" class="btn_button" onclick="add_shoping()">
+        </div>
+        <p class="grocery_detail1_lastp">
+          点击查看 <a href="#"><span class="btn_span">配送详情</span></a>或 <a href="#"><span class="btn_span">会员制度</span></a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <!--第二个板块-->
+  <div class="grocery_detail2">
+    <div class="grocery_detail2_left">
+      <img src="" id="grocery_detail2_left_img">
+    </div>
+    <div class="grocery_detail2_right">
+      <p class="grocery_detail2_right_p1_title"></p>
+      <p class="grocery_detail2_right_p2"></p>
+    </div>
+  </div>
+  <!--第三个板块-->
+  <div class="grocery_detail3">
+    <div class="grocery_detail3_left">
+      <img src="" id="grocery_detail3_left_img">
+    </div>
+    <div class="grocery_detail3_right">
+
+      <p class="grocery_detail3_right_p"><span class="iconfont"><img src="../images/ruler.png" alt=""></span> <br>
+        产品参数 Product Parameter <br>
+        <span id="grocery_detail3_right_model">155-2</span></p>
+      <p class="grocery_detail3_right_p"><span class="iconfont"><img src="../images/hand.png" alt=""></span> <br>
+        材质 Materialr <br>
+        <span id="grocery_detail3_right_caizhi"></span></p>
+      <p class="grocery_detail3_right_p"><span class="iconfont"><img src="../images/marker.png" alt=""></span> <br>
+        产地 Production Place <br>
+        <span id="grocery_detail3_right_media">中国</span></p>
+
+    </div>
+  </div>
+  <!--第四个板块-->
+  <div class="grocery_detail4">
+    <div class="grocery_detail4_left">
+      <!--产品特点-->
+      <img src="../images/features_grocery.png" id="grocery_detail4_left_img">
+    </div>
+    <div class="grocery_detail4_right">
+        <img src="" id="grocery_detail4_right_img">
+    </div>
+  </div>
+  <!--第四个板块-->
+  <div class="grocery_detail4">
+    <div class="grocery_detail4_left">
+      <!--产品特点-->
+      <img src="../images/collocation_grocery.png" id="grocery_detail5_left_img">
+    </div>
+    <div class="grocery_detail4_right">
+      <img src="" class="grocery_detail5_right_img">
+    </div>
+  </div>
+
+  <!--第六个板块-->
+  <div class="grocery_detail6">
+    <!--<div class="grocery_detail6_left">-->
+      <!--<img src="../images/knowledge.png" alt="" id="grocery_detail6_left_img">-->
+    <!--</div>-->
+    <div class="grocery_detail6_right">
+      <div class="money float isKey" name="zhifu">
+        <img src="../images/money.png" alt="">
+        <p class="money_p"><span>关于支付</span> <br>pay for</p>
+        <br>
+        <span id="grocery_detail6_right_controller_pay" class="controller">+</span>
+      </div><div class="money float isKey">
+        <img src="../images/talk.png" alt="">
+        <p class="money_p"><span>关于售后</span> <br>Customer Service</p>
+        <br>
+        <span id="grocery_detail6_right_controller_servers"  class="controller">+</span>
+      </div><div class="money float isKey">
+        <img src="../images/truck.png" alt="">
+        <p class="money_p"><span>关于运送</span> <br>Delivery</p>
+        <br>
+        <span id="grocery_detail6_right_controller_delivery" class="controller">+</span>
+      </div>
+
+    </div>
+    <div id="pay_for" class="iscontent">
+      <p>关于支付：</p>
+      <p>1）杂货类商品无需致电客服激活，在购物车内商品可直接进行支付。</p>
+      <p>2）支持支付宝、微信以及网上银行支付。</p>
+    </div>
+    <div id="Customer_Service" class="iscontent">
+      <p>关于售后服务：</p>
+      <p>1) 支持7天无理由退换货。有质量问题商品的退换货，请于签收后7个工作日内，在保证商品包装、吊牌、完整无损的情况下联系客服办理退换货。退换货发生时，您寄回商品的运费由我们承担；无质量问题的退换货，来回运费需买家承担。</p>
+      <p>2）质量问题是指商品本身的破损、瑕疵。因拍摄和光线问题，照片与实物可能略有差异；手工艺人作品因材质和手工特性，个体差异在所难免，以上问题不属于质量问题，请以实物为准。</p>
+    </div>
+    <div id="Delivery" class="iscontent">
+      <p>关于配送：</p>
+      <p>1)中国大陆地区单笔订单消费满200元可免费顺丰配送；未满200元，收取10元/单配送费。</p>
+      <p>2)下单后48小时内发货（如遇周末及国家法定节假日,商品的配送将推迟到下一工作日处理）。</p>
+    </div>
+  </div>
+  <!--第七个板块-->
+  <div class="clear"></div>
+  <div class="grocery_detail7">
+    <div><p class="more">更多产品 <br> <span>FIND OUT FOR MORE</span></p></div>
+    <div id="more"></div>
+  </div>
+</div>
+<div class="clear"></div>
+<!--引入尾部-->
+<div class="clear"></div>
+<%-include('common/footer.ejs')%>
+
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script  >
+    //将收到的字符串转为数组
+    {
+        //images/grocery_details_kn1.jpg,images/grocery_details_kn2.jpg,images/grocery_details_kn3.jpg,images/grocery_details_kn4.jpg
+
+
+
+
+        var data = JSON.parse('<%- data %>');
+        if (data.length == 0) {
+          document.getElementsByClassName("content_grocery_detail")[0].innerHTML="<div class='no_more'>哦，好像没有数据</div>"
+        } else {
+            {
+            var data1 = JSON.parse('<%- data1 %>');
+            var sc_id = data[0].sc_Id;
+//            console.log(data.length);
+//            console.log(data);
+//            console.log(data1);
+//            console.log(data[0].car_address);
+            //小轮播图的路径
+            var path = data[0].car_address.split(",");
+            var path_details = data[0].detail_address.split(",");
+            var txtarr = data[0].details.split("+");
+//            console.log(txtarr);
+//            console.log(txtarr[0]);
+
+
+            //添加商品属性
+                {
+            //商品名称
+            document.getElementById("goods_name").innerHTML = data[0].proName;
+            //商品颜色
+            document.getElementById("goods_color").innerHTML = data[0].ci_color;
+            //商品单价
+            document.getElementById("goods_money").innerHTML = data[0].proPrice;
+            //商品材质
+            document.getElementById("grocery_detail3_right_caizhi").innerHTML = data[0].materal;
+            //商品产地
+            document.getElementById("grocery_detail3_right_media").innerHTML = data[0].place;
+            //品牌图片
+            document.getElementById("grocery_detail2_left_img").src = path_details[0];
+            //品牌介绍
+            document.getElementsByClassName("grocery_detail2_right_p2")[0].innerHTML = txtarr[1];
+            //产品详情图片
+            document.getElementById("grocery_detail3_left_img").src = path[1];
+            //产品特点图片
+            document.getElementById("grocery_detail4_right_img").src = path[path.length-1];
+            //灵感图片
+            document.getElementsByClassName("grocery_detail5_right_img")[0].src = path[0];
+            //产品特点介绍标题
+            document.getElementsByClassName("grocery_detail2_right_p1_title")[0].innerHTML = txtarr[0];
+            //产品特点介绍
+          //  document.getElementsByClassName("grocery_detail4_right_txt")[0].innerHTML = " 16 世纪，荷兰商人远渡重洋，跋涉万里，前往日本拜见幕府的将军。他们将带来的荷兰亚麻 布作为特别礼物进献给将军，然后带着珍贵的日本瓷器回到荷兰。至此以后，日本有田的瓷器 与荷兰的亚麻桌布经常被同时描绘在油画中。Christien Meindertsma 以荷兰亚麻布和日本 瓷器的这段渊源为创作灵感，设计出这个系列：用亚麻布料制成杯子、盘子和碗的模型，然后 再把这些模型转化为陶瓷作品。 作为这个系列的进阶，Meindertsma 和藤卷制陶共同发明了一种特殊的彩色斑点釉面，它融 入了从2016/ 的其它各个系列中收集的陶瓷废料。这种新釉面是对有田窑厂携手并进共同发展 的美好寓意，它色彩斑斓却又拿捏得当，有五彩纸屑的视觉效果。";
+                }
+            //更多商品
+
+            for (var i = 0; i < data1.length; i++) {
+                document.getElementById("more").innerHTML += "<a href='/grocery_detail?id=" + data1[i].proId + "&typeOne=2" + "'><div class='grocery_img'>" +
+                    "  <img src=" + data1[i].image + ">" +
+                    " <div class='grocery_img_after'>" +
+                    " <p><span class='goods_name'>" + data1[i].proName + "</span><span class='goods_color'>" + data1[i].ci_color + "</span><br>￥<span class='goods_price'>" + data1[i].proPrice + "</span></p>" +
+                    " </div>" +
+                    " </div></a>";
+            }
+            {
+                //普通轮播
+
+                var imgBanner=document.getElementById("imgBanner");
+                var arr=path;
+                var index=0;
+                imgBanner.style.backgroundImage="url("+arr[index]+")";
+                imgBanner.style.backgroundSize="100% 100%";
+                clearInterval(time);
+                var time=setInterval(dis,3000);
+                imgBanner.onmouseover=function () {
+                    clearInterval(time)
+                };
+                imgBanner.onmouseout=function () {
+                    clearInterval(time);
+                    time=setInterval(dis,3000);
+                };
+                function dis() {//自动改变背景图片
+                    index++;
+                    if(index==arr.length){
+                        index=0;
+                    }
+                    imgBanner.style.backgroundImage="url(../"+arr[index]+")";
+                    //图片对应的小圆点
+                    disCirCleSyle();
+                }
+                //生成控制小圆点
+                var divCircle=document.getElementById("divCircle");
+                for(var i=0;i<arr.length;i++){
+                    divCircle.innerHTML+="<span class='span'></span>";
+                }
+                disCirCleSyle();
+                function disCirCleSyle() {//给当前小圆点添加类名
+                    var spanArr=divCircle.getElementsByClassName("span");
+                    for(var i=0;i<spanArr.length;i++){
+                        spanArr[i].classList.remove("circle");
+                    }
+                    divCircle.getElementsByClassName("span")[index].classList.add("circle");
+                }
+                for(var i=0;i<arr.length;i++){//绑定小圆点的单击事件
+                    document.getElementsByClassName("span")[i].index=i;
+                    document.getElementsByClassName("span")[i].onclick=function () {
+                        index=this.index;
+                        clearInterval(time);
+                        document.getElementById("imgBanner").style.backgroundImage="url(../"+arr[index]+")";
+                        disCirCleSyle();
+                        time=setInterval(dis,3000);
+                    }
+                }
+
+            }
+                //控制产品数量
+                {
+
+                    var  add_num=document.getElementById("add_num");
+                    var  reduce=document.getElementById("reduce");
+                    var  num=document.getElementById("num");
+                    var num_num=parseInt(num.innerHTML);
+                    add_num.onclick=function () {
+                        num_num=parseInt(num.innerHTML)+1;
+                        num.innerHTML=num_num;
+                    };
+                    reduce.onclick=function () {
+                        if (parseInt(num.innerHTML)==1){
+                            num.innerHTML="1"
+                        }else {
+                            num_num=num_num-1;
+                            num.innerHTML=num_num;
+                        }
+                    }
+                }
+                //第六个板块
+                {
+                    //关于配送、关于支付等
+                    var key=document.getElementsByClassName("isKey");
+                    var content=document.getElementsByClassName("iscontent");
+                    var controller=document.getElementsByClassName("controller");
+                    for(var i=0;i<key.length;i++){
+                        key[i].index=i;
+                        var s=1,ider;
+                        key[i].onclick=function(){
+                            if (s==1){
+                                ider =content[this.index].id;
+                                for(var j=0;j<key.length;j++){
+                                    //  aBtn[j].className='';
+                                    content[j].classList.remove("visible");
+                                    controller[j].innerHTML="+"
+                                }
+                                content[this.index].classList.add("visible");
+                                controller[this.index].innerHTML=("-");
+                                s=0;
+                            }
+                            else {
+                                if (ider ==content[this.index].id){
+                                    content[this.index].classList.remove("visible");
+                                    controller[this.index].innerHTML=("+");
+                                    s=1;
+                                }else {
+                                    for(var k=0;k<key.length;k++){
+                                        content[k].classList.remove("visible");
+                                        controller[k].innerHTML="+"
+                                    }
+                                    content[this.index].classList.add("visible");
+                                    controller[this.index].innerHTML=("-");
+                                    s=1;
+
+                                }
+                            }
+                        };
+                    }
+                }
+                //单击直接购买
+                function add_shoping() {
+                    location.href="shoping.html?id="+id+"&num="+num_num;
+                }
+        }
+        }
+    }
+
+
+</script>
+</body>
+</html>

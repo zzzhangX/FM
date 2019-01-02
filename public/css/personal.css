@@ -1,0 +1,457 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑;
+}
+/*<!--个人中心面板-->*/
+.allContent{
+    position: relative;
+    width: 80%;
+    height: 610px;
+    background-color: #5b9bd1;
+    margin: 160px auto;
+}
+/*左边导航栏*/
+.leftdiv{
+    position: absolute;
+    width: 32%;
+    height: 610px;
+    font-size: 14px;
+    text-align: center;
+    color: #575757;
+    overflow: hidden;
+    background-color: #000000;
+}
+/*图标样式*/
+@font-face {
+    font-family: 'iconfont';
+    src: url('../icon-font/iconfont.eot');
+    src: url('../icon-font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../icon-font/iconfont.woff') format('woff'),
+    url('../icon-font/iconfont.ttf') format('truetype'),
+    url('../icon-font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
+}
+/*设置用户头像*/
+.avatar{
+    width: 84px;
+    height: 84px;
+    border-radius: 84px;
+    background-image: url("../images/cat.jpg");
+    background-size: 84px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*设置用户名样式*/
+.name{
+    color: white;
+    margin-top: 10px;
+}
+/*导航栏内容*/
+.navul{
+    margin-top: 20px;
+}
+.navul>li{
+    color: #575757;
+    height: 58px;
+    text-align: center;
+    padding-top: 3px;
+    list-style: none;
+}
+.navul>li>a:hover{
+    color: white;
+}
+.navul>li>a{
+    color: #575757;
+    text-decoration: none;
+}
+/*导航栏内容结束*/
+/*右侧内容*/
+.rightdiv{
+    position: absolute;
+    width: 68%;
+    height: 610px;
+    right: 0;
+    background-color: #f2f2f2;
+}
+.member-info{
+    position: absolute;  /*日常相对定位*/
+    width: 68%;
+    height: 610px;
+    /*display: inline-block;*/
+    z-index: 2;
+    opacity: 1;
+}
+/*指向部分*/
+.member-info:before{
+    content:" \25C0";
+    position: absolute;
+    color: #f2f2f2;
+    font-size: 24px;
+    top: 210px;
+    left: -16px;
+}
+.title {
+    width: 555px;
+    height: 36px;
+    margin-top: 80px;
+    margin-bottom: 15px;
+    margin-left: 95px;
+}
+.form-row{
+    width: 555px;
+    height: 70px;
+    margin-left: 95px;
+    overflow: hidden;
+    border-bottom: 1px solid #afafaf;
+}
+.form-row>span{
+    display: inline-block;
+    margin-top: 26px;
+}
+/*修改按钮*/
+.form-row>.btnedit{
+    position: absolute;
+    display: inline-block;
+    margin-top: 26px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #afafaf;
+    right: -95px;
+}
+/*地址管理部分*/
+.member-address{
+    position: absolute;  /*日常相对定位*/
+    height: 610px;
+    top:0px;
+    z-index: 1;
+    opacity: 0;
+}
+/*指向部分*/
+.member-address:before{
+    content:" \25C0";
+    position: absolute;
+    color: #f2f2f2;
+    font-size: 24px;
+    top: 328px;
+    left: -16px;
+}
+.address-table>thead>tr{
+    height: 80px;
+    background-color: #E6E6e6;
+}
+.address-table>thead>tr>th{
+    text-align: center;
+}
+.address-table{
+    text-align: center;
+}
+.address-table>tbody>tr{
+    height: 60px;
+    border-bottom: 1px solid #afafaf;
+}
+#addAddressbtn{
+    border: none;
+    width: 150px;
+    height: 40px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 40%;
+    background-color: #979797;
+}
+/*地址管理部分结束*/
+/*订单管理*/
+.member-order{
+    position: absolute;  /*日常相对定位*/
+    height: 610px;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+}
+/*指向部分*/
+.member-order:before{
+    content:" \25C0";
+    position: absolute;
+    color: #f2f2f2;
+    font-size: 24px;
+    top: 381px;
+    left: -16px;
+}
+.order-table>thead>tr{
+    background-color: #E6E6e6;
+    height: 80px;
+}
+.order-table>thead>tr>th{
+    text-align: center;
+}
+.order-table>tbody>tr{
+    height: 60px;
+    border-bottom: 1px solid #afafaf;
+}
+.order-table>tbody>tr>td{
+    text-align: center;
+}
+.seeOrder{
+    color: #d0aa8c;
+    text-decoration: underline;
+}
+/*订单管理部分结束*/
+/*会员管理部分*/
+.member-privilege{
+    position: relative;
+    opacity: 0;
+    top:0;
+    z-index: 1;
+}
+.member-privilege>.block-level{
+    width: 100%;
+    height: 250px;
+    background-color: #f2eadf;
+}
+/*指向部分*/
+.member-privilege:before{
+    content:" \25C0";
+    position: absolute;
+    color: #f2f2f2;
+    font-size: 24px;
+    top: 271px;
+    left: -16px;
+}
+/*等级图片设置*/
+.levelImg{
+    position: absolute;
+    width: 44px;
+    height: 61px;
+    right:150px;
+    background-image: url("../images/level_1.png");
+    background-size: 44px 61px;
+}
+.viplevel{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 64px;
+}
+.viplevel>span{
+    color: #d0aa8c;
+}
+.viplevel>.spanlevel{
+    font-size: 20px;
+}
+.viplevel>.mc{
+    font-size: 12px;
+}
+/*进度条图片设置*/
+.progres{
+    position: absolute;
+    width: 311px;
+    height: 23px;
+    left: 210px;
+    top:170px;
+    background-image: url("../images/progress.png");
+    background-size: 311px 23px;
+}
+.progres>span{
+    color: #d0aa8c;
+}
+.v1{
+    position: absolute;
+    top: 30px;
+    left:10px;
+}
+.v2{
+    position: absolute;
+    top: 30px;
+    right: 10px;
+}
+.bottomdiv{
+    width: 100%;
+    position: absolute;
+}
+.juandiv{
+    position: absolute;
+    width: 177px;
+    height: 112px;
+    left: 280px;
+    top:170px;
+    background: url("../images/ticket-valid.png") no-repeat;
+    background-size: 177px 112px;
+}
+.viplevel2{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 285px;
+}
+.viplevel2>span{
+    color: #d0aa8c;
+    font-size: 12px;
+}
+.use{
+    position: absolute;
+    top: 5px;
+}
+.mc>a{
+    color:#d0aa8c;
+    text-decoration: underline;
+}
+.mc>a:hover{
+    color:#d0aa8c;
+}
+.juandiv{
+    color: white;
+    text-align: center;
+}
+.juandiv>span{
+    font-size: 12px;
+}
+.tenyuan{
+    font-size: 22px;
+}
+/*会员管理部分结束*/
+/*我的发票*/
+.member-content{
+    position: absolute;
+    top: 5px;
+    z-index: 1;
+    opacity: 0;
+}
+/*指向部分*/
+.member-content:before{
+    content:" \25C0";
+    position: absolute;
+    color: #f2f2f2;
+    font-size: 24px;
+    top: 438px;
+    left: -16px;
+}
+.order-ticket{
+    width: 100%;
+    margin-top: 80px;
+}
+.order-ticket>thead>tr{
+    height: 80px;
+    background-color: #E6E6e6;
+}
+.order-ticket>thead>tr>th{
+    text-align: center;
+}
+.contentdiv{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.contentdiv>p{
+    font-size: 12px;
+    color: #989898;
+}
+.contentdiv>h5{
+    padding-bottom: 20px;
+}
+.btnticket{
+    color: #d0aa8c;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.noticket{
+    width: 150px;
+    margin: 10px auto;
+}
+/*模态框样式设置*/
+.modal-title{
+    text-align: center;
+}
+.modal-dialog>.modal-content{
+    left: 100px;
+}
+.modal-content>.modal-header{
+    border-bottom: 1px solid white;
+}
+.modal-content>.modal-header>.modal-title{
+    padding-top: 10px;
+    font-weight: bold;
+}
+.modal-content>.modal-body{
+    position: relative;
+    text-align: center;
+}
+.modal-content>.modal-footer{
+    border-top:1px solid white;
+    text-align: center;
+}
+.modal-content{
+    width: 400px;
+}
+.modal-content>.modal-footer>.btn{
+    background-color: black;
+    width: 150px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+/*选择每个启用的input*/
+input[type='text'],input[type='password'],input[type='email']{
+    width: 80%;
+    outline: none;  /*去掉input自带的样式*/
+    border: none;
+    height: 60px;
+    border-bottom: 1px solid #afafaf;
+}
+/*改变地址选择框的大小*/
+.dome-main{
+    margin-top: 10px;
+}
+.dome-main .city-picker-selector .selector-item{
+    width: 100px;
+    outline: none;
+    border-bottom: 1px solid #afafaf;
+}
+.dome-main .city-picker-selector .selector-item .selector-name{
+    font-size: 14px;
+}
+.yanzheng{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    border: none;
+    right: 50px;
+    top: 25px;
+}
+#regiterbtn{
+    width: 80%;
+}
+#loginbtn{
+    width: 80%;
+    margin-top: 15px;
+    background-color: black;
+}
+#findpwdbtn{
+    width: 80%;
+}
+.forgetpwd{
+    color:#d0aa8c;
+    cursor: pointer;
+    float: right;
+    text-decoration: underline;
+    margin-right: 40px;
+}
+.rememberpwddiv{
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+}
+.regspan{
+    color:#d0aa8c;
+    cursor: pointer;
+    text-decoration: underline;
+}

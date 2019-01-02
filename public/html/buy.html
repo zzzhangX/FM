@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>buy</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <style>
+        *{margin: 0 auto;
+        padding: 0}
+        /*购物车样式开始*/
+        .shoping{
+            width: 70%;
+            /*background-color: rgba(255, 0, 0, 0.13);*/
+            height: calc(400px - 50px);
+            padding-top: 70px;
+            position: relative;
+        }
+        .shoping>.divstr{
+            position: relative;
+        }
+        .shoping>div.divstr>span{
+            position: absolute;
+        }
+        .shoping .step{
+            border: 1px solid #000000;
+            position: absolute;
+            top: -27px;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .shoping .stepok{
+            background-color: #000000!important;
+        }
+        .shoping .step2{
+            left: 50%;
+        }
+        /*.shoping .step3{*/
+             /*left: 66.6%;*/
+         /*}*/
+        .shoping .step4{
+              left: 99%;
+          }
+        .shoping .step:after{
+            content: "";
+            position: absolute;
+            height: 30px;
+            top: -20px;
+        }
+        .shoping .step1:after{
+            content: "加入购物车";
+            width: 100px;
+            left: -30px;
+        }
+        .shoping .step2:after{
+            content: "生成订单";
+            width: 100px;
+            left: calc(50% - 30px);
+        }
+        /*.shoping .step3:after{*/
+            /*maincontent: "激活订单(仅限家具)";*/
+            /*width: 150px;*/
+            /*left: calc(66.6% - 60px);*/
+        /*}*/
+        .shoping .step4:after{
+            content: "付款";
+            position: absolute;
+            width: 150px;
+            left: calc(99% - 20px);
+        }
+        .shoping .goods p,.shoping .address p{
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+        .shoping .money{
+            height: 60px;
+            background-color: #e0e0e0;
+            margin-top: 10px;
+        }
+        .new_address{
+            height: auto;
+            background-color: #e0e0e0;
+            margin-top: 10px;
+        }
+        .shoping  .money>div{
+            float: left;
+            line-height: 60px;
+        }
+        .shoping  .money>div.div1,.money>div.div3,.money>div.div4{
+            margin-left: 20px;
+        }.money>div.div2{
+             margin-left: 430px;
+         }
+        .shoping .money>div.div4{
+            cursor: pointer;
+            width: 132px;
+            text-align: center;
+            background-color: #000000;
+            color: white;
+            float: right;
+        }
+        .new_address span{
+            color: rgba(255, 165, 0, 0.7);
+            line-height: 60px;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+        .goods_info{
+            width:100% ;
+            height: 150px;
+            position: relative;
+            border-top: 1px solid  gainsboro;
+            padding-top: 10px;
+        }
+        .goods_info>div>img{
+            width: 150px;
+            height: 150px;
+
+        }
+        .goods_info>div{
+            float: left;
+            text-align: center;
+            line-height: 150px;
+            height: 150px;
+        }
+        .close{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 20px;
+        }
+        .goods_info>div:nth-child(2){
+            width: 200px;
+        }.goods_info>div:nth-child(3){
+             width: 100px;
+         }.goods_info>div:nth-child(4){
+              width: 220px;
+          }.goods_info>div:nth-child(5){
+               width: 150px;
+           }
+        .goods_detai1t_span{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: #ffffff;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+        #add_num{
+            margin-right: 20px;
+        }
+        .goods_img img{
+            width: 100%;
+            height: 100%;
+        }
+        #num{
+            width: 30px;
+            height: 30px;
+            border: none;
+        }
+        #address_name input[type="radio"]{
+            margin-left: 30px;
+        }
+        #address_name span{
+            margin-right: 20px;
+        }
+        #address_name{
+            height: auto;
+        }
+        span.adserr{
+            margin-left: 5px;
+        }
+        #shoping_id{
+            text-decoration: underline;
+            margin-left: 10px;
+        }
+        /*购物车样式结束*/
+        input[type="button"],button{
+            cursor: pointer;
+        }
+        .clear{
+            clear: both;
+        }
+    </style>
+
+</head>
+<body>
+<!--顶部文字-->
+<div class="navTop">
+    <div class="containerO">
+        <ul class="right">
+            <li><a href="">实体店</a></li>
+            <li><a href="">商业合作</a></li>
+        </ul>
+        <div class="middle">
+            <span>长生于野</span><span>安于堂</span>
+        </div>
+    </div>
+</div>
+<!--顶部导航-->
+<div class="navContent">
+    <div class="contentO">
+        <div class="left">Three</div>
+        <div class="right">
+            <a href="" class="iconfont">&#xe52a;</a>
+            <a href="" class="iconfont">&#xe507;</a>
+            <a href="personal.html" class="iconfont" id="orderbtn">&#xe60c;</a><!--订单-->
+            <!--<button data-toggle="modal" data-target="#myLogin">1111</button>-->
+            <a href="" class="iconfont" data-toggle="modal" data-target="#myLogin" >&#xe6c0;</a>
+        </div>
+        <div class="middle">
+            <ul>
+                <li>
+                    <a href="furnitureRecommend.html">家具</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">椅</a></li>
+                        <li><a href="">桌</a></li>
+                        <li><a href="">床</a></li>
+                        <li><a href="">几</a></li>
+                        <li><a href="">柜</a></li>
+                        <li><a href="">沙发</a></li>
+                        <li><a href="">一枚板</a></li>
+                        <li><a href="">其他</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="grocery.html">家居</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">餐厨</a></li>
+                        <li><a href="">家居</a></li>
+                        <li><a href="">摆件</a></li>
+                        <li><a href="">养护</a></li>
+                        <li><a href="">园艺</a></li>
+                        <li><a href="">数码</a></li>
+                        <li><a href="">文具</a></li>
+                        <li><a href="">配饰</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/art.html">艺术</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">艺术家</a></li>
+                        <li><a href="">展览</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/lanmu.html">栏目</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">梵几在家</a></li>
+                        <li><a href="">串门</a></li>
+                        <li><a href="">ARTSTAGE</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/NewThings.html">新事</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="shoping">
+    <hr>
+    <div class="divstr">
+        <span class="step stepok step1"></span>
+        <span class="step step2 stepok" ></span>
+        <span class="step step4"></span>
+    </div>
+    <div class="address" id="shoping_address">
+        <p>填写收货地址</p>
+        <div class="new_address">
+            <div id="address_name"></div>
+         <span>+新添地址</span>
+        </div>
+    </div>
+    <div class="goods">
+        <p>商品信息</p>
+    <div class="goods_info">
+        <div> <img src="" class="goods_info_img"></div>
+       <div> <span class="goods_name"></span></div>
+       <div> <span class="goods_color">red</span></div>
+       <div> <span id="num" class="goods_detai1t_span goods_detai1t_span_num">1</span></div>
+        <div>￥<span class="shoping_money">99.00</span></div>
+        <div><span class="close"></span></div>
+    </div>
+    </div>
+    <div class="money">
+        <div class="div1">订单号<span id="shoping_id"></span></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4" onclick="pay()">去付款</div>
+        <br><br>
+        <br><br>
+        <span>您可以正常付款。请您在7天内尽快付款，否则订单将自动取消。</span>
+    </div>
+</div>
+<div class="clear"></div>
+<!--尾部-->
+<footer>
+    <nav>
+        <ul>
+            <li>
+                <span>关于我们</span>
+                <ul>
+                    <li><a href="">梵几STORY</a></li>
+                    <li><a href="">梵几实体店</a></li>
+                    <li><a href="">媒体报道</a></li>
+                    <li><a href="">招聘信息</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>购物指南</span>
+                <ul>
+                    <li><a href="">购物流程</a></li>
+                    <li><a href="">会员制度</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>关于配送</span>
+                <ul>
+                    <li><a href="">家具配送</a></li>
+                    <li><a href="">家居配送</a></li>
+                    <li><a href="">一枚板配送</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>售后服务</span>
+                <ul>
+                    <li><a href="">家具售后</a></li>
+                    <li><a href="">家居售后</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>商业合作</span>
+                <ul>
+                    <li><a href="">项目批量采购</a></li>
+                    <li><a href="">设计公司合作</a></li>
+                    <li><a href="">家居品牌合作</a></li>
+                    <li><a href="">市场&媒体合作</a></li>
+                    <li><a href="">艺术品合作</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="footer">
+        <div class="footer_left">
+            梵几独立家居品牌 © 2017 Fnji Interior design Co. Ltd. Beijing, China 京ICP备13004049号-3
+        </div>
+        <div class="footer_right">
+            <div>
+                <span>微信</span>
+                <span>新浪</span>
+            </div>
+            <div>
+                客服邮箱 service@fnji.com / TEL 400-641-6399
+            </div>
+        </div>
+    </div>
+</footer>
+<!--右侧悬浮按钮-->
+<div class="right_button">
+    <a href="" class="iconfont top">&#xe765;</a>
+    <a href="" class="iconfont contact">&#xe610;</a>
+</div>
+
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script src="../js/arr.js"></script>
+<script src="../js/nav.js"></script>
+<script>
+    //获取url传的值
+    {
+        var id,money,num,url=location.search,
+            Request = new Object();
+        if(url.indexOf("?")!=-1){
+            var str = url.substr(1);　//去掉?号
+            strs = str.split("&");
+            for(var i=0;i<strs.length;i++) {
+                Request[strs[i ].split("=")[0]]=unescape(strs[ i].split("=")[1]);
+            }
+        }
+        id=Request["id"];
+        money=Request["money"] ;
+        num=Request["num"] ;
+//        alert(money)
+    }
+    var goods_info_img=document.getElementsByClassName("goods_info_img");
+    var goods_name=document.getElementsByClassName("goods_name");
+    var goods_num=document.getElementById("num");
+    var shoping_money=document.getElementsByClassName("shoping_money");
+    var shoping_id=document.getElementById("shoping_id");
+    var date=new Date();
+    var sn=""+date.getFullYear()+date.getMonth()+date.getDate()+date.getHours()+date.getMinutes()+date.getSeconds();
+    shoping_id.innerHTML=sn;
+    goods_info_img[0].src=imgarr[id];
+    goods_name[0].innerHTML=goods_name_arr[id];
+    goods_num.innerHTML=num;
+    shoping_money[0].innerHTML=money;
+    //控制商品数量
+//    {
+//        var  add_num=document.getElementById("add_num");
+//        var  reduce=document.getElementById("reduce");
+//        var  num=document.getElementById("num");
+//        add_num.onclick=function () {
+//            //var num_num=parseInt(num.innerHTML)+1;
+//            num.innerHTML=parseInt(num.innerHTML)+1;
+//        }
+//        reduce.onclick=function () {
+//            if (parseInt(num.innerHTML)==1){
+//                num.innerHTML="1"
+//            }else {
+//                num.innerHTML=parseInt(num.innerHTML)-1;
+//            }
+//        }
+//    }
+//for (var i=0;i<address.length;i++){
+//        document.getElementById("address_name").innerHTML+="<input type='radio' name='adr'> <span class='adserr'>"+address[i].addreser+"</span><span>"+address[i].tel+"</span> <span>修改</span>"
+//}
+function pay() {
+    location.href="pay.html?id="+sn+"&money="+money;
+}
+</script>
+</body>
+</html>

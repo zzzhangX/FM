@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单页面</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/orderPage.css">
+    <script src="../bootstrap/js/jquery-1.11.3.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+<!--引入导航-->
+<%-include('common/nav.ejs')%>
+
+<div class="order-detail">
+    <div class="order-title">
+        <span>订单号：</span><span><%=mydata[0].orderNum%></span>
+        <span class="idaifukua"><%=mydata[0].state%></span>
+    </div>
+    <%for(var i=0;i<mydata.length;i++){%>
+    <div>
+        <table class="orderTable">
+            <tbody>
+            <tr>
+                <td>
+                    <img src="/<%=mydata[i].imgaddress%>" alt="物品图片" class="goodsImg">
+                </td>
+                <td><%=mydata[i].proName%></td>
+                <td>铜釉</td>
+                <td><%=mydata[i].od_num%></td>
+                <td><%=mydata[i].od_subtotal%></td>
+            </tr>
+            </tbody>
+        </table>
+        <%}%>
+        <div class="price">
+            <div class="pricediv1">
+                <span>商品金额:</span>
+                <span><%=mydata[0].od_subtotal%></span>
+            </div>
+            <!--<hr>-->
+            <div class="pricediv2">
+                <span>应付总额:</span>
+                <span><%=mydata[0].od_subtotal%></span>
+            </div>
+        </div>
+    </div>
+    <div class="ordermsg">
+        <div class="ordermsgdiv1">
+            <span>订单信息</span>
+        </div>
+        <div class="ordermsgdiv2">
+            <span> 收件人:</span>
+            <span> <%=mydata[0].name%></span><br>
+            <span> 电话:</span>
+            <span> <%=mydata[0].phone%></span><br>
+            <span> 地址:</span>
+            <span> <%=mydata[0].province%><%=mydata[0].city%><%=mydata[0].district%><%=mydata[0].address%></span><br>
+        </div>
+    </div>
+    <button type="button" id="paymentbtn">去付款</button>
+</div>
+<!--引入尾部-->
+<%-include('common/footer.ejs')%>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script src="../js/nav.js"></script>
+<script>
+    var orderState='<%=mydata[0].state%>';
+    //判断订单状态，显示页面信息
+    if (orderState!="未付款") {
+        $("#paymentbtn").remove();
+    }
+</script>
+</body>
+</html>

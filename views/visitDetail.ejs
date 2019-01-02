@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title</title>
+
+
+  <!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="css/lanmuSonStyle.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<%-include('common/nav.ejs')%>
+<section id="page-container">
+  <div class="myControl">
+    <!--标题-->
+    <div class="col-s-12 myTitle">
+      <%=mydata[0].v_theme%>
+    </div>
+    <div class="col-s-12 secondTitle" style="text-align: center; padding-bottom: 50px; font-size: 12px;">
+      <%=mydata[0].v_place%>&nbsp;&nbsp;<%=mydata[0].v_time%>
+    </div>
+    <section>
+      <!-- 第一张图-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <img src="<%=mydata[0].visit_pic1%>">
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第一段文字-->
+      <p style="text-align: left;margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(115, 98, 90); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;text-align: left">
+            <%=mydata[0].visit_intro1%>
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第2-3张图-->
+      <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; clear: both; color: rgb(0, 0, 0); ">
+        <span style="margin: 0px; padding: 0px; font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 12px;">
+          <img src="<%=mydata[0].visit_pic2%>">
+          <img src="<%=mydata[0].visit_pic3%>">
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第2段文字-->
+      <p style="text-align: left;margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(115, 98, 90); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;text-align: left">
+            <%=mydata[0].visit_intro2%>
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第4张图-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <img src="<%=mydata[0].visit_pic4%>">
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第3段文字-->
+      <p style="text-align: left;margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(115, 98, 90); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;text-align: left">
+            <%-mydata[0].visit_intro3%>
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+            <br>
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第5张图-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <img src="<%=mydata[0].visit_pic5%>">
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第4段文字-->
+      <p style="text-align: left;margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(115, 98, 90); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;text-align: left">
+            <%-mydata[0].visit_intro4%>
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第6-8张图-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <img src="<%=mydata[0].visit_pic6%>">
+            <img src="<%=mydata[0].visit_pic7%>">
+            <img src="<%=mydata[0].visit_pic8%>">
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第5段文字-->
+      <p style="text-align: left;margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(115, 98, 90); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;text-align: left">
+            <%-mydata[0].visit_intro5%>
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第9-12张图-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <img src="<%=mydata[0].visit_pic9%>">
+            <img src="<%=mydata[0].visit_pic10%>">
+            <img src="<%=mydata[0].visit_pic11%>">
+            <img src="<%=mydata[0].visit_pic12%>">
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第6段文字-->
+      <p style="text-align: left;margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(115, 98, 90); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;text-align: left">
+            <%-mydata[0].visit_intro6%>
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第13-14张图-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <img src="<%=mydata[0].visit_pic13%>">
+            <img src="<%=mydata[0].visit_pic14%>">
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第7段文字-->
+      <p style="text-align: left;margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(115, 98, 90); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;text-align: left">
+            <%-mydata[0].visit_intro7%>
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第15-17张图-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <img src="<%=mydata[0].visit_pic15%>">
+            <img src="<%=mydata[0].visit_pic16%>">
+            <img src="<%=mydata[0].visit_pic17%>">
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第8段文字-->
+      <p style="text-align: left;margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(115, 98, 90); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;text-align: left">
+            <%-mydata[0].visit_intro8%>
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第18-19张图-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <img src="<%=mydata[0].visit_pic18%>">
+            <img src="<%=mydata[0].visit_pic19%>">
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第9段文字-->
+      <p style="text-align: left;margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(115, 98, 90); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;text-align: left">
+            <%-mydata[0].visit_intro9%>
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第20-22张图-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <img src="<%=mydata[0].visit_pic20%>">
+            <img src="<%=mydata[0].visit_pic21%>">
+            <img src="<%=mydata[0].visit_pic22%>">
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第10段文字-->
+      <p style="text-align: left;margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(115, 98, 90); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;text-align: left">
+            <%-mydata[0].visit_intro10%>
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- 第23-26张图-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <img src="<%=mydata[0].visit_pic23%>">
+            <img src="<%=mydata[0].visit_pic24%>">
+            <img src="<%=mydata[0].visit_pic25%>">
+            <img src="<%=mydata[0].visit_pic26%>">
+          </span>
+        </span>
+      </p>
+      <!-- 空格-->
+      <p style="margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+            <br>
+            <br>
+            <br>
+          </span>
+        </span>
+      </p>
+      <!-- PROFILE-->
+      <p style="text-align:left;margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(0, 0, 0);">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;">
+           PROFILE
+          </span>
+        </span>
+      </p>
+      <p><br/></p>
+      <section style="margin: 0px; padding: 0px; font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal; color: rgb(62, 62, 62); background-color: rgb(255, 255, 255); max-width: 100% !important; word-wrap: break-word !important;">
+        <section class="" style="margin: 0px; padding: 0px; max-width: 100% !important; word-wrap: break-word !important;">
+          <section class="" style="margin: 0.5em 0px; padding: 0px; max-width: 100% !important; word-wrap: break-word !important;">
+            <section class="" style="margin: 0px; padding: 0px; border-top-width: 1px; border-top-style: dashed; border-top-color: rgb(160, 160, 160); max-width: 100% !important; word-wrap: break-word !important;">
+
+            </section>
+          </section>
+        </section>
+      </section>
+      <p><br/></p>
+      <!-- 第11段文字-->
+      <p style="text-align: left;margin-top: 0; margin-bottom: 0; padding: 0; clear: both; color: rgb(115, 98, 90); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+        <span style="font-size: 14px;">
+          <span style="font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;text-align: left">
+            <%-mydata[0].visit_intro11%>
+          </span>
+        </span>
+      </p>
+      <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal; text-align: right;">
+        <span style="margin: 0px; padding: 0px; color: rgb(62, 62, 62); background-color: rgb(255, 255, 255); white-space: pre-wrap;">
+        </span>
+      </p>
+      <hr style="margin: 0px; padding: 0px; font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal;">
+      <p><br/></p>
+      <p style="margin-top: 10px; margin-bottom: 0px; padding: 0px; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal; min-height: 1em; line-height: 1.75em; text-align: center; max-width: 100% !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; color: rgb(136, 136, 136); line-height: 28px; max-width: 100% !important; word-wrap: break-word !important;">／</span><span style="margin: 0px; padding: 0px; color: rgb(127, 127, 127); max-width: 100% !important; word-wrap: break-word !important;"></span></p>
+      <p><br/></p>
+      <p style="margin-top: 10px; margin-bottom: 0px; padding: 0px; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal; min-height: 1em; line-height: 1.75em; text-align: center; max-width: 100% !important; word-wrap: break-word !important;">
+        <span style="margin: 0px; padding: 0px; color: rgb(136, 136, 136); max-width: 100% !important; word-wrap: break-word !important;">
+          <span style="margin: 0px; padding: 0px; color: rgb(127, 127, 127); max-width: 100% !important;">
+             <%-mydata[0].visitby%>
+          </span>
+          <br style="margin: 0px; padding: 0px; color: rgb(127, 127, 127); font-family: arial, helvetica, sans-serif; font-size: 14px; line-height: 22px; max-width: 100% !important; word-wrap: break-word !important;">
+          <span style="margin: 0px; padding: 0px; color: rgb(127, 127, 127); max-width: 100% !important;">
+            <%-mydata[0].photoby%>
+          </span>
+          <br style="margin: 0px; padding: 0px; color: rgb(127, 127, 127); font-family: arial, helvetica, sans-serif; font-size: 14px; line-height: 22px; max-width: 100% !important; word-wrap: break-word !important;">
+          <span style="margin: 0px; padding: 0px; color: rgb(127, 127, 127); max-width: 100% !important;">
+            <%-mydata[0].writeby%>
+          </span>
+        </span>
+      </p>
+      <p><br/></p>
+      <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal; min-height: 1em; text-align: center; max-width: 100% !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; color: rgb(136, 136, 136); line-height: 28px; max-width: 100% !important; word-wrap: break-word !important;">／</span></p>
+      <p style="margin-top: 10px; margin-bottom: 0px; padding: 0px; clear: both; color: rgb(0, 0, 0); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; white-space: normal; min-height: 1em; line-height: 1.75em; text-align: center; max-width: 100% !important; word-wrap: break-word !important;">
+        <span style="margin: 0px; padding: 0px; color: rgb(136, 136, 136); line-height: 28px; max-width: 100% !important; word-wrap: break-word !important;">
+          <img src="<%=mydata[0].visit_pic27%>">
+        </span>
+      </p>
+    </section>
+  </div>
+</section>
+<%-include('common/footer.ejs')%>
+
+<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

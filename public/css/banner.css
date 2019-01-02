@@ -1,0 +1,33 @@
+/*轮播样式开始*/
+.banner{
+    height: 450px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.banner .contentO #imgBanner{
+    height: 450px;
+    width:100%;
+    transition: all 1s linear;
+    background-size: 100% 100%;
+}
+.banner .circle{
+    background-color:#CCC!important;
+}
+.banner .span{
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    background-color: #000000;
+    margin-left: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.banner #divCircle{
+    margin: 0 auto;
+    font-size: 15px;
+    width: 115px;
+    height: 30px;
+    line-height: 30px;
+}

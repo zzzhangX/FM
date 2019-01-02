@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <style type="text/css">
+        .header{
+            position: relative;
+            width: 1349px;
+            height: 540px;
+            overflow: hidden;
+        }
+        .header>img{
+            transform: scale(1.2);
+            transition: all 1s linear;
+        }
+        .header .two{
+            width: 160px;
+            height: 60px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -80px;
+            margin-top: -30px;
+            opacity: 0;
+        }
+        .time{
+            overflow: hidden;
+        }
+        .time>div{
+            position: relative;
+        }
+        .time-one{
+            text-align: center;
+            margin-top: 80px;
+            opacity: 0;
+        }
+        .time-two{
+            margin-top: 80px;
+            height: 300px;
+            background-color: #f6f6f6;
+        }
+        .time-three{
+            height: 650px;
+        }
+        .time-three>img{
+            position: absolute;
+        }
+        .time-three>img:nth-child(1){
+            left: 150px;
+            top: 110px;
+        }
+        .time-three>img:nth-child(2){
+            left: 700px;
+            top: 220px;
+        }
+        .time-three>img:nth-child(3){
+            left: 650px;
+            top: 610px;
+        }
+        .time-four{
+            margin-top: 50px;
+            text-align: center;
+            padding-bottom: 100px;
+            opacity: 0;
+        }
+        .time-four>img{
+            margin-top: 20px;
+        }
+        /*介绍*/
+        .introduce{
+            width: 1200px;
+           /* height: 1100px;*/
+            margin: 0 auto;
+            padding-bottom: 100px;
+            overflow: hidden;
+            background-color: #f4f4f4;
+        }
+        .introduce-one{
+            margin-top: 200px;
+            text-align: center;
+            margin-bottom: 200px;
+            opacity: 0;
+        }
+       .introduce>.common{
+           width: 960px;
+           height: 640px;
+           margin: 100px auto 0;
+           background-color: gainsboro;
+       }
+        .introduce>.common>.img{
+            width: 530px;
+            height: 640px;
+        }
+        .introduce>.common>.words{
+            width: 310px;
+            height: 230px;
+            padding: 350px 60px 60px 60px;
+            background-color: #D8D8D8;
+        }
+        .introduce>.common>.words>div{
+            margin-top: 30px;
+            font-size: 12px;
+            color: grey;
+        }
+        .introduce>.common>.words .name{
+            font-size: 16px;
+        }
+        .introduce>.common>.words .list{
+            line-height: 20px;
+        }
+        .introduce>.common>.FL{
+            float: left;
+        }
+        .introduce>.common>.FR{
+            float: right;
+        }
+        .introduce-two .img{
+            background-size: 530px 640px;
+            background-image: url("../images/2-9.jpg");
+        }
+        .introduce-three .img{
+            background-size: 530px 640px;
+            background-image: url("../images/2-11.jpg");
+        }
+        .introduce-four .img{
+            background-size: 530px 640px;
+            background-image: url("../images/2-16.jpg");
+        }
+        /*新品*/
+        .newProducts{
+            padding-top: 20px;
+        }
+        .newProducts>div{
+            margin-top: 100px;
+            text-align: center;
+        }
+        .newProducts .newProducts-one{
+            transform: translateY(200px);
+        }
+        .newProducts .newProducts-two{
+            width: 1160px;
+            margin: 120px auto 0;
+        }
+        .newProducts .newProducts-two>div{
+            margin-top: 30px;
+            float: left;
+            width: 230px;
+            padding: 0 30px;
+        }
+        .newProducts .newProducts-two>div img{
+            width: 150px;
+            height: 320px;
+        }
+        .newProducts .newProducts-two>div>.words{
+            width: 190px;
+            padding: 20px;
+            font-size: 12px;
+        }
+        .newProducts .newProducts-two>div .name{
+            color: grey;
+        }
+        .clear{
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <!--头部图片-->
+    <div class="header">
+        <img src="../images/2-1.png" alt="" class="one">
+        <img src="../images/2-26.png" alt="" class="two">
+    </div>
+    <!--时间的厚度-->
+    <div class="time">
+        <div class="time-one">
+            <img src="../images/2-27.png" alt="">
+        </div>
+        <div class="time-two"></div>
+        <div class="time-three">
+            <img src="../images/2-2.png" alt="">
+            <img src="../images/2-3.png" alt="">
+            <img src="../images/2-4.png" alt="">
+        </div>
+        <div class="time-four">
+            <img src="../images/2-5.png" alt=""><br>
+            <img src="../images/2-8.png" alt="">
+        </div>
+    </div>
+    <!--介绍-->
+    <div class="introduce">
+        <div class="introduce-one">
+            <img src="../images/2-7.png" alt="">
+        </div>
+        <div class="introduce-two common">
+            <div class="img FL">
+            </div>
+            <div class="words FR">
+                <div class="name">
+                    3/1 <br>
+                    <span>凝结时光的传承价值</span>
+                </div>
+                <div class="list">
+                    . <br>
+                    . <br>
+                    平均树龄150年，来自日本，非洲，北美，东南亚等地，<br>涉至黑胡桃木，枥木，榉木，白杨木等丰富珍贵的木 <br>材。蕴藏的时间厚度与福祉，值得传承使用。
+                </div>
+            </div>
+        </div>
+        <div class="introduce-three common">
+            <div class="img FR">
+            </div>
+            <div class="words FL">
+                <div class="name">
+                    3/2 <br>
+                    <span>独一无二的自然美感</span>
+                </div>
+                <div class="list">
+                    . <br>
+                    . <br>
+                    经验丰富的手工职人们保留了木头的自然特质，其自然 <br>生成的纹理，伤痕，节疤，都真实地记载着时光。表面 <br>采用聚氨酯漆涂层，漆面轻薄，漆后也可以触摸到到木 <br>纹的变化。
+                </div>
+            </div>
+        </div>
+        <div class="introduce-four common">
+            <div class="img FL">
+            </div>
+            <div class="words FR">
+                <div class="name">
+                    3/3 <br>
+                    <span>来自日本的顶级工艺</span>
+                </div>
+                <div class="list">
+                    . <br>
+                    . <br>
+                    一枚板全程在日本由手工匠人加工完成。取材自顺应规律自然倒下的木头，经过三年以上自然晾晒保证其稳定 <br>性，加之使用高周波机器，历时8小时，从30℃到80℃逐 <br>步升温加压，保证木头水分干燥，减少板面翘曲，使得
+                    <br>木头在成相纤薄的同时依旧有着稳定的特性。
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--新品-->
+    <div class="newProducts">
+        <div class="newProducts-one">
+            <img src="../images/2-17.png" alt="">
+        </div>
+        <div class="newProducts-two">
+            <div>
+                <a href=""><img src="../images/2-18.png" alt=""></a>
+                <div class="words">
+                    <span class="name">一枚板0411</span> <br>
+                    <span class="price">55000.00</span> <br>
+                </div>
+            </div>
+            <div>
+                <a href=""><img src="../images/2-19.png" alt=""></a>
+                <div class="words">
+                    <span class="name">一枚板0425</span> <br>
+                    <span class="price">48600.00</span> <br>
+                </div>
+            </div>
+            <div>
+                <a href=""><img src="../images/2-20.png" alt=""></a>
+                <div class="words">
+                    <span class="name">一枚板0406</span> <br>
+                    <span class="price">48500.00</span> <br>
+                </div>
+            </div>
+            <div>
+                <a href=""><img src="../images/2-21.png" alt=""></a>
+                <div class="words">
+                    <span class="name">一枚板0402</span> <br>
+                    <span class="price">36000.00</span> <br>
+                </div>
+            </div>
+            <div>
+                <a href=""><img src="../images/2-22.png" alt=""></a>
+                <div class="words">
+                    <span class="name">一枚板0405</span> <br>
+                    <span class="price">16800.00</span> <br>
+                </div>
+            </div>
+            <div>
+                <a href=""><img src="../images/2-23.png" alt=""></a>
+                <div class="words">
+                    <span class="name">一枚板0423</span> <br>
+                    <span class="price">46800.00</span> <br>
+                </div>
+            </div>
+            <div>
+                <a href=""><img src="../images/2-24.png" alt=""></a>
+                <div class="words">
+                    <span class="name">一枚板0416</span> <br>
+                    <span class="price">34500.00</span> <br>
+                </div>
+            </div>
+            <div>
+                <a href=""><img src="../images/2-25.png" alt=""></a>
+                <div class="words">
+                    <span class="name">一枚板0418</span> <br>
+                    <span class="price">13500.00</span> <br>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="clear"></div>
+    <!--尾部-->
+    <footer>
+        <nav>
+            <ul>
+                <li>
+                    <span>关于我们</span>
+                    <ul>
+                        <li><a href="">梵几STORY</a></li>
+                        <li><a href="">梵几实体店</a></li>
+                        <li><a href="">媒体报道</a></li>
+                        <li><a href="">招聘信息</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span>购物指南</span>
+                    <ul>
+                        <li><a href="">购物流程</a></li>
+                        <li><a href="">会员制度</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span>关于配送</span>
+                    <ul>
+                        <li><a href="">家具配送</a></li>
+                        <li><a href="">家居配送</a></li>
+                        <li><a href="">一枚板配送</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span>售后服务</span>
+                    <ul>
+                        <li><a href="">家具售后</a></li>
+                        <li><a href="">家居售后</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span>商业合作</span>
+                    <ul>
+                        <li><a href="">项目批量采购</a></li>
+                        <li><a href="">设计公司合作</a></li>
+                        <li><a href="">家居品牌合作</a></li>
+                        <li><a href="">市场&媒体合作</a></li>
+                        <li><a href="">艺术品合作</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="footer">
+            <div class="footer_left">
+                梵几独立家居品牌 © 2017 Fnji Interior design Co. Ltd. Beijing, China 京ICP备13004049号-3
+            </div>
+            <div class="footer_right">
+                <div>
+                    <span>微信</span>
+                    <span>新浪</span>
+                </div>
+                <div>
+                    客服邮箱 service@fnji.com / TEL 400-641-6399
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--右侧悬浮按钮-->
+    <div class="right_button">
+        <a href="" class="iconfont top">&#xe765;</a>
+        <a href="" class="iconfont contact">&#xe610;</a>
+    </div>
+    <script src="../bootstrap/js/jquery-1.11.3.js"></script>
+    <script src="../js/nav.js"></script>
+
+    <script>
+        $(function () {
+            $(".header .one").css({
+               "transform":"scale(1)",
+                "transition":"all 1,5s linear"
+            });
+            $(".header .two").css({
+                "opacity":"1",
+                "transition":"all .5s linear 1.5s"
+            });
+            $(".time-one").css({
+                "opacity":"1",
+                "transition":"all 1.5s linear 1.5s"
+            });
+        });
+        $(window).scroll(function () {
+            console.log($(window).scrollTop());
+            if ($(window).scrollTop()>=200){
+                $(".time-three>img:nth-child(1)").css({
+                    "top":"-150px",
+                    "transition":"all 1.5s linear"
+                });
+            }
+            else {
+                $(".time-three>img:nth-child(1)").css({
+                    "top":"110px"
+                });
+            }
+
+            if ($(window).scrollTop()>=350){
+                $(".time-three>img:nth-child(2)").css({
+                    "top":"-100px",
+                    "transition":"all 1.5s linear"
+                });
+            }
+            else {
+                $(".time-three>img:nth-child(2)").css({
+                    "top":"220px"
+                });
+            }
+
+            if ($(window).scrollTop()>=500){
+                $(".header .one").css({
+                    "transform":"scale(1.2)",
+                    "transition":"all 2s linear"
+                });
+                $(".header .two").css({
+                    "opacity":"0",
+                    "transition":"all .5s linear 1.5s"
+                });
+                $(".time-three>img:nth-child(3)").css({
+                    "top":"300px",
+                    "transition":"all 1.5s linear"
+                });
+            }
+            else {
+                $(".header .one").css({
+                    "transform":"scale(1)"
+                });
+                $(".header .two").css({
+                    "opacity":"1"
+                });
+                $(".time-three>img:nth-child(3)").css({
+                    "top":"610px"
+                });
+            }
+
+            if ($(window).scrollTop()>=700){
+                $(".time-one").css({
+                    "transform":"translateY(-100px)",
+                    "opacity":"0",
+                    "transition":"all 1s linear"
+                });
+            }
+            else {
+                $(".time-one").css({
+                    "transform":"translateY(0px)",
+                    "opacity":"1"
+                });
+            }
+
+            if ($(window).scrollTop()>=1200){
+                $(".time-four").css({
+                    "transform":"translateY(-100px)",
+                    "opacity":"1",
+                    "transition":"all 1.5s linear"
+                });
+            }
+            else {
+                $(".time-four").css({
+                    "transform":"translateY(0)",
+                    "opacity":"0"
+                });
+            }
+
+            if ($(window).scrollTop()>=1600){
+                $(".introduce-one").css({
+                    "transform":"translateY(-100px)",
+                    "opacity":"1",
+                    "transition":"all 1.5s linear"
+                });
+            }
+            else {
+                $(".introduce-one").css({
+                    "transform":"translateY(0)",
+                    "opacity":"0"
+                });
+            }
+
+            if ($(window).scrollTop()>=1800){
+                $(".introduce-two").css({
+                    "transform":"translateY(-200px)",
+                    "transition":"all 1.5s linear"
+                });
+            }
+            else {
+                $(".introduce-two").css({
+                    "transform":"translateY(0)"
+                });
+            }
+
+            if ($(window).scrollTop()>=2600){
+                $(".introduce-three").css({
+                    "transform":"translateY(-200px)",
+                    "transition":"all 1.5s linear"
+                });
+            }
+            else {
+                $(".introduce-three").css({
+                    "transform":"translateY(0)"
+                });
+            }
+
+            if ($(window).scrollTop()>=3400){
+                $(".introduce-four").css({
+                    "transform":"translateY(-200px)",
+                    "transition":"all 1.5s linear"
+                });
+            }
+            else {
+                $(".introduce-four").css({
+                    "transform":"translateY(0)"
+                });
+            }
+
+            if ($(window).scrollTop()>=4300){
+                $(".newProducts-one").css({
+                    "transform":"translateY(0px)",
+                    "transition":"all 1.5s linear"
+                });
+            }
+            else {
+                $(".newProducts-one").css({
+                    "transform":"translateY(200px)"
+                });
+            }
+        });
+    </script>
+</body>
+</html>

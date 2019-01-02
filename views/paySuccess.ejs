@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>err</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+        header{
+            width: 100%;
+            /*height: 60px;*/
+        }
+        header .t{
+            height: 20px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font-size: 12px;
+            text-align: right;
+            padding-right: 300px;
+        }  header .b{
+            height: 50px;
+            line-height: 50px;
+            background-color: rgb(255, 255, 255);
+
+        } header .b img{
+            padding-left: 300px;
+            padding-top: 10px;
+            float: left;
+        }header .b div{
+           display: block;
+            height: 30px;
+            float: left;
+            font-size: 20px;
+        }
+        header .b div span{
+            margin: 0 10px;
+        }
+        .err{
+            margin-left: 300px;
+            padding-left: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            line-height: 30px;
+            margin-top: 35px;
+            width: calc(80% - 300px);
+            text-align: center;
+        }
+        .err a{
+            text-decoration: none;
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            margin-top: 30px;
+            margin-left: -15px;
+        }
+      .last_p{
+          text-align: center;
+          margin-top: 20px;
+          font-size: 10px;
+        }
+        .last_div{
+            text-align: center;
+            margin-top: 50px;
+        }
+       /* body{
+            background-color: rgb(239,240,241);
+        }*/
+    </style>
+</head>
+<body>
+<!--引入导航-->
+<%-include('common/nav.ejs')%>
+<header>
+
+    <div class="err">
+        <h3> 支付成功！</h3>
+        <a href="/furniture.do?typeOne=1">继续购物</a>
+    </div>
+</header>
+<!--引入尾部-->
+<%-include('common/footer.ejs')%>
+<script src="bootstrap/js/jquery-1.11.3.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

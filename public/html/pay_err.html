@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>err</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+        header{
+            width: 100%;
+            /*height: 60px;*/
+        }
+        header .t{
+            height: 20px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font-size: 12px;
+            text-align: right;
+            padding-right: 300px;
+        }  header .b{
+            height: 50px;
+            line-height: 50px;
+            background-color: rgb(255, 255, 255);
+
+        } header .b img{
+            padding-left: 300px;
+            padding-top: 10px;
+            float: left;
+        }header .b div{
+           display: block;
+            height: 30px;
+            float: left;
+            font-size: 20px;
+        }
+        header .b div span{
+            margin: 0 10px;
+        }
+        .err{
+            margin-left: 300px;
+            padding-left: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            line-height: 30px;
+            margin-top: 35px;
+            width: calc(80% - 300px);
+            text-align: center;
+        }
+        .err a{
+            text-decoration: none;
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            margin-top: 30px;
+            margin-left: -15px;
+        }
+      .last_p{
+          text-align: center;
+          margin-top: 20px;
+          font-size: 10px;
+        }
+        .last_div{
+            text-align: center;
+            margin-top: 50px;
+        }
+       /* body{
+            background-color: rgb(239,240,241);
+        }*/
+    </style>
+</head>
+<body>
+<!--顶部文字-->
+<div class="navTop">
+    <div class="containerO">
+        <ul class="right">
+            <li><a href="">实体店</a></li>
+            <li><a href="">商业合作</a></li>
+        </ul>
+        <div class="middle">
+            <span>长生于野</span><span>安于堂</span>
+        </div>
+    </div>
+</div>
+<!--顶部导航-->
+<div class="navContent">
+    <div class="contentO">
+        <div class="left">Three</div>
+        <div class="right">
+            <a href="" class="iconfont">&#xe52a;</a>
+            <a href="" class="iconfont">&#xe507;</a>
+            <a href="personal.html" class="iconfont" id="orderbtn">&#xe60c;</a><!--订单-->
+            <!--<button data-toggle="modal" data-target="#myLogin">1111</button>-->
+            <a href="" class="iconfont" data-toggle="modal" data-target="#myLogin" >&#xe6c0;</a>
+        </div>
+        <div class="middle">
+            <ul>
+                <li>
+                    <a href="furnitureRecommend.html">家具</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">椅</a></li>
+                        <li><a href="">桌</a></li>
+                        <li><a href="">床</a></li>
+                        <li><a href="">几</a></li>
+                        <li><a href="">柜</a></li>
+                        <li><a href="">沙发</a></li>
+                        <li><a href="">一枚板</a></li>
+                        <li><a href="">其他</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="grocery.html">家居</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">餐厨</a></li>
+                        <li><a href="">家居</a></li>
+                        <li><a href="">摆件</a></li>
+                        <li><a href="">养护</a></li>
+                        <li><a href="">园艺</a></li>
+                        <li><a href="">数码</a></li>
+                        <li><a href="">文具</a></li>
+                        <li><a href="">配饰</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/art.html">艺术</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">艺术家</a></li>
+                        <li><a href="">展览</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/lanmu.html">栏目</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">梵几在家</a></li>
+                        <li><a href="">串门</a></li>
+                        <li><a href="">ARTSTAGE</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/NewThings.html">新事</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<header>
+
+    <!--<div class="b"><img src="../images/T13IFgXjlaXXXXXXXX.png" alt=""> <div><span>|</span>我的收银台</div></div>-->
+    <div class="err">
+        <h3> 支付成功！</h3>
+        <a href="furnitureRecommend.html">继续购物</a>
+    </div>
+</header>
+<!--尾部-->
+<footer>
+    <nav>
+        <ul>
+            <li>
+                <span>关于我们</span>
+                <ul>
+                    <li><a href="">梵几STORY</a></li>
+                    <li><a href="">梵几实体店</a></li>
+                    <li><a href="">媒体报道</a></li>
+                    <li><a href="">招聘信息</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>购物指南</span>
+                <ul>
+                    <li><a href="">购物流程</a></li>
+                    <li><a href="">会员制度</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>关于配送</span>
+                <ul>
+                    <li><a href="">家具配送</a></li>
+                    <li><a href="">家居配送</a></li>
+                    <li><a href="">一枚板配送</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>售后服务</span>
+                <ul>
+                    <li><a href="">家具售后</a></li>
+                    <li><a href="">家居售后</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>商业合作</span>
+                <ul>
+                    <li><a href="">项目批量采购</a></li>
+                    <li><a href="">设计公司合作</a></li>
+                    <li><a href="">家居品牌合作</a></li>
+                    <li><a href="">市场&媒体合作</a></li>
+                    <li><a href="">艺术品合作</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="footer">
+        <div class="footer_left">
+            梵几独立家居品牌 © 2017 Fnji Interior design Co. Ltd. Beijing, China 京ICP备13004049号-3
+        </div>
+        <div class="footer_right">
+            <div>
+                <span>微信</span>
+                <span>新浪</span>
+            </div>
+            <div>
+                客服邮箱 service@fnji.com / TEL 400-641-6399
+            </div>
+        </div>
+    </div>
+</footer>
+<!--右侧悬浮按钮-->
+<div class="right_button">
+    <a href="" class="iconfont top">&#xe765;</a>
+    <a href="" class="iconfont contact">&#xe610;</a>
+</div>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script src="../js/arr.js"></script>
+<script src="../js/nav.js"></script>
+</body>
+</html>

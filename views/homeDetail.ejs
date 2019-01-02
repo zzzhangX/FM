@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title</title>
+
+
+  <!--[if lt IE 9]>
+  <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/lanmuSonStyle.css">
+</head>
+<body>
+<%-include('common/nav.ejs')%>
+<section id="page-container">
+    <div class="myControl">
+        <!--标题-->
+        <div class="col-s-12 myTitle">
+            <%=mydata[0].h_number%><%=mydata[0].h_name%>
+        </div>
+        <div class="col-s-12 secondTitle">
+            <%=mydata[0].h_address%>&nbsp;&nbsp;<%=mydata[0].h_time%>
+        </div>
+
+        <%for(var i=0;i<mydata.length;i++){%>
+        <section style="text-align: center; margin-top: 10px; margin-bottom: 10px; position: static;">
+            <img src="<%=mydata[i].p_src%>">
+        </section>
+        <!-- 第二段文字-->
+        <section style="padding: 0 20px; text-align: justify; color: rgb(89, 87, 87); line-height: 2.5; letter-spacing: 2px; font-size: 12px;">
+            <p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; white-space: normal;">
+                <%=mydata[i].p_intro%>
+                <br>
+            </p>
+            <section style="text-align: center; margin-top: 10px; margin-bottom: 10px; position: static;">
+                <br>
+            </section>
+        </section>
+        <%}%>
+        <!-- 结尾-->
+        <section style="text-align: center; margin-top: 10px; margin-bottom: 10px; position: static;">
+            <br>
+        </section>
+        <section style="text-align: center; margin-top: 10px; margin-bottom: 10px; position: static;">
+            <br>
+        </section>
+        <section style="position: static;">
+            <section>
+                <p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
+          <span style="font-size: 10px;">
+            <%=mydata[0].writeby%>
+          </span>
+                </p>
+                <p style="padding: 0px; margin-top: 0px; margin-bottom: 0px; text-align: center;">
+          <span style="font-size: 10px;">
+            &nbsp;<%=mydata[0].photoby%>&nbsp;
+          </span>
+                </p>
+            </section>
+        </section>
+    </div>
+</section>
+<%-include('common/footer.ejs')%>
+
+
+<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/nav.js"></script>
+<script>
+</script>
+</body>
+</html>

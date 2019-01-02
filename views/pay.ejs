@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pay</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+        input[type="button"],button{
+            cursor: pointer;
+        }
+        .sn{
+            width: 75%;
+            height: 200px;
+            background-color: rgb(250,250,250);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 100px;
+        }
+        .pay_for{
+            width: 75%;
+            height: 400px;
+            margin-top: 50px;
+        }
+        .pay_for>div>div{
+            float: left;
+            line-height: 35px;
+            height: 35px;
+
+        }
+        .pay_for>div{
+
+            line-height: 35px;
+            margin-bottom: 10px;
+
+        }
+        .float{
+            float: left;
+        }
+        .bank{
+            background-image: url('../images/bank-icons.png');
+            width: 125px;
+            height: 30px;
+            margin-right: 10px;
+            background-position: 0 -948px;
+        }
+        .bank1 img{
+            width: 85px;
+            height: 22px;
+            margin-top: 5px;
+            margin-left: 2px;
+        }
+        .bank1{background: none;}
+        .bank2{background-position: 0 -72px;  }
+        .bank3{background-position: 0 calc(-36px * 3);  }
+        .bank4{background-position: 0 calc(-36px * 4);  }
+        .bank5{background-position: 0 calc(-36px * 5);  }
+        .bank6{background-position: 0 calc(-36px * 6);  }
+        .bank7{background-position: 0 calc(-36px * 7);  }
+        .bank8{background-position: 0 calc(-36px * 8);  }
+        .bank9{background-position: 0 calc(-36px * 9);  }
+        .bank10{background-position: 0 calc(-36px * 10);  }
+        .bank11{background-position: 0 calc(-36px * 11);  }
+        .bank12{background-position: 0 calc(-36px * 12);  }
+        .bank13{background-position: 0 calc(-36px * 13);  }
+        .bank14{background-position: 0 calc(-36px * 14);  }
+        .bank15{background-position: 0 calc(-36px * 15);  }
+        .bank16{background-position: 0 calc(-36px * 16);  }
+        .bank17{background-position: 0 calc(-36px * 17);  }
+        .bank18{background-position: 0 calc(-36px * 18);  }
+        .bank19{background-position: 0 calc(-36px * 19);  }
+        .bank20{background-position: 0 calc(-36px * 20);  }
+        .clear{
+            clear: both;
+        }
+        .pay_go{
+            width: 150px;
+            height: 45px;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+        .pay_go_div{
+            width: 150px;
+        }
+        .clear{
+            clear: both;
+        }
+        .modal-content{
+            margin-top: 150px;
+           /* margin-left: 150px;*/
+            width: 400px;
+        }
+        .modal-dialog>.modal-content{
+            left: 0;
+        }
+        .modal-body{
+            text-align: center;
+        }
+        .modal-footer{
+            text-align: center;
+        }
+        .btn-primary{
+            background-color: black;
+        }
+        .failureTips{
+            padding-left: 10%;
+            text-align: left;
+            color: red;
+            display: none;
+        }
+        .emptyTips{
+            padding-left: 10%;
+            text-align: left;
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--引入导航-->
+<%-include('common/nav.ejs')%>
+<div class="sn">
+    <p style="margin-bottom: 30px">
+        单号: <span id="sn"><%=currentorderNum%></span>  总金额(¥)：<span id="sum_money"><%=orderTotal[0].odsubTotal%>.00</span> 元
+    </p>
+    <p>
+        提示: 若由于银行卡限额等问题无法支付，可以先将款项转至余额宝中再进行支付。 <br>
+        其它原因引起的未能支付，请您联系在线客服，或致电400 641 6399联系梵几的客服人员进行处理。
+    </p>
+</div>
+<div class="pay_for">
+   <div>
+       <div><input type="radio" name="pay" checked></div>
+       <div class="bank"></div>
+   </div>
+    <div class="clear"></div>
+    <div>
+       <div><input type="radio" name="pay"></div>
+       <div class="bank bank1"><img src="../images/wxpay.png" alt=""></div>
+   </div>
+    <div class="clear"></div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank2"></div>
+    </div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank3"></div>
+    </div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank4"></div>
+    </div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank5"></div>
+    </div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank6"></div>
+    </div>
+    <div class="clear"></div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank7"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank8"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank9"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank10"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank11"></div>
+    </div> <div class="clear"></div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank12"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank13"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank14"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank15"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank16"></div>
+    </div> <div class="clear"></div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank17"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank18"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank19"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank20"></div>
+    </div>
+</div>
+<div class="pay_go_div"><button class="pay_go" data-toggle="modal" data-target="#pay">去支付</button></div>
+<div class="clear"></div>
+<!--引入尾部-->
+<%-include('common/footer.ejs')%>
+<!-- 支付模态框 -->
+<div class="modal fade" id="pay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel1">支付确认</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="账号" class="userNamePay">
+                <input type="password" placeholder="密码" class="pwdPay">
+                <div class="failureTips">
+                    <span>账号或者密码错误</span>
+                </div>
+                <div class="emptyTips">
+                    <span>不能为空</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="surePay">确认支付</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="bootstrap/js/jquery-1.11.3.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script>
+    var currentOrderId = "<%=currentOrderId%>";
+    var currentAddressId = "<%=currentAddressId%>";
+    console.log(currentOrderId);
+    console.log(currentAddressId);
+    $("#surePay").on("click",function () {
+        if ($(".userNamePay").val()==""||$(".pwdPay").val()==""){
+            $(".emptyTips").css({
+                "display":"block"
+            });
+        }
+        else {
+            $(".emptyTips").css({
+                "display":"none"
+            });
+            $.ajax({
+                type:"post",
+                url:"/surePayJudge.do?",
+                data:{
+                    userName:$(".userNamePay").val(),
+                    pwd:$(".pwdPay").val()
+                },
+                success:function (data) {
+                    console.log(data);
+                    if (data.length<=0){
+                        $(".failureTips").css({
+                            "display":"block"
+                        });
+                    }
+                    else {
+                        window.location.href="surePay.do?currentOrderId="+currentOrderId+"&currentAddressId="+currentAddressId;
+                    }
+                }
+
+            })
+        }
+
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .ad-section1 {
+      width: 1100px;
+      height: 200px;
+      margin: 0 auto;
+      overflow: hidden;
+      /*outline: solid 1px yellow;*/
+    }
+
+    .ad-block1 {
+      text-align: center;
+      font-family: FZSongKeBenXiuKaiS-R-GB, PingFangSC-Light, Helvetica Neue, Helvetica, STHeiTi, sans-serif;
+      color: #8a8a8a;
+      margin-top: 50px;
+      margin-bottom: 40px;
+      /*outline: solid 1px tomato;*/
+    }
+
+    .ad-word1 {
+      font-family: 楷体;
+      line-height: 30px;
+      font-size: 16px;
+    }
+
+    .ad-word2 {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    .ad-span {
+      width: 30px;
+      display: inline-block;
+      border-bottom: solid 1px #8a8a8a;
+    }
+
+    .hts-block1 {
+      width: 800px;
+      margin: 0 auto;
+    }
+
+    .hts-block1 > li {
+      width: 200px;
+      height: 75px;
+      float: left;
+      list-style: none;
+      position: relative;
+      text-align: center;
+      /*outline: solid 1px teal;*/
+    }
+
+    .hts-section1 {
+      width: 1100px;
+      height: 200px;
+      margin: 0 auto;
+      /*outline: solid 1px teal;*/
+    }
+
+    .hts-span1 {
+      width: 20px;
+      display: inline-block;
+      border-bottom: solid 1px #8a8a8a
+    }
+
+    .hts-spanSet {
+      margin-top: 14.5px;
+      margin-left: 7px;
+      height: 7px;
+      transform: rotate(90deg);
+    }
+    .hts-spanSet1{
+      display: none;
+    }
+
+    .htp-word1 {
+      padding-top: 10px;
+      font-size: 12px;
+      color: #8a8a8a;
+    }
+
+    .htp-word2 {
+      width: 5.5px;
+      height: 5.5px;
+      background-color: #8a8a8a;
+      border-radius: 2.25px;
+      position: absolute;
+      top: 55px;
+      left: 90px;
+    }
+
+    .htp-pointSet {
+      top: 50px;
+      left: 97px;
+    }
+
+    .htp-pointSet1 {
+      left: 97px;
+    }
+
+    .htp-pointSet2 {
+      left: 105px;
+    }
+
+    .htp-block2 {
+      width: 800px;
+      height: 340px;
+      margin: 0 auto;
+      color: #8a8a8a;
+      background-color: #F2F2F2;
+      display: none;
+    }
+
+    .htp-block2Set1 {
+      height: 300px;
+    }
+
+    .htp-block2Set2 {
+      height: 220px;
+    }
+
+    .htp-block2Set3 {
+      height: 280px;
+    }
+
+    .htp-block2Set4 {
+      height: 320px;
+    }
+
+    .htp-block2Set5 {
+      height: 180px;
+    }
+
+    .htp-block2Set6 {
+      height: 200px;
+    }
+
+    .htp-word3 {
+      text-align: center;
+      font-size: 14px;
+      line-height: 65px;
+      padding-bottom: 15px;
+    }
+
+    .htp-word4 {
+      margin-left: 20px;
+      line-height: 20px;
+      font-size: 12px;
+    }
+    .htp-word-ok{
+      color: black;
+      font-weight: 700;
+    }
+    .htp-word1-ok{
+      background-color: black;
+    }
+    .htp-span-ok{
+      border-bottom: solid 1px #000000
+    }
+    .htp-block-ok{
+      display: block;
+    }
+  </style>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<%-include('common/nav.ejs')%>
+<section class="ad-section1">
+  <div class="ad-block1">
+    <p class="ad-word1">购物流程</p>
+    <p class="ad-word2">HOW TO SHOP</p>
+    <span class="ad-span"></span>
+  </div>
+</section>
+<section class="hts-section1">
+  <ul class="hts-block1">
+    <li>
+      <p class="htp-word1 htp-word-ok">1<br>注册用户</p>
+      <div class="htp-word2 htp-word1-ok"></div>
+      <span class="hts-span1 htp-span-ok"></span>
+      <p>
+    </li>
+    <li>
+      <p class="htp-word1">2<br>浏览物品</p>
+      <div class="htp-word2"></div>
+      <span class="hts-span1"></span>
+      <p>
+    </li>
+    <li>
+      <p class="htp-word1">3<br>添加到购物车</p>
+      <div class="htp-word2"></div>
+      <span class="hts-span1"></span>
+      <p>
+    </li>
+    <li>
+      <p class="htp-word1">4<br>生成订单</p>
+      <div class="htp-word2 htp-pointSet"></div>
+      <span class="hts-span1 hts-spanSet"></span>
+      <p>
+    </li>
+    <li>
+      <p class="htp-word1">8<br>确认收货</p>
+      <div class="htp-word2 htp-pointSet1"></div>
+      <span class="hts-span1 hts-spanSet1"></span>
+      <p>
+    </li>
+    <li class="hts-li">
+      <p class="htp-word1">7<br>商品发货</p>
+      <div class="htp-word2 htp-pointSet2"></div>
+      <span class="hts-span1"></span>
+      <p>
+    </li>
+    <li>
+      <p class="htp-word1">6<br>订单付款</p>
+      <div class="htp-word2 htp-pointSet2"></div>
+      <span class="hts-span1"></span>
+      <p>
+    </li>
+    <li>
+      <p class="htp-word1">5<br>订单激活</p>
+      <div class="htp-word2 htp-pointSet2"></div>
+      <span class="hts-span1"></span>
+      <p>
+    </li>
+  </ul>
+</section>
+<div class="htp-block2 htp-block-ok">
+  <p class="htp-word3">注册用户 Register </p>
+  <p class="htp-word4">
+    1. 进入官网后，点击网站右上方的“注册”。<br><br>
+    2. 将进入注册页面后 ，在相应提示处输入您的邮箱地址或电话号码，点击获取验证码，您的手机或邮箱将收到一个6位验证码。<br><br>
+    3. 输入获得的验证码、密码、确认密码后点击“提交”即可。<br><br>
+    4. 提交以上注册信息后，您将即注册成功。<br><br>
+    梵几官网注册用户可方便地管理和查询订单，并可收到来自梵几的产品更新信息以及梵几在家、串门等新文，还有机会参与丰富多彩的优惠活<br>
+    动。<br>
+    建议同时关注梵几微信服务号，绑定梵几账号，方便实时查询订单状态，管理账号。
+  </p>
+</div>
+<div class="htp-block2 htp-block2Set1">
+  <p class="htp-word3">浏览物品 Browser items </p>
+  <p class="htp-word4">
+    1. 商品购买<br>
+    进入官网后，点击网站上方主菜单，可以分别进入家具、生活杂货、艺术品三大类商品的购买区域。<br><br>
+    2. 杂志浏览<br>
+    点击网站上方的杂志菜单，可以分别进入梵几在家、串门、艺术跨界、梵几新事板块。<br><br>
+    3. 在线客服<br>
+    若您在浏览物品时，存在有关商品购买的问题，可在客服工作时间内（周一至周五，9：30—18:00）联系在线客服，得到实时回复；也可在非工<br>
+    作时间段内进行留言，客服回复后，您将于第一时间通过梵几微信服务号或邮件收到回复通知。<br>
+  </p>
+</div>
+<div class="htp-block2 htp-block2Set2">
+  <p class="htp-word3">添加到购物车 Add to the cart </p>
+  <p class="htp-word4">
+    1. 购物车加入<br>
+    您选择到自己喜欢的商品后，可以将其加入购物车，稍后进行订单的生成操作。<br><br>
+    2. 购物车可以作为游客身份添加<br>
+    当您通过注册账户登录后，可以通过点击网站右上角的购物车图标进入自己的购物车，您之前以游客身份添加的商品将归并到您的购物车
+  </p>
+</div>
+<div class="htp-block2 htp-block2Set3">
+  <p class="htp-word3">生成订单 Generate an order </p>
+  <p class="htp-word4">
+    1. 进入购物车勾选自己需要购买的商品，核对总价后点击生产订单。<br><br>
+    2. 填写订单信息，您可以从原有历史收货地址信息中选择收货地址和收货人，也可以新建收货地址信息。<br><br>
+    3. 确认收货信息后，点击生成订单，网站提示您当前的订单状态，您继续按照提示进行操作。<br><br>
+    您的订单会根据商品属性不同，生成三类订单，家具、生活杂货、艺术品，因为三类商品的发货周期不同，梵几将为您提供不同的发货方式。<br>
+    您选择到自己喜欢的商品后，可以将其加入购物车，稍后进行订单的生成操作。
+  </p>
+</div>
+<div class="htp-block2 htp-block2Set4">
+  <p class="htp-word3">确认收货 Receive products </p>
+  <p class="htp-word4">
+    1. 根据订单种类不同，您需要关注商品的到货的损坏或质量问题，具体参考您需要了解的。<br><br>
+    2. 商品到货后，订单会更新状态为已关闭。<br><br><br>
+    • 退换货<br><br>
+    1. 根据订单种类不同，您需要关注商品的退换货注意事项，具体参考您需要了解的。<br><br>
+    2. 商品到货后，订单会更新状态为已关闭。<br><br>
+  </p>
+</div>
+<div class="htp-block2 htp-block2Set5">
+  <p class="htp-word3">商品发货 Deliver products</p>
+  <p class="htp-word4">
+    1. 根据订单的种类不同，发货周期略有不同，具体参考您需要了解的。<br><br>
+    2. 商品发货后，您可以在梵几官网或梵几微信服务号登录账户，查看我的订单，进行订单的物流跟踪。
+  </p>
+</div>
+<div class="htp-block2 htp-block2Set6">
+  <p class="htp-word3">订单付款 Confirm and pay your order</p>
+  <p class="htp-word4">
+    1. 网上支付方式默认支付宝（建议绑定储蓄卡），梵几目前支持大部分常用银行卡。<br><br>
+    2. 如果由于银行卡限额等问题，可以先将款项转至余额宝中再进行支付。其它原因引起的未能支付，请您联系在线客服，或致电400 641 6399联<br>
+    系梵几的客服人员进行处理。
+  </p>
+</div>
+<div class="htp-block2 htp-block2Set4">
+  <p class="htp-word3">订单激活 Confirm your order</p>
+  <p class="htp-word4">
+    订单生成后需进行订单激活，梵几提供「人工激活」与「自助激活」两种方式可以选择。<br><br>
+    • 「人工激活」<br><br>
+    考虑到实木家具的特殊性，家具订单可致电客服400 641 6399确认订单细节，进行订单的激活，如不在工作日的时段，请等待客服来电激活订<br>
+    单。激活后则可以进入付款环节。<br><br>
+    • 「自助激活」<br><br>
+    若您已了解商品特性，无其他疑问，您可以直接自助激活，进行付款操作，无需致电客服。
+  </p>
+</div>
+</body>
+<%-include('common/footer.ejs')%>
+<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/Story.js"></script>
+<script src="js/nav.js"></script>
+<script>
+    var p = document.getElementsByClassName("htp-word1");
+    var p1 = document.getElementsByClassName("htp-word2");
+    var span = document.getElementsByClassName("hts-span1");
+    var div = document.getElementsByClassName("htp-block2");
+    for (var i = 0; i < p.length; i++) {
+        p[i].index = i;
+        p[i].onclick = function () {
+            for (var j = 0; j < p.length; j++) {
+                p[j].classList.remove("htp-word-ok");
+                p1[j].classList.remove("htp-word1-ok");
+                span[j].classList.remove("htp-span-ok");
+                div[j].classList.remove("htp-block-ok");
+
+            }
+            p[this.index].classList.add("htp-word-ok");
+            p1[this.index].classList.add("htp-word1-ok");
+            span[this.index].classList.add("htp-span-ok");
+            div[this.index].classList.add("htp-block-ok");
+        }
+    }
+</script>
+</html>

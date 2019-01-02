@@ -1,0 +1,89 @@
+.modal-title{
+    text-align: center;
+}
+.modal-dialog>.modal-content{
+    left: 100px;
+}
+.modal-content>.modal-header{
+    border-bottom: 1px solid white;
+}
+.modal-content>.modal-header>.modal-title{
+    padding-top: 10px;
+    font-weight: bold;
+}
+.modal-content>.modal-body{
+    position: relative;
+    text-align: center;
+}
+.modal-content>.modal-footer{
+    border-top:1px solid white;
+    text-align: center;
+}
+.modal-content{
+    width: 400px;
+}
+.modal-content>.modal-footer>.btn{
+    background-color: black;
+    width: 150px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+/*选择每个启用的input*/
+input[type='text'],input[type='password']{
+    width: 80%;
+    outline: none;  /*去掉input自带的样式*/
+    border: none;
+    height: 60px;
+    border-bottom: 1px solid #afafaf;
+}
+/*改变地址选择框的大小*/
+.dome-main{
+    margin-top: 10px;
+}
+.dome-main .city-picker-selector .selector-item{
+    width: 100px;
+    outline: none;
+    border-bottom: 1px solid #afafaf;
+}
+.dome-main .city-picker-selector .selector-item .selector-name{
+    font-size: 14px;
+}
+.yanzheng{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    text-align: center;
+    color: white;
+    border: none;
+    right: 50px;
+    top: 25px;
+}
+#regiterbtn{
+    width: 80%;
+}
+#loginbtn{
+    width: 80%;
+    margin-top: 15px;
+    background-color: black;
+}
+#findpwdbtn{
+    width: 80%;
+}
+.forgetpwd{
+    color:#d0aa8c;
+    cursor: pointer;
+    float: right;
+    text-decoration: underline;
+    margin-right: 40px;
+}
+.rememberpwddiv{
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+}
+.regspan{
+    color:#d0aa8c;
+    cursor: pointer;
+    text-decoration: underline;
+}

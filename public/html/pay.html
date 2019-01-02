@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pay</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+        input[type="button"],button{
+            cursor: pointer;
+        }
+        .sn{
+            width: 75%;
+            height: 200px;
+            background-color: rgb(250,250,250);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 100px;
+        }
+        .pay_for{
+            width: 75%;
+            height: 400px;
+            margin-top: 50px;
+        }
+        .pay_for>div>div{
+            float: left;
+            line-height: 35px;
+            height: 35px;
+
+        }
+        .pay_for>div{
+
+            line-height: 35px;
+            margin-bottom: 10px;
+
+        }
+        .float{
+            float: left;
+        }
+        .bank{
+            background-image: url('../images/bank-icons.png');
+            width: 125px;
+            height: 30px;
+            margin-right: 10px;
+            background-position: 0 -948px;
+        }
+        .bank1 img{
+            width: 85px;
+            height: 22px;
+            margin-top: 5px;
+            margin-left: 2px;
+        }
+        .bank1{background: none;}
+        .bank2{background-position: 0 -72px;  }
+        .bank3{background-position: 0 calc(-36px * 3);  }
+        .bank4{background-position: 0 calc(-36px * 4);  }
+        .bank5{background-position: 0 calc(-36px * 5);  }
+        .bank6{background-position: 0 calc(-36px * 6);  }
+        .bank7{background-position: 0 calc(-36px * 7);  }
+        .bank8{background-position: 0 calc(-36px * 8);  }
+        .bank9{background-position: 0 calc(-36px * 9);  }
+        .bank10{background-position: 0 calc(-36px * 10);  }
+        .bank11{background-position: 0 calc(-36px * 11);  }
+        .bank12{background-position: 0 calc(-36px * 12);  }
+        .bank13{background-position: 0 calc(-36px * 13);  }
+        .bank14{background-position: 0 calc(-36px * 14);  }
+        .bank15{background-position: 0 calc(-36px * 15);  }
+        .bank16{background-position: 0 calc(-36px * 16);  }
+        .bank17{background-position: 0 calc(-36px * 17);  }
+        .bank18{background-position: 0 calc(-36px * 18);  }
+        .bank19{background-position: 0 calc(-36px * 19);  }
+        .bank20{background-position: 0 calc(-36px * 20);  }
+        .clear{
+            clear: both;
+        }
+        .pay_go{
+            width: 150px;
+            height: 45px;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+        .pay_go_div{
+            width: 150px;
+        }
+        .clear{
+            clear: both;
+        }
+        .modal-content{
+            margin-top: 150px;
+           /* margin-left: 150px;*/
+            width: 400px;
+        }
+        .modal-dialog>.modal-content{
+            left: 0;
+        }
+        .modal-body{
+            text-align: center;
+        }
+        .modal-footer{
+            text-align: center;
+        }
+        .btn-primary{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<!--顶部文字-->
+<div class="navTop">
+    <div class="containerO">
+        <ul class="right">
+            <li><a href="">实体店</a></li>
+            <li><a href="">商业合作</a></li>
+        </ul>
+        <div class="middle">
+            <span>长生于野</span><span>安于堂</span>
+        </div>
+    </div>
+</div>
+<!--顶部导航-->
+<div class="navContent">
+    <div class="contentO">
+        <div class="left">Three</div>
+        <div class="right">
+            <a href="" class="iconfont">&#xe52a;</a>
+            <a href="" class="iconfont">&#xe507;</a>
+            <a href="personal.html" class="iconfont" id="orderbtn">&#xe60c;</a><!--订单-->
+            <!--<button data-toggle="modal" data-target="#myLogin">1111</button>-->
+            <a href="" class="iconfont" data-toggle="modal" data-target="#myLogin" >&#xe6c0;</a>
+        </div>
+        <div class="middle">
+            <ul>
+                <li>
+                    <a href="furnitureRecommend.html">家具</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">椅</a></li>
+                        <li><a href="">桌</a></li>
+                        <li><a href="">床</a></li>
+                        <li><a href="">几</a></li>
+                        <li><a href="">柜</a></li>
+                        <li><a href="">沙发</a></li>
+                        <li><a href="">一枚板</a></li>
+                        <li><a href="">其他</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="grocery.html">家居</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">餐厨</a></li>
+                        <li><a href="">家居</a></li>
+                        <li><a href="">摆件</a></li>
+                        <li><a href="">养护</a></li>
+                        <li><a href="">园艺</a></li>
+                        <li><a href="">数码</a></li>
+                        <li><a href="">文具</a></li>
+                        <li><a href="">配饰</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/art.html">艺术</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">艺术家</a></li>
+                        <li><a href="">展览</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/lanmu.html">栏目</a>
+                    <div></div>
+                    <ul>
+                        <li><a href="">梵几在家</a></li>
+                        <li><a href="">串门</a></li>
+                        <li><a href="">ARTSTAGE</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../html/NewThings.html">新事</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="sn">
+    <p style="margin-bottom: 30px">
+        单号: <span id="sn">2018110116030802</span>  总金额(¥)：<span id="sum_money">1099</span> 元
+    </p>
+    <p>
+        提示: 若由于银行卡限额等问题无法支付，可以先将款项转至余额宝中再进行支付。 <br>
+        其它原因引起的未能支付，请您联系在线客服，或致电400 641 6399联系梵几的客服人员进行处理。
+    </p>
+</div>
+<div class="pay_for">
+   <div>
+       <div><input type="radio" name="pay" checked></div>
+       <div class="bank"></div>
+   </div>
+    <div class="clear"></div>
+    <div>
+       <div><input type="radio" name="pay"></div>
+       <div class="bank bank1"><img src="../images/wxpay.png" alt=""></div>
+   </div>
+    <div class="clear"></div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank2"></div>
+    </div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank3"></div>
+    </div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank4"></div>
+    </div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank5"></div>
+    </div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank6"></div>
+    </div>
+    <div class="clear"></div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank7"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank8"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank9"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank10"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank11"></div>
+    </div> <div class="clear"></div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank12"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank13"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank14"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank15"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank16"></div>
+    </div> <div class="clear"></div>
+    <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank17"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank18"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank19"></div>
+    </div> <div>
+        <div><input type="radio" name="pay"></div>
+        <div class="bank bank20"></div>
+    </div>
+</div>
+<div class="pay_go_div"><button class="pay_go" data-toggle="modal" data-target="#pay">去支付</button></div>
+<div class="clear"></div>
+<!--尾部-->
+<footer>
+    <nav>
+        <ul>
+            <li>
+                <span>关于我们</span>
+                <ul>
+                    <li><a href="">梵几STORY</a></li>
+                    <li><a href="">梵几实体店</a></li>
+                    <li><a href="">媒体报道</a></li>
+                    <li><a href="">招聘信息</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>购物指南</span>
+                <ul>
+                    <li><a href="">购物流程</a></li>
+                    <li><a href="">会员制度</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>关于配送</span>
+                <ul>
+                    <li><a href="">家具配送</a></li>
+                    <li><a href="">家居配送</a></li>
+                    <li><a href="">一枚板配送</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>售后服务</span>
+                <ul>
+                    <li><a href="">家具售后</a></li>
+                    <li><a href="">家居售后</a></li>
+                </ul>
+            </li>
+            <li>
+                <span>商业合作</span>
+                <ul>
+                    <li><a href="">项目批量采购</a></li>
+                    <li><a href="">设计公司合作</a></li>
+                    <li><a href="">家居品牌合作</a></li>
+                    <li><a href="">市场&媒体合作</a></li>
+                    <li><a href="">艺术品合作</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="footer">
+        <div class="footer_left">
+            梵几独立家居品牌 © 2017 Fnji Interior design Co. Ltd. Beijing, China 京ICP备13004049号-3
+        </div>
+        <div class="footer_right">
+            <div>
+                <span>微信</span>
+                <span>新浪</span>
+            </div>
+            <div>
+                客服邮箱 service@fnji.com / TEL 400-641-6399
+            </div>
+        </div>
+    </div>
+</footer>
+<!--右侧悬浮按钮-->
+<div class="right_button">
+    <a href="" class="iconfont top">&#xe765;</a>
+    <a href="" class="iconfont contact">&#xe610;</a>
+</div>
+<!--输入账号和秘密-->
+<!-- 修改密码模态框 -->
+<div class="modal fade" id="pay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel1">支付确认</h4>
+            </div>
+            <div class="modal-body">
+                <input type="password" placeholder="账号">
+                <input type="password" placeholder="密码">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" onclick="go_pay()">确认支付</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script src="../js/arr.js"></script>
+<script src="../js/nav.js"></script>
+<script>
+    //获取url传的值
+    {
+        var id,money,url=location.search,
+            Request = new Object();
+        if(url.indexOf("?")!=-1){
+            var str = url.substr(1);　//去掉?号
+            strs = str.split("&");
+            for(var i=0;i<strs.length;i++) {
+                Request[strs[i ].split("=")[0]]=unescape(strs[ i].split("=")[1]);
+            }
+        }
+        id=Request["id"];
+        money=Request["money"];
+    }
+    document.getElementById("sn").innerHTML=id;
+    document.getElementById("sum_money").innerHTML=money;
+    var bank=document.getElementsByClassName("bank");
+    var randio=document.getElementsByName("pay");
+   // console.log(randio.length)
+    //点击div选中相应的单选按钮
+    for (var i=0;i<bank.length;i++){
+        bank[i].index=i;
+        bank[i].onclick=function () {
+//            alert(this.index)
+                 randio[this.index].checked=true;
+            //console.log( this.index)
+        }
+    }
+    function go_pay() {
+        location.href="pay_err.html";
+    }
+</script>
+</body>
+</html>

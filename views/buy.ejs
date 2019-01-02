@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>buy</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/city-picker.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/personal.css">
+    <style>
+        *{margin: 0 auto;
+        padding: 0}
+        /*购物车样式开始*/
+        .shoping{
+            width: 70%;
+            /*background-color: rgba(255, 0, 0, 0.13);*/
+            height: calc(400px - 50px);
+            padding-top: 70px;
+            position: relative;
+        }
+        .shoping>.divstr{
+            position: relative;
+        }
+        .shoping>div.divstr>span{
+            position: absolute;
+        }
+        .shoping .step{
+            border: 1px solid #000000;
+            position: absolute;
+            top: -27px;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .shoping .stepok{
+            background-color: #000000!important;
+        }
+        .shoping .step2{
+            left: 50%;
+        }
+        /*.shoping .step3{*/
+             /*left: 66.6%;*/
+         /*}*/
+        .shoping .step4{
+              left: 99%;
+          }
+        .shoping .step:after{
+            content: "";
+            position: absolute;
+            height: 30px;
+            top: -20px;
+        }
+        .shoping .step1:after{
+            content: "加入购物车";
+            width: 100px;
+            left: -30px;
+        }
+        .shoping .step2:after{
+            content: "生成订单";
+            width: 100px;
+            left: calc(50% - 30px);
+        }
+        /*.shoping .step3:after{*/
+            /*maincontent: "激活订单(仅限家具)";*/
+            /*width: 150px;*/
+            /*left: calc(66.6% - 60px);*/
+        /*}*/
+        .shoping .step4:after{
+            content: "付款";
+            position: absolute;
+            width: 150px;
+            left: calc(99% - 20px);
+        }
+        .shoping .goods p,.shoping .address p{
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+        }
+        .shoping .money{
+            height: 60px;
+            background-color: #e0e0e0;
+            margin-top: 10px;
+        }
+        .new_address{
+            height: auto;
+            background-color: #e0e0e0;
+            margin-top: 10px;
+        }
+        .shoping  .money>div{
+            float: left;
+            line-height: 60px;
+        }
+        .shoping  .money>div.div1,.money>div.div3,.money>div.div4{
+            margin-left: 20px;
+        }.money>div.div2{
+             margin-left: 130px;
+         }
+        .shoping .money>div.div4{
+            cursor: pointer;
+            width: 132px;
+            text-align: center;
+            background-color: #000000;
+            color: white;
+            float: right;
+        }
+        .new_address span{
+            color: rgba(255, 165, 0, 0.7);
+            line-height: 60px;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+        .goods_info{
+            width:100% ;
+            height: 170px;
+            position: relative;
+            border-top: 1px solid  gainsboro;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .goods_info>div>img{
+            width: 150px;
+            height: 150px;
+
+        }
+        .goods_info>div{
+            float: left;
+            text-align: center;
+            line-height: 150px;
+            height: 150px;
+        }
+        .close{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 20px;
+        }
+        .goods_info>div:nth-child(2){
+            width: 200px;
+        }.goods_info>div:nth-child(3){
+             width: 100px;
+         }.goods_info>div:nth-child(4){
+              width: 220px;
+          }.goods_info>div:nth-child(5){
+               width: 150px;
+           }
+        .goods_detai1t_span{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: #ffffff;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+        #add_num{
+            margin-right: 20px;
+        }
+        .goods_img img{
+            width: 100%;
+            height: 100%;
+        }
+        #num{
+            width: 30px;
+            height: 30px;
+            border: none;
+        }
+        #address_name input[type="radio"]{
+            margin-left: 30px;
+        }
+        #address_name span{
+            margin-right: 20px;
+        }
+        #address_name{
+            height: auto;
+        }
+        span.adserr{
+            margin-left: 5px;
+        }
+        #shoping_id{
+            text-decoration: underline;
+            margin-left: 10px;
+        }
+        /*购物车样式结束*/
+        input[type="button"],button{
+            cursor: pointer;
+        }
+        .clear{
+            clear: both;
+        }
+        .goods_info>div>div{
+            height: 25px;
+        }
+        .default_address button{
+            margin-left: 20px;
+            font-size: 12px;
+            height: 20px;
+        }
+        .is_default{
+            display: none;
+        }
+        .addressId{
+            display: none;
+        }
+        .update{
+            border: none;
+            padding: 0 10px;
+            border-radius: 4px;
+        }
+        .delete{
+            border: none;
+            padding: 0 10px;
+            border-radius: 4px;
+        }
+        .modal-dialog{
+            margin-left: 300px;
+        }
+    </style>
+
+</head>
+<body>
+<!--引入导航-->
+<%-include('common/nav.ejs')%>
+<div class="shoping">
+    <hr>
+    <div class="divstr">
+        <span class="step stepok step1"></span>
+        <span class="step step2 stepok" ></span>
+        <span class="step step4"></span>
+    </div>
+    <div class="address" id="shoping_address">
+        <p>填写收货地址</p>
+        <%if(addressInfo.length>0){%>
+            <%for(var i=0;i<addressInfo.length;i++){%>
+                <div class="default_address">
+                    <form>
+                        <!-- <input type="checkbox" name="address" checked>-->
+                        <input type="radio" name="address">
+                        <span class="is_default"><%=addressInfo[i].is_default%></span>
+                        <span class="addressId"><%=addressInfo[i].id%></span>
+                        <span class="addressName"><%=addressInfo[i].name%></span>
+                        <span class="tel"><%=addressInfo[i].phone%></span>
+                        <span class="province"><%=addressInfo[i].province%></span>
+                        <span class="city"><%=addressInfo[i].city%></span>
+                        <span class="district"><%=addressInfo[i].district%></span>
+                        <span class="address"><%=addressInfo[i].address%></span>
+                        <button class="update" onclick="editthisAddr(<%=addressInfo[i].id%>)" type="button">修改</button><button class="delete" onclick="deleteAddress(this)" type="button">删除</button>
+                    </form>
+                </div>
+            <%}%>
+        <%}%>
+
+        <div class="new_address">
+            <div id="address_name"></div>
+         <span onclick="openMotaiaddaddr()">+新添地址</span>
+
+        </div>
+    </div>
+    <div class="goods">
+        <p>商品信息</p>
+        <%for(var i=0;i<orderDetails.length;i++){%>
+        <div class="goods_info">
+            <div><img src="/<%=orderDetails[i].imgaddress%>" class="goods_info_img"></div>
+            <div><span class="goods_name"><%=orderDetails[i].proName%></span></div>
+            <div>
+                <%if (orderDetails[i].w_wood!=null){%>
+                <div class="goods_color"><%=orderDetails[i].w_wood%></div>
+                <%}%>
+                <%if (orderDetails[i].ci_color!=null){%>
+                <div class="goods_color"><%=orderDetails[i].ci_color%></div>
+                <%}%>
+                <%if (orderDetails[i].fv_name!=null){%>
+                <div class="goods_color"><%=orderDetails[i].fv_name%></div>
+                <%}%>
+
+            </div>
+            <div><span id="num" class="goods_detai1t_span goods_detai1t_span_num"><%=orderDetails[i].od_num%></span></div>
+            <div>总计：￥<span class="shoping_money"><%=orderDetails[i].od_subtotal%></span>.00</div>
+            <div><span class="close"></span></div>
+        </div>
+        <%}%>
+    </div>
+    <div class="money">
+        <div class="div1">订单号：<span id="shoping_id"><%=orderNum%></span></div>
+        <div class="div2"><span>总计：<%=orderTotal[0].odnumTotal%>件商品,</span><span>共：￥<%=orderTotal[0].odsubTotal%>.00</span></div>
+        <div class="div3"></div>
+        <div class="div4">去付款</div>
+        <br><br>
+        <br><br>
+    </div>
+</div>
+<div class="clear"></div>
+<!--引入尾部-->
+<%-include('common/footer.ejs')%>
+<!-- 添加地址 -->
+<form id="myaddrform">
+    <div class="modal fade" id="addAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel3">添加地址</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" placeholder="姓名(必填)" name="names"  class="required" id="names">
+                    <input type="text" placeholder="联系电话(必填)" name="phone" class="required phone">
+                    <input type="text" placeholder="备份电话(非必填)" name="phone1" class="required phone">
+                    <select class="form-control" id="cmbProvince" name="cmbProvince" ></select>
+                    <select class="form-control" id="cmbCity" name="cmbCity" ></select>
+                    <select class="form-control" id="cmbArea" name="cmbArea" ></select>
+                    <input type="text" placeholder="详细地址(必填)" name="addresss">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="addDddress()">保存地址</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- 修改地址 -->
+<form id="editaddr">
+    <div class="modal fade" id="editAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel9">修改地址</h4>
+                </div>
+                <div class="modal-body">
+                    姓名：<input type="text" placeholder="姓名" name="rename"><br>
+                    电话：<input type="text" placeholder="联系电话" name="rephone"><br>
+                    备用电话：<input type="text" placeholder="备份电话" name="rephone1">
+                    <!--<input type="email" placeholder="邮箱">-->
+                    <select class="form-control" id="cmbProvince1" name="cmbProvince1" ></select>
+                    <select class="form-control" id="cmbCity1" name="cmbCity1" ></select>
+                    <select class="form-control" id="cmbArea1" name="cmbArea1" ></select>
+                    <input type="text" placeholder="详细地址" name="readdress">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="editaddress()">保存地址</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="bootstrap/js/jquery-1.11.3.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/addressInit.js"></script>
+<script src="js/citydata.min.js"></script>
+<script src="js/cityPicker-2.0.0.js"></script>
+<!--<script src="js/personal.js"></script>-->
+<script>
+    var currentOrderId;
+    var currentAddressId;
+    var currentorderNum;
+    var orderTotalJ = JSON.parse('<%-orderTotalJ%>');
+    currentOrderId=orderTotalJ[0].orderId;
+    currentorderNum="<%=orderNum%>";
+    //三级联动地址初始化
+    addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+
+    for (var i=0;i<$(".default_address input").length;i++){
+        if ($(".default_address input").eq(i).next().html()=="1"){
+            $(".default_address input").eq(i).attr("checked","checked");
+            currentAddressId=parseInt($(".default_address input").eq(i).siblings().eq(1).html());
+        }
+    }
+
+    $(".default_address input").on("click",function () {
+
+        currentAddressId=parseInt($(this).siblings().eq(1).html());
+        var brother = $(this).parent().parent().siblings(".default_address")
+        for (var i=0;i<brother.length;i++){
+            brother.eq(i).children().children().eq(0).attr("checked",null);
+        }
+
+    })
+
+    $(".money .div4").on("click",function () {
+            window.location.href="/goBuy.do?currentOrderId="+currentOrderId+"&currentAddressId="+currentAddressId+"&currentorderNum="+currentorderNum;
+    });
+
+    function openMotai6(){
+        $("#deleteAddress").modal({backdrop: 'static', keyboard: false});  //手动开启
+    }
+    //调用添加模态框
+    function openMotaiaddaddr(){
+        $("#addAddress").modal({backdrop: 'static', keyboard: false});  //手动开启
+    }
+
+    function addDddress(){
+
+        $.ajax({
+            type: "post",//提交类型
+            url: "/addDddress.do",//提交地址
+            data: {//传参
+                userId: userId,
+                //表单序列化，获得表单提交的全部数据
+                alladdr:$("#myaddrform").serialize()
+            },
+            success: function (data) {
+                getAllDddress();
+            },
+            err: function (data) {
+                console.log(data);
+            }
+        });
+        $("#addAddress").modal('hide');
+    }
+
+    //获得用户全部地址
+    function getAllDddress(){
+        /*$.each:通过$对象调用方法*/
+        $.ajax({
+            type: "get",//提交类型
+            url: "/getAllDddress.do",//提交地址
+            data: {//传参
+                userId: userId
+            },
+            success: function (data) {
+                $(".default_address").remove();
+                for(var i=0;i<data.length;i++){
+                    $(".new_address").before("<div class='default_address'>"+
+                        "<form>"+
+                        "<input type='radio' name='address'> "+
+                        "<span class='is_default'>"+data[i].is_default+"</span> "+
+                        "<span class='addressId'>"+data[i].id+"</span> "+
+                        "<span class='addressName'>"+data[i].name+"</span> "+
+                        "<span class='tel'>"+data[i].phone+"</span> "+
+                        "<span class='province'>"+data[i].province+"</span> "+
+                        "<span class='city'>"+data[i].city+"</span> "+
+                        "<span class='district'>"+data[i].district+"</span> "+
+                        "<span class='address'>"+data[i].address+"</span> "+
+                        "<button class='update' onclick='editthisAddr("+data[i].id+")' type='button'>修改</button><button class='delete' onclick='deleteAddress(this)' type='button'>删除</button>"+
+                        "</form>"+
+                        "</div>")
+                }
+                for (var i=0;i<$(".default_address input").length;i++){
+                    if ($(".default_address input").eq(i).next().html()=="1"){
+                        $(".default_address input").eq(i).attr("checked","checked");
+                        currentAddressId=parseInt($(".default_address input").eq(i).siblings().eq(1).html());
+                    }
+                }
+            },
+            err: function (data) {
+                console.log(data);
+            }
+        })
+    }
+
+    var addrid1;
+    //获得单个地址信息
+    function editthisAddr(addrid) {
+        addrid1=addrid;
+        $.ajax({
+            type: "post",//提交类型
+            url: "/editthisAddr.do",//提交地址
+            data: {//传参
+                addrid:addrid1
+            },
+            success: function (data) {
+                console.log(data);
+                openMotaieditaddr();
+                /*console.log("data[0]:"+data[0].city);*/
+                $("input[name='rename']").val(data[0].name);
+                $("input[name='rephone']").val(data[0].phone);
+                $("input[name='rephone1']").val(data[0].phone1);
+                $("input[name='readdress']").val(data[0].address);
+                $("#cmbProvince1").val(data[0].province);
+                $("#cmbCity1").val(data[0].city);
+                $("#cmbArea1").val(data[0].district);
+
+                // $("#cmbProvince1").val(data[0].province);
+                //设置地址的默认选中
+                var defaultProvince=data[0].province;
+                /*console.log("defaultProvince:"+defaultProvince);*/
+                var defaultCity=data[0].city;
+                var defaultArea=data[0].district;
+                addressInit('cmbProvince1', 'cmbCity1', 'cmbArea1',defaultProvince,defaultCity,defaultArea);
+
+            },
+            err: function (data) {
+                console.log(data);
+            }
+        });
+
+    }
+    //调用修改模态框
+    function openMotaieditaddr(){
+        /*console.log("openMotaieditaddr()");*/
+        $("#editAddress").modal({backdrop: 'static', keyboard: false});  //手动开启
+    }
+    //修改地址
+    function editaddress(){
+        $.ajax({
+            type: "post",//提交类型
+            url: "/editadrress.do",//提交地址
+            data: {//传参
+                userId: userId,
+                addrid1:addrid1,
+                // //表单序列化，获得表单提交的全部数据
+                // alladdr:$("#editaddr").serialize()
+                rename:$("input[name='rename']").val(),
+                rephone:$("input[name='rephone']").val(),
+                rephone1:$("input[name='rephone1']").val(),
+                cmbProvince1:$("#cmbProvince1").val(),
+                cmbCity1:$("#cmbCity1").val(),
+                cmbArea1:$("#cmbArea1").val(),
+                readdress:$("input[name='readdress']").val(),
+            },
+            success: function (data) {
+
+                for(var i=0;i<$(".default_address").length;i++){
+                    if ($(".default_address").eq(i).children().children().eq(2).html()==addrid1){
+                        $(".default_address").eq(i).children().children().eq(3).html(data[0].name);
+                        $(".default_address").eq(i).children().children().eq(4).html(data[0].phone);
+                        $(".default_address").eq(i).children().children().eq(5).html(data[0].province);
+                        $(".default_address").eq(i).children().children().eq(6).html(data[0].city);
+                        $(".default_address").eq(i).children().children().eq(7).html(data[0].district);
+                        $(".default_address").eq(i).children().children().eq(8).html(data[0].address);
+                    }
+                }
+            },
+            err: function (data) {
+                console.log(data);
+            }
+        });
+        $("#editAddress").modal('hide');
+    }
+    /*删除地址*/
+    function deleteAddress(index) {
+        if (confirm("你确定要删除吗")){
+            $(index).parent().parent().remove();
+            $.ajax({
+                type:"get",
+                url:"/deleteAddress.do",
+                data:{
+                    addressId:$(index).parent().children().eq(2).html()
+                }
+            })
+        }
+    }
+</script>
+</body>
+</html>

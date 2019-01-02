@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .ad-section1 {
+      width: 1100px;
+      height: 1500px;
+      margin: 0 auto;
+      overflow: hidden;
+      /*outline: solid 1px yellow;*/
+    }
+
+    .ad-block1 {
+      text-align: center;
+      font-family: FZSongKeBenXiuKaiS-R-GB, PingFangSC-Light, Helvetica Neue, Helvetica, STHeiTi, sans-serif;
+      color: #8a8a8a;
+      margin-top: 50px;
+      margin-bottom: 40px;
+      /*outline: solid 1px tomato;*/
+    }
+
+    .ad-word1 {
+      font-family: 楷体;
+      line-height: 30px;
+      font-size: 16px;
+    }
+
+    .ad-word2 {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    .ad-span {
+      width: 30px;
+      display: inline-block;
+      border-bottom: solid 1px #8a8a8a;
+    }
+    .mr-block1{
+      width: 1000px;
+      height: 960px;
+      margin: 0 auto;
+      /*outline: solid 1px yellow;*/
+    }
+    .mr-left{
+      float: left;
+    }
+    .mr-img1{
+      width: 290px;
+      margin: 20px;
+      border: solid 1px #e1e1e1;
+    }
+    .mr-img2{
+      width: 291px;
+      margin: 20px;
+      border: solid 1px #e1e1e1;
+    }
+    .mr-word1{
+      margin-left: 20px;
+      margin-top: -10px;
+      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 20px;
+      color: #8a8a8a;
+    }
+  </style>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/story.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<%-include('common/nav.ejs')%>
+<section class="ad-section1">
+  <div class="ad-block1">
+    <p class="ad-word1">媒体报道</p>
+    <p class="ad-word2">Media Reports</p>
+    <span class="ad-span"></span>
+  </div>
+  <div class="mr-block1">
+    <div class="mr-left">
+      <img src="../images/s20480_1524644368_8671.jpg" class="mr-img1"/>
+      <p class="mr-word1">Trends: 寻觅理想之家<br>2018-05-01</p>
+      <img src="../images/s20480_1524712211_9499.jpg" class="mr-img2"/>
+      <p class="mr-word1">文创品牌的秘密：这个时代的中国家具<br>2017-05-01</p>
+      <img src="../images/s20480_1524643816_7378.jpg" class="mr-img2"/>
+      <p class="mr-word1">VOGUE: LIFESTYLE SHOP「设计」生活<br>2016-06-01</p>
+    </div>
+    <div class="mr-left">
+      <img src="../images/s20480_1524714575_9655.jpg" class="mr-img2"/>
+      <p class="mr-word1">设计： 自然设计，有机形态<br>2017-07-14</p>
+      <img src="../images/s20480_1524645316_7804.jpg" class="mr-img2"/>
+      <p class="mr-word1">360 design： 对话 梵几<br>2017-02-03</p>
+    </div>
+    <div class="mr-left">
+      <img src="../images/s20480_1524711409_3295.jpg" class="mr-img2"/>
+      <p class="mr-word1">LOHAS：舒适的所在<br>2017-05-16</p>
+      <img src="../images/s20480_1524722337_4113.jpg" class="mr-img2"/>
+      <p class="mr-word1">艺术客：生于野，安于室<br>2017-04-15</p>
+    </div>
+  </div>
+</section>
+<%-include('common/footer.ejs')%>
+<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="js/Story.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

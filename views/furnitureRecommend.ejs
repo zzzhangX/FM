@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Document</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/furnitureRecommend.css">
+
+</head>
+<body>
+
+<!--引入导航-->
+<%-include('common/nav.ejs')%>
+<!--banner-->
+    <div class="banner">
+        <!-- 显示图片-->
+        <div class="contentO">
+            <div id="imgBanner"></div>
+        </div>
+        <!--小圆点 -->
+        <div id="divCircle"></div>
+    </div>
+<!--内容-->
+    <div class="mainContent">
+        <div class="mainContentNav">
+            <ul>
+                <li>
+                    <a href="">推荐</a>
+                </li>
+                <li>
+                    <a href="">全部分类</a>
+                    <span class="iconfont">&#xe64d;</span>
+                    <ul>
+                        <li><a href="">椅</a></li>
+                        <li><a href="">桌</a></li>
+                        <li><a href="">床</a></li>
+                        <li><a href="">几</a></li>
+                        <li><a href="">柜</a></li>
+                        <li><a href="">沙发</a></li>
+                        <li><a href="">一枚板</a></li>
+                        <li><a href="">其他</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">产品线</a>
+                    <span class="iconfont">&#xe64d;</span>
+                    <ul>
+                        <li><a href="">本线</a></li>
+                        <li><a href="">FF线</a></li>
+                        <li><a href="">一枚板</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="mainContentCon">
+           <table>
+               <tbody>
+                    <tr>
+                        <td colspan="2" rowspan="2" class="recommendOne">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                        <td colspan="2" class="recommendTwo">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="recommendThree">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                        <td class="recommendThree">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="recommendThree">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                        <td class="recommendThree">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                        <td colspan="2" class="recommendTwo">
+                            <img src="../images/recommend/7.png" alt="">
+                            <div>
+                                <span class="name">合围地台床 1.8米</span><br>
+                                <span class="price">¥19800.00</span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="recommendTwo">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                        <td colspan="2" class="recommendTwo">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="recommendTwo">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                        <td colspan="2" class="recommendTwo">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="recommendThree">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                        <td colspan="2" class="recommendTwo">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                        <td class="recommendThree">
+                            <img src="" alt="">
+                            <div>
+                                <span class="name"></span><br>
+                                <span class="price"></span>
+                            </div>
+                            <a href=""></a>
+                        </td>
+                    </tr>
+               </tbody>
+           </table>
+        </div>
+    </div>
+<!--引入尾部-->
+<%-include('common/footer.ejs')%>
+    <script src="bootstrap/js/jquery-1.11.3.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/banner.js"></script>
+    <script src="js/modal.js"></script>
+    <script>
+
+
+
+        var FurnitureRecommend = JSON.parse('<%-FurnitureRecommend%>');
+        /*console.log(FurnitureRecommend);*/
+        for (var i=0;i<FurnitureRecommend.length;i++){
+            $("td img").eq(i)[0].src=FurnitureRecommend[i].image;
+            $("td .name").eq(i).html(FurnitureRecommend[i].proName);
+            $("td .price").eq(i).html("￥"+FurnitureRecommend[i].proPrice+".00");
+            $("td a").eq(i)[0].href="/details.do?proId="+FurnitureRecommend[i].proId+"&typeOne=1";
+        }
+        /*滚动条滚动事件*/
+        $(window).scroll(function () {
+            /*内容板块变化*/
+            if ($(window).scrollTop()>=100){
+                $(".mainContentCon tr:nth-child(1) td:nth-child(1),.mainContentCon tr:nth-child(1) td:nth-child(2)").css({
+                    "transform":"translateY(-55px)",
+                    "transition":"all .5s linear .1s"
+                });
+            }
+            else {
+                $(".mainContentCon tr:nth-child(1) td:nth-child(1)").css({
+                    "transform":"translateY(0)"
+                });
+                $(".mainContentCon tr:nth-child(1) td:nth-child(2)").css({
+                    "transform":"translateY(0)",
+                    "transition":"all .5s linear .5s"
+                });
+            }
+
+            if ($(window).scrollTop()>=300){
+                $(".mainContentCon tr:nth-child(2)").css({
+                    "transform":"translateY(-55px)",
+                    "transition":"all .5s linear .3s"
+                });
+            }
+            else {
+                $(".mainContentCon tr:nth-child(2)").css({
+                    "transform":"translateY(0px)"
+                });
+            }
+
+            if($(window).scrollTop()>=630){
+                $(".mainContentCon tr:nth-child(3)").css({
+                    "transform":"translateY(-55px)",
+                    "transition":"all .5s linear .1s"
+                });
+            }
+            else {
+                $(".mainContentCon tr:nth-child(3)").css({
+                    "transform":"translateY(0)"
+                });
+            }
+
+            if($(window).scrollTop()>=930){
+                $(".mainContentCon tr:nth-child(4)").css({
+                    "transform":"translateY(-55px)",
+                    "transition":"all .5s linear .1s"
+                });
+            }
+            else {
+                $(".mainContentCon tr:nth-child(4)").css({
+                    "transform":"translateY(0)"
+                });
+            }
+
+            if($(window).scrollTop()>=1200){
+                $(".mainContentCon tr:nth-child(5)").css({
+                    "transform":"translateY(-55px)",
+                    "transition":"all .5s linear .1s"
+                });
+            }
+            else {
+                $(".mainContentCon tr:nth-child(5)").css({
+                    "transform":"translateY(0)"
+                });
+            }
+
+            if($(window).scrollTop()>=1500){
+                $(".mainContentCon tr:nth-child(6)").css({
+                    "transform":"translateY(-55px)",
+                    "transition":"all .5s linear .1s"
+                });
+            }
+            else {
+                $(".mainContentCon tr:nth-child(6)").css({
+                    "transform":"translateY(0)"
+                });
+            }
+
+        });
+
+    </script>
+</body>
+</html>

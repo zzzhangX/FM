@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/details.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+    <!--引入导航-->
+    <%-include('common/nav.ejs')%>
+    <!--名称、价格、规格-->
+    <div class="contentDetails">
+        <div class="left"></div>
+        <div class="right">
+            <div class="top">
+                <div class="name"><%=commonInfo[0].proName%></div>
+                <div class="price"></div>
+                <%if(queryWoodNum.length>0){%>
+                <div class="Material">
+                     <div class="Material-name">材质 <span>Material</span></div>
+                     <div class="Material-list">
+                         <%for (var i=0;i<queryWoodNum.length;i++){%>
+                         <span onclick="innerQuery(this)" class="MaterialDetails"><%=queryWoodNum[i].w_wood%></span>
+                         <%}%>
+                     </div>
+                </div>
+                <%}%>
+                <%if(queryColorNum.length>0){%>
+                <div class="color">
+                    <div class="color-name">颜色<span>Color</span></div>
+                    <div class="color-list">
+                        <%for (var i=0;i<queryColorNum.length;i++){%>
+                        <span onclick="innerQuery(this)" class="colorDetails"><%=queryColorNum[i].ci_color%></span>
+                        <%}%>
+                    </div>
+                </div>
+                <%}%>
+                <%if(queryFormatNum.length>0){%>
+                <div class="format">
+                    <div class="format-name">规格 <span>format</span></div>
+                    <div class="format-list">
+                        <%for (var i=0;i<queryFormatNum.length;i++){%>
+                        <span onclick="innerQuery(this)" class="formatDetails"><%=queryFormatNum[i].fv_name%></span>
+                        <%}%>
+                    </div>
+                </div>
+                <%}%>
+                <div class="count">
+                    <div class="count-name">选购数量 <span>Count</span></div>
+                    <div class="count-list"><span class="sub">-</span><input type="text" class="amount"value="1"><span class="add">+</span> 件 / piece</div>
+                </div>
+                <div class="Delivery">
+                    <div class="Delivery-name">发货周期 <span>Delivery</span></div>
+                    <div class="Delivery-list"></div>
+                </div>
+                <div class="quantity">
+                    <div class="quantity-name">库存量 <span>Quantity</span></div>
+                    <div class="quantity-list"></div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="operate">
+                    <a class="addCart" onclick="addShopingCart()">加入购物车</a>
+                    <a class="buy" onclick="shopingCart()">立即购买</a>
+                    <a class="saleDown">售罄</a>
+                </div>
+                <div class="other">
+                    点击查看 <a href="">配送详情</a> 或 <a href="/vip.do">会员制度</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--设计-->
+    <div class="contentDesign">
+        <div class="header">
+            <img src="../images/1_11.png" alt="">
+            <div><span></span>梵几设计<br><span>DESIGNED BY FNJI</span></div>
+            <div>/</div>
+            <div>
+                <%=detailsWords[0]%>
+            </div>
+        </div>
+        <div class="content">
+            <div class="left">
+                <div class="bg"></div>
+                <div class="img"></div>
+            </div>
+            <div class="right">
+                <div>
+                    <img src="../images/1_14.png" alt="">
+                    <div class="Parameter-name"><span>产品参数</span> Product Parameter</div>
+                    <div class="Parameter-list">
+                        <span>产品尺寸(cm)：W/L96 P/D96 H74（不含脚垫）</span><br>
+                        <span class="weight"></span><br>
+                        <span>包装体积(m³)：0.69</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="../images/1_15.png" alt="">
+                    <div class="Material-name"><span>材质</span> Material</div>
+                    <div class="Material-list">
+                        <span class="mainMaterial"></span><br>
+                        <span>桌面材质：<%=commonInfo[0].cloth%></span>
+                    </div>
+                </div>
+                <div>
+                <img src="../images/1_16.png" alt="">
+                <div class="Place-name"><span>产地</span> Production Place</div>
+                <div class="Place-list">
+                    <span><%=commonInfo[0].place%></span>
+                </div>
+            </div>
+                <div>
+                    <img src="../images/1_17.png" alt="">
+                    <div class="Method-name"><span>安装方式</span> Production Place</div>
+                    <div class="Method-list">
+                        <span><%=commonInfo[0].proinstall%></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--特点-->
+    <div class="contentFeature">
+        <div>
+            <img src="../images/1_18.png" alt="">
+        </div>
+        <div>
+            <img src="../images/1_19.jpg" alt="">
+        </div>
+        <div class="contentFeatureCon">
+           <div class="words FL">
+           <div>
+               <span class="num">1/3</span><br>
+               <span class="name"><%=detailsWords[1]%></span><br>
+           </div>
+           <div>-</div>
+           <div><%=detailsWords[2]%></div>
+       </div>
+           <div class="img FR one">
+           </div>
+       </div>
+        <div class="contentFeatureCon">
+            <div class="words FR">
+                <div>
+                    <span class="num">2/3</span><br>
+                    <span class="name"><%=detailsWords[3]%></span><br>
+                </div>
+                <div>-</div>
+                <div><%=detailsWords[4]%></div>
+            </div>
+            <div class="img FL two">
+            </div>
+        </div>
+        <div class="contentFeatureCon">
+            <div class="words FL">
+                <div>
+                    <span class="num">3/3</span><br>
+                    <span class="name"><%=detailsWords[5]%></span><br>
+                </div>
+                <div>-</div>
+                <div><%=detailsWords[6]%>
+                </div>
+            </div>
+            <div class="img FR three">
+            </div>
+        </div>
+        <div class="introduce">
+            <img src="../images/1_26.jpg" alt="" class="one">
+            <img src="../images/1_27.jpg" alt="" class="two">
+            <img src="../images/1_28.jpg" alt="" class="three">
+            <img src="../images/1_29.jpg" alt="" class="four">
+            <div class="words">
+                <div class="words-name">材料解析 <br><span>Material Description</span></div>
+                <div class="words-list">* <br><span>光标移至材质区域可以查看材料解析</span></div>
+            </div>
+        </div>
+    </div>
+    <!--灵感搭配-->
+    <div class="inspiration">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five"></div>
+    </div>
+    <!--保养提示 -->
+    <div class="USING ">
+        <div class="left">
+            <div class="USING-name">保养贴士 <br>
+                - <br>
+            <span>USING TIPS</span>
+            </div>
+            <div class="USING-list">
+                1. 请勿将家具放置户外使用，尽量保持室内的干湿度稳定在35%-65%之间，避免长时间阳光暴<br>晒
+                <br>2. 搬运或摆放家具时请勿大力拖拽；
+                <br>3. 避免尖锐物体划伤家具表面；
+                <br>4.注意避免水渍、油污长期浸泡，餐后请及时用拧干的抹布清理桌面，不建议使用强力去污产品清洁桌面；
+                <br>5. 此款家具软体部分不可拆洗，如被污损，请尽快用拧干的抹布或软体专用清洁剂清洁。也可以请专业的软体清洁公司上门养护。
+            </div>
+        </div>
+
+        <div class="right">
+            <img src="../images/1_35.jpg" alt="">
+        </div>
+    </div>
+    <!--产品详情-->
+    <div class="productKnowledge">
+        <div class="header"></div>
+        <div class="content">
+            <div class="one common">
+                <div class="Environmental">
+                    <div class="left">
+                        <img src="../images/1_37.png" alt="">
+                        <div>
+                            <span class="CN">环保选材</span><br>
+                            <span class="EN">Environmental protection</span>
+                        </div>
+                    </div>
+                    <div class="right">+</div>
+                </div>
+                <div class="wood">
+                    <div class="left">
+                        <img src="../images/1_38.png" alt="">
+                        <div>
+                            <span class="CN">环保选材</span><br>
+                            <span class="EN">Environmental protection</span>
+                        </div>
+                    </div>
+                    <div class="right">+</div>
+                </div>
+            </div>
+            <div class="two common">
+                <div class="Craftsman">
+                    <div class="left">
+                        <img src="../images/1_39.png" alt="">
+                        <div>
+                            <span class="CN">环保选材</span><br>
+                            <span class="EN">Environmental protection</span>
+                        </div>
+                    </div>
+                    <div class="right">+</div>
+                </div>
+                <div class="Coating">
+                    <div class="left">
+                        <img src="../images/1_40.png" alt="">
+                        <div>
+                            <span class="CN">环保选材</span><br>
+                            <span class="EN">Environmental protection</span>
+                        </div>
+                    </div>
+                    <div class="right">+</div>
+                </div>
+            </div>
+            <div class="three common">
+                <div class="Package">
+                    <div class="left">
+                        <img src="../images/1_41.png" alt="">
+                        <div>
+                            <span class="CN">环保选材</span><br>
+                            <span class="EN">Environmental protection</span>
+                        </div>
+                    </div>
+                    <div class="right">+</div>
+                </div>
+                <div class="Delivery">
+                    <div class="left">
+                        <img src="../images/1_42.png" alt="">
+                        <div>
+                            <span class="CN">环保选材</span><br>
+                            <span class="EN">Environmental protection</span>
+                        </div>
+                    </div>
+                    <div class="right">+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--更多产品-->
+    <div class="moreProducts">
+        <div class="header">
+            更多产品<br>
+            <span>FIND OUT FOR MORE</span>
+        </div>
+        <div class="content">
+            <div class="one">
+                <a href="detailsTwo.html"></a>
+                <div class="bottom">
+                    <span class="name">四柱餐桌1.6米版</span><br>
+                    <span class="price">¥8600.00</span>
+                </div>
+            </div>
+            <div class="two">
+                <a href=""></a>
+                <div class="bottom">
+                    <span class="name">四柱餐桌1.6米版</span><br>
+                    <span class="price">¥8600.00</span>
+                </div>
+            </div>
+            <div class="three">
+                <a href=""></a>
+                <div class="bottom">
+                    <span class="name">四柱餐桌1.6米版</span><br>
+                    <span class="price">¥8600.00</span>
+                </div>
+            </div>
+            <div class="four">
+                <a href=""></a>
+                <div class="bottom">
+                    <span class="name">四柱餐桌1.6米版</span><br>
+                    <span class="price">¥8600.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <!--引入尾部-->
+    <%-include('common/footer.ejs')%>
+    <!--加入购物车-->
+    <div class="modal fade" id="addCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    加入购物车成功,现在车内共有 <span class="cartCount"></span>件商品,合计￥<span class="cartTotal"></span>.00
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">继续购物</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="shopingCartByModal()">立即购买</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--种类提示-->
+    <div class="modal fade" id="saleDown" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    该类型商品还未上架，敬请期待。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--数量超出提示-->
+    <div class="modal fade" id="upTips" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    超出库存量
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bootstrap/js/jquery-1.11.3.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <!--<script src="js/modal.js"></script>-->
+    <script>
+        var goodsNum = 1;
+        var subTotal=0;
+        var currentProName;
+        var currentProId;
+        var currentPsId;
+        var currentImgaddress;
+        var currentWood;
+        var currentColor;
+        var currentFormat;
+        var currrentQuantity;
+        var currentPrice;
+
+        currentProId="<%=currentProId%>";
+        currentProName='<%=currentProName%>';
+        var queryFirstJ=JSON.parse('<%-queryFirstJ%>');
+        var car_address=JSON.parse('<%-car_address%>');
+        var detail_address=JSON.parse('<%-detail_address%>');
+
+        console.log(queryFirstJ);
+        console.log(car_address);
+        console.log(detail_address);
+
+
+
+        /*内部查询*/
+        function innerQuery(index) {
+            var innerQueryArray = [];
+            if ($(index).attr("class")=="MaterialDetails"){
+                currentWood=$(index).html();
+            }
+            if ($(index).attr("class")=="colorDetails"){
+                currentColor=$(index).html();
+            }
+            if ($(index).attr("class")=="formatDetails"){
+                currentFormat=$(index).html();
+            }
+            var sql = "SELECT"+
+                "`prospecs`.`ps_id`"+
+            "FROM"+
+                "`threepart`.`prospecs`"+
+            "INNER JOIN `threepart`.`product`"+
+            "ON (`prospecs`.`proId` = `product`.`proId`)"+
+            "LEFT OUTER JOIN `threepart`.`colorinfo`"+
+            "ON (`prospecs`.`ci_id` = `colorinfo`.`ci_id`)"+
+            "LEFT OUTER JOIN `threepart`.`formatvalue`"+
+            "ON (`prospecs`.`fv_id` = `formatvalue`.`fv_id`)"+
+            "LEFT OUTER JOIN `threepart`.`woodinfo`"+
+            "ON (`prospecs`.`w_id` = `woodinfo`.`w_id`) WHERE product.`proId`="+currentProId;
+            if (currentWood!=null){
+                sql+=" and woodinfo.`w_wood`=?";
+                innerQueryArray.push(currentWood);
+            }
+            if (currentColor!=null){
+                sql+=" and colorinfo.`ci_color`=?";
+                innerQueryArray.push(currentColor);
+            }
+            if (currentFormat!=null){
+                sql+=" and formatvalue.`fv_name`=?";
+                innerQueryArray.push(currentFormat);
+            }
+            console.log(sql);
+            console.log(innerQueryArray);
+            $.ajax({
+                type:"get",
+                url:"/innerQuery.do",
+                data:{
+                    sql:sql,
+                    innerQueryArray:innerQueryArray
+                },
+                success:function (data) {
+                    if (typeof data=="string"){
+                        $("#saleDown").modal("show");
+                        currentWood=null;
+                        currentColor=null;
+                        currentFormat=null;
+                        if($(".contentDetails .Material").length>0){
+
+                            for (var i= 0;i<$(".contentDetails .Material .Material-list").children().length;i++ ){
+
+                                $(".contentDetails .Material .Material-list").children().eq(i).css({
+                                    "border":"1px solid grey",
+                                    "color":"#73696B"
+                                });
+
+                            }
+                        }
+
+                        if($(".contentDetails .color").length>0){
+
+                            for (var i= 0;i<$(".contentDetails .color .color-list").children().length;i++ ){
+
+
+                                $(".contentDetails .color .color-list").children().eq(i).css({
+                                    "border":"1px solid grey",
+                                    "color":"#73696B"
+                                });
+
+                            }
+                        }
+
+                        if($(".contentDetails .format").length>0){
+
+
+                            $(".contentDetails .format .format-list").children().eq(i).css({
+                                "border":"1px solid grey",
+                                "color":"#73696B"
+                            });
+
+                        }
+                    }
+                    else {
+                        queryFirstJ=data.queryFirstJ;
+                        car_address = JSON.parse(data.car_address);
+                        detail_address=JSON.parse(data.detail_address);
+                        /*console.log(car_address);
+                         console.log(detail_address);*/
+                        defaultChoose();
+                    }
+
+                },
+                error:function (data) {
+                    console.log(data);
+                }
+            })
+        }
+
+        /*默认选项*/
+        function defaultChoose() {
+
+            currentImgaddress=queryFirstJ[0].imgaddress;
+            currentPsId=queryFirstJ[0].ps_id;
+            currentWood=queryFirstJ[0].w_wood;
+            currentColor=queryFirstJ[0].ci_color;
+            currentFormat=queryFirstJ[0].fv_name;
+            currrentQuantity=queryFirstJ[0].quantity;
+            currentPrice=queryFirstJ[0].ps_price;
+
+            console.log(currentWood);
+            console.log(currentColor);
+            console.log(currentFormat);
+            console.log(currentImgaddress);
+            console.log(currrentQuantity);
+            console.log(currentPsId);
+            console.log(currentProId);
+            console.log(currentProName);
+            console.log(currentPrice);
+
+            if($(".contentDetails .Material").length>0){
+
+                for (var i= 0;i<$(".contentDetails .Material .Material-list").children().length;i++ ){
+                    if ($(".contentDetails .Material .Material-list").children().eq(i).html()==currentWood){
+                        /*console.log(1111);*/
+                        $(".contentDetails .Material .Material-list").children().eq(i).css({
+                            "border":"1px solid black",
+                            "color":"black"
+                        });
+                    }
+                    else {
+                        $(".contentDetails .Material .Material-list").children().eq(i).css({
+                            "border":"1px solid grey",
+                            "color":"#73696B"
+                        });
+                    }
+                }
+            }
+
+            if($(".contentDetails .color").length>0){
+
+                for (var i= 0;i<$(".contentDetails .color .color-list").children().length;i++ ){
+                    if ($(".contentDetails .color .color-list").children().eq(i).html()==currentColor){
+                       /* console.log(2222);*/
+                        $(".contentDetails .color .color-list").children().eq(i).css({
+                            "border":"1px solid black",
+                            "color":"black"
+                        });
+                    }
+                    else {
+                        $(".contentDetails .color .color-list").children().eq(i).css({
+                            "border":"1px solid grey",
+                            "color":"#73696B"
+                        });
+                    }
+                }
+            }
+
+            if($(".contentDetails .format").length>0){
+                for (var i= 0;i<$(".contentDetails .format .format-list").children().length;i++ ){
+                    if ($(".contentDetails .format .format-list").children().eq(i).html()==currentFormat){
+                        $(".contentDetails .format .format-list").children().eq(i).css({
+                            "border":"1px solid black",
+                            "color":"black"
+                        });
+                    }
+                    else {
+                        $(".contentDetails .format .format-list").children().eq(i).css({
+                            "border":"1px solid grey",
+                            "color":"#73696B"
+                        });
+                    }
+                }
+            }
+
+            if (currrentQuantity==0){
+                $(".operate .addCart").css({
+                    "display":"none"
+                });
+                $(".operate .buy").css({
+                    "display":"none"
+                });
+                $(".operate .saleDown").css({
+                    "display":"inline-block"
+                });
+
+                $(".count").css({
+                    "display":"none"
+                });
+
+
+            }
+            else {
+                $(".operate .addCart").css({
+                    "display":"inline-block"
+                });
+                $(".operate .buy").css({
+                    "display":"inline-block"
+                });
+                $(".operate .saleDown").css({
+                    "display":"none"
+                });
+                $(".count").css({
+                    "display":"block"
+                });
+            }
+
+            $(".contentDetails .price").html("¥"+queryFirstJ[0].ps_price+".00");
+            $(".contentDetails .Delivery-list").html("家具制作周期为"+queryFirstJ[0].Delivery);
+            $(".contentDetails .quantity-list").html(queryFirstJ[0].quantity);
+            $(".contentDetails .left").css({
+                "background-image":"url(images/"+car_address[0]+")"
+            });
+            $(".contentDesign .weight").html("重量(kg)："+queryFirstJ[0].weight);
+            $(".contentDesign .mainMaterial").html("主体材质："+queryFirstJ[0].w_wood);
+            $(".contentDesign .header img")[0].src="images/"+detail_address[2];
+            $(".contentFeature>div:nth-child(2)>img")[0].src="images/"+detail_address[3];
+            $(".contentFeature .contentFeatureCon .one").css({
+                "background-image":"url(images/"+detail_address[4]+")"
+            })
+            $(".contentFeature .contentFeatureCon .two").css({
+                "background-image":"url(images/"+detail_address[5]+")"
+            })
+            $(".contentFeature .contentFeatureCon .three").css({
+                "background-image":"url(images/"+detail_address[6]+")"
+            })
+            for (var i=0;i<$(".inspiration>div:nth-child(1)~div").length;i++){
+                $(".inspiration>div:nth-child(1)~div").eq(i).css({
+                    "background-image":"url(images/"+detail_address[i+7]+")"
+                })
+            }
+        }
+
+        /*加入购物车*/
+        function addShopingCart() {
+
+          /* $.ajax({
+               type:"get",
+               url:"/addShopingCartAddress.do"
+           })*/
+           if (userId==""){
+               $("#myLogin").modal("show");
+           }
+           else {
+               subTotal=currentPrice*goodsNum;
+               $.ajax({
+                   type:"get",
+                   url:"/addShopingCart.do",
+                   data:{
+                       currentPsId:currentPsId,
+                       goodsNum:goodsNum,
+                       subTotal:subTotal,
+                       currrentQuantity:currrentQuantity,
+                       currentPrice:currentPrice
+                   },
+                   success:function (data) {
+                       $("#addCart .cartCount").html(data[0].countTotal);
+                       $("#addCart .cartTotal").html(data[0].subTotal+".00");
+                       $("#addCart").modal("show");
+                   }
+               })
+           }
+
+        }
+
+        /*通过页面按钮进入购物车页面*/
+        function shopingCart() {
+            if (userId==""){
+                $("#myLogin").modal("show");
+            }
+            else {
+                subTotal=currentPrice*goodsNum;
+                window.location.href="/shopingCart.do?currentPsId="+currentPsId+"&goodsNum="+goodsNum+"&subTotal="+subTotal+"&currrentQuantity="+currrentQuantity+"&currentPrice="+currentPrice;
+            }
+
+        }
+
+        /*通过模态框按钮进入购物车页面*/
+        function shopingCartByModal() {
+            window.location.href="/shopingCartByModal.do?"
+        }
+
+        $(function () {
+           defaultChoose();
+        });
+
+        $(window).scroll(function () {
+           /* console.log($(window).scrollTop());*/
+
+            /*设计图片*/
+            if ($(window).scrollTop()>=845){
+                $(".contentDesign .content .left .bg").css({
+                    "width":"640px",
+                    "transition":"all 1.5s linear"
+                });
+                $(".contentDesign .content .left .img").css({
+                    "background-image":"url(images/"+detail_address[1]+")",
+                    "transition":"all 1s linear 1.5s"
+                });
+            }
+            else {
+                $(".contentDesign .content .left .bg").css({
+                    "width":"100px",
+                    "transition":""
+                });
+                $(".contentDesign .content .left .img").css({
+                    "background-image":"url(images/"+detail_address[0]+")",
+                    "transition":""
+                });
+            }
+
+            /*特点图片*/
+            if ($(window).scrollTop()>=4040){
+                $(".contentFeature .introduce .one").css({
+                    "left":"500px",
+                    "transition":"all 1.5s linear"
+                });
+                $(".contentFeature .introduce .two").css({
+                    "top":"200px",
+                    "transition":"all 1.5s linear"
+                });
+                $(".contentFeature .introduce .three").css({
+                    "top":"360px",
+                    "transition":"all 1.5s linear"
+                });
+                $(".contentFeature .introduce .four").css({
+                    "left":"600px",
+                    "transition":"all 1.5s linear"
+                });
+                $(".contentFeature .introduce .words").css({
+                    "opacity":"1",
+                    "transition":"all .5s linear 1.7s"
+                });
+            }
+            else {
+                $(".contentFeature .introduce .one").css({
+                    "left":"100px"
+                });
+                $(".contentFeature .introduce .two").css({
+                    "top":"50px"
+                });
+                $(".contentFeature .introduce .three").css({
+                    "top":"500px"
+                });
+                $(".contentFeature .introduce .four").css({
+                    "left":"1000px"
+                });
+                $(".contentFeature .introduce .words").css({
+                    "opacity":"0"
+                });
+            }
+        });
+
+        /*数量加减*/
+
+        $(".contentDetails>.right .count-list .add").click(function () {
+            goodsNum++;
+            if (goodsNum>currrentQuantity){
+                $("#upTips").modal("show");
+            }
+            else {
+                $(".contentDetails>.right .count-list .amount").val(goodsNum);
+            }
+        });
+        $(".contentDetails>.right .count-list .sub").click(function () {
+            goodsNum--;
+            if (goodsNum<1){
+                goodsNum=1;
+            }
+            $(".contentDetails>.right .count-list .amount").val(goodsNum);
+        });
+        /*数量小于等于0的判断*/
+        $(".contentDetails .amount").on("blur",function () {
+            goodsNum=$(this).val();
+           if (goodsNum<=0){
+               goodsNum=1;
+               $(".contentDetails>.right .count-list .amount").val(goodsNum);
+           }
+            if (goodsNum>currrentQuantity){
+                $("#upTips").modal("show");
+                goodsNum=currrentQuantity;
+                $(".contentDetails>.right .count-list .amount").val(goodsNum);
+          }
+        });
+
+        /*材料介绍*/
+        $(".contentFeature .introduce .one").mouseover(function () {
+            $(".contentFeature .introduce .words").html("<div class='words-name'>美国白蜡木 <br><span>Material Description</span></div>"+
+            "<div class='words-list'><span>白蜡木主要产地为北美，光泽柔和，疤结较少，纹理粗犷，具有一定禅意，白蜡木质地坚韧，硬度高，坚固耐用，稳定性较高。</span></div>'");
+        });
+        $(".contentFeature .introduce .two").mouseover(function () {
+            $(".contentFeature .introduce .words").html("<div class='words-name'>富美家卡拉卡塔石烧纹磨砂面板 <br><span>Material Description</span></div>"+
+                "<div class='words-list'><span>一款卡拉卡塔装饰面，表面经过磨砂处理，色彩温润， 纹路自然，有着耐火、防潮、耐高温等特性。 </span></div>'");
+        });
+        $(".contentFeature .introduce .three").mouseover(function () {
+            $(".contentFeature .introduce .words").html("<div class='words-name'>意大利PUGI R.G.羊毛布料一橄榄绿色 <br><span>Material Description</span></div>"+
+                "<div class='words-list'><span>意大利品牌PUGI R.G.牌旗下的Fenice系列布料，由优质羊毛制成，羊毛量75%，通过传统工艺的稳定化处理获得特定表面效果，赋予特别统一平滑而柔软的手感，能够实现优异的耐起毛起球性和耐磨性。</span></div>'");
+        });
+        $(".contentFeature .introduce .four").mouseover(function () {
+            $(".contentFeature .introduce .words").html("<div class='words-name'>美国黑胡桃 <br><span>Material Description</span></div>"+
+                "<div class='words-list'><span>黑胡桃木主要产地为北美，外观优美，颜色深沉雅致，纹理清晰，稳定性高，且在同等坚韧度的木材中密度较小，比较轻便。</span></div>'");
+        });
+        $(".contentFeature .introduce img").mouseout(function () {
+            $(".contentFeature .introduce .words").html("<div class='words-name'>材料解析 <br><span>Material Description</span></div>"+
+            "<div class='words-list'>* <br><span>光标移至材质区域可以查看材料解析</span></div>'");
+        });
+
+        /*底部详细介绍*/
+        var one =true;
+        var two =true;
+        var three =true;
+        var four =true;
+        var five =true;
+        var six =true;
+        $(".productKnowledge>.content>.common>div:nth-child(1)").click(function () {
+            two=true;
+            if ($(this).parent().next().attr("class")=="details"&&one==true){
+                $(this).parent().next().remove();
+                if (one==true){
+                    one=false;
+                    $(this).parent().after(
+                        "<div class='details'>"+
+                        "<div class='img'></div>"+
+                        "<div class='words'>"+
+                        "我们采用天然的的可持续木材，做“对环境与人负责任”的设计。梵几家具的结构采用榫卯结构连接为主，胶合与五金件辅助加固。所有涂层均不含苯、重金属等有害物质，符合欧盟DIN53160标准和EN71标准，也达到欧盟认证的儿童玩具级别。"+
+                        "</div>"+
+                        "</div>");
+                    $(".productKnowledge .details .img").css({
+                        "background-image":"url(../images/1_43.jpg)"
+                    });
+                    $(this).children().eq(1).html("-");
+                    $(this).siblings().children().eq(1).html("+");
+                }
+            }
+            else if (one==true){
+                one=false;
+                $(this).parent().after(
+                    "<div class='details'>"+
+                    "<div class='img'></div>"+
+                    "<div class='words'>"+
+                    "我们采用天然的的可持续木材，做“对环境与人负责任”的设计。梵几家具的结构采用榫卯结构连接为主，胶合与五金件辅助加固。所有涂层均不含苯、重金属等有害物质，符合欧盟DIN53160标准和EN71标准，也达到欧盟认证的儿童玩具级别。"+
+                    "</div>"+
+                    "</div>");
+                $(".productKnowledge .details .img").css({
+                    "background-image":"url(../images/1_43.jpg)"
+                });
+                $(this).children().eq(1).html("-");
+                $(this).siblings().children().eq(1).html("+");
+            }
+            else if (one==false){
+                $(this).parent().next().remove();
+                $(this).children().eq(1).html("+");
+                one=true;
+            }
+
+        });
+        $(".productKnowledge>.content>.common>div:nth-child(2)").click(function () {
+            one=true;
+            if ($(this).parent().next().attr("class")=="details"&&two==true){
+                $(this).parent().next().remove();
+
+                $(this).parent().after(
+                    "<div class='details'>"+
+                    "<div class='img'></div>"+
+                    "<div class='words'>"+
+                    "我们采用天然的的可持续木材，做“对环境与人负责任”的设计。梵几家具的结构采用榫卯结构连接为主，胶合与五金件辅助加固。所有涂层均不含苯、重金属等有害物质，符合欧盟DIN53160标准和EN71标准，也达到欧盟认证的儿童玩具级别。"+
+                    "</div>"+
+                    "</div>");
+                $(".productKnowledge .details .img").css({
+                    "background-image":"url(../images/1_44.jpg)"
+                });
+                $(this).children().eq(1).html("-");
+                $(this).siblings().children().eq(1).html("+");
+                two=false;
+            }
+            else if (two==true){
+                two=false;
+                $(this).parent().after(
+                    "<div class='details'>"+
+                    "<div class='img'></div>"+
+                    "<div class='words'>"+
+                    "梵几家具为实木家具，采用符合FSC森林认证的可持续木材，包括所有侧板、层板（除柜体背板、抽屉底板、罗汉床底板及软包家具采用符合欧洲E0级标准实木多层板）均为实木原木。较之市场上常见的仿实木家具，实木家具更加结实、耐用、环保。 "+
+                    "</div>"+
+                    "<div class='words'>"+
+                    "梵几家具精选北美进口黑胡桃木或白蜡木，面板及框架选材高于全美硬木板材协会制定的NHLA特级选材标准，确保产品耐用而美观。 白蜡木主要产地为北美，纹理粗犷，光泽柔和，具有一定禅意。白蜡木质地坚韧，硬度高，坚固耐用，稳定性较高； 黑胡桃木主要产地为北美，颜色深沉雅致，纹理清晰，稳定性高，且在同等坚韧度的木材中密度较小，比较轻便。"+
+                    "</div>"+
+                    "<div class='words'>"+
+                    " 实木来源于自然，木材的自然特性决定它会因湿度的变化出现发胀或收缩。使用实木家具时，环境湿度最好在35％-65％之间。详细请点击 实木特性。"+
+                    "</div>"+
+                    "</div>");
+                $(".productKnowledge .details .img").css({
+                    "background-image":"url(../images/1_44.jpg)"
+                });
+                $(this).children().eq(1).html("-");
+                $(this).siblings().children().eq(1).html("+");
+            }
+            else if (two==false){
+                $(this).parent().next().remove();
+                $(this).children().eq(1).html("+");
+                two=true;
+            }
+
+        });
+    </script>
+</body>
+</html>

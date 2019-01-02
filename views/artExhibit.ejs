@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>展览详情页</title>
+
+  <link rel="stylesheet" href="css/artExhibit.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+<%-include('common/nav.ejs')%>
+
+<div class="header">
+
+</div>
+<div class="title">
+  <h2><%=title%></h2>
+  <span><%=titleDate%></span>
+</div>
+<div class="mainPart">
+  <p>展览名称：<%=name%></p>
+  <p>艺术家：<%=artistName%></p>
+  <p>展览日期：<%=date%></p>
+  <p>展览时间:<%=time%></p>
+  <p>展览地点:<%=address%></p>
+  <p class="exhibitInfo"><%-exhibitInfo%></p>
+  <%if(teaInfo!=null){%>
+   <p>展览开幕茶会时间:<%=teaInfo%></p>
+  <%}%>
+</div>
+<div class="imgShow">
+
+</div>
+<div class="map">
+  <img src="images/art/location.jpg" alt="">
+  <p>梵几国子监门店</p>
+  <p>北京市东城区安定门内大街国子监街41号</p>
+  <img src="images/art/shop-gzj.png" alt="">
+</div>
+<!--尾部-->
+<%-include('common/footer.ejs')%>
+<!--右侧悬浮按钮-->
+<div class="right_button">
+  <a href="" class="iconfont top">&#xe765;</a>
+  <a href="" class="iconfont contact">&#xe610;</a>
+</div>
+
+
+<script src="bootstrap/js/jquery-3.3.1.min.js"></script>
+<script>
+    var imgSrc='<%=carouselImg%>'
+    if(imgSrc!=""){
+        $('.header').html("<img src="+imgSrc+" alt=''>")
+    }
+    var id="<%=id%>";
+    console.log(id);
+    $.ajax({
+      type:"get",
+      url:"/getExhibitPhoto.do",
+      data:{
+        id: id
+      },
+      success:function (data) {
+          console.log(data);
+          for(var i=0;i<data.length;i++){
+              $(".imgShow").append("" +
+                  "<img src='"+data[i].sceneDrawing+"'>")
+          }
+
+      },
+      err:function (data) {
+          console.log(data);
+      }
+    })
+
+</script>
+
+</body>
+</html>

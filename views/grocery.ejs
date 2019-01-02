@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style type="text/css">
+        .mainContentNav{
+            width: 350px;
+            margin: 0 auto;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .mainContentNav>ul>li{
+            text-align: center;
+            list-style: none;
+            width: 110px;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+            font-size: 14px;
+            /*overflow: hidden;*/
+        }
+
+        .mainContentNav>ul>li>a{
+            display: inline-block;
+            height: 47px;
+            text-decoration: none;
+            color: #848484;
+            border-bottom: 2px solid transparent;
+        }
+        .mainContentNav>ul>li>span{
+            color: gainsboro;
+            margin-right: -17px;
+        }
+
+
+        .ul_div{
+            z-index: 999;
+            position: absolute;
+            width: 125px;
+            visibility: hidden;
+        }
+        .ul_div li{
+            list-style: none;
+            /*border-top: 1px solid red;*/
+
+            background-color: white;
+        }
+
+        .ul_div li a{
+            display: block;
+            border: none;
+            height: 35px;
+            /*min-width: 50px;*/
+            line-height: 35px;
+            color: rgba(0, 0, 0, 0.55);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.38);
+            max-width: 50px;
+            margin-left: 36px;
+        }
+        .ul_div li a:hover{
+            color: rgba(0, 0, 0, 0.82);
+            text-decoration: none;
+        }
+        .mainContentNav>ul>li>ul>li:nth-child(1)~li>a{
+            border-top: 1px solid grey;
+        }
+.clear{
+    clear: both;
+}
+        /*商品列表样式开始*/
+       .content_goods{
+            width: 71%;
+           text-align: center;
+           margin: 0 auto;
+        }
+        .grocery_img{
+            width: 249px;
+            height: 250px;
+            position: relative;
+            float: left;
+            margin: 10px;
+            color: black;
+
+        }
+        .grocery_img>img{
+            width: 100%;
+            height: 100%;
+        }
+        .grocery_img:hover .grocery_img_after{
+            visibility: visible;
+        }
+        .grocery_img_after{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.56);
+            text-align: center;
+            padding-top: 30px;
+            visibility: hidden;
+            transition: all .1s linear;
+        }
+        .grocery_img_after>p{
+            margin: -15px 0 0;
+        }
+        .li_1.ok{
+            border-bottom: 2px solid black;
+        }
+        .grocery_img_more{
+            border: 1px solid rgba(0, 0, 0, 0.33);
+            text-align: center;
+            line-height: 250px;
+        }
+        .no_more{
+            width: 100%;
+            height: 100px;
+            font-size: 24px;
+            text-align: center;
+            line-height: 100px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<!--引入导航-->
+<%-include('common/nav.ejs')%>
+<!--banner-->
+    <div class="banner">
+        <!-- 显示图片-->
+        <div class="contentO">
+            <div id="imgBanner"></div>
+        </div>
+        <!--小圆点 -->
+        <div id="divCircle"></div>
+    </div>
+<!--内容-->
+<div class="clear"></div>
+        <div class="mainContentNav">
+            <ul>
+                <li>
+                    <a href="/grocery?type=0" class="li_1">推荐</a>
+                </li>
+                <li>
+                    <a href="/grocery?type=0" class="aller" class="li_1">全部分类</a>
+                    <span class="iconfont">&#xe64d;</span>
+                    <div class="ul_div">
+                        <ul>
+                            <li><a href="/grocery?type=1">餐厨</a></li>
+                            <li><a href="/grocery?type=2">家居</a></li>
+                            <li><a href="/grocery?type=3">摆件</a></li>
+                            <li><a href="/grocery?type=4">养护</a></li>
+                            <li><a href="/grocery?type=5">园艺</a></li>
+                            <li><a href="/grocery?type=6">数码</a></li>
+                            <li><a href="/grocery?type=7">文具</a></li>
+                            <li><a href="/grocery?type=8" style="border-bottom: none">配饰</a></li>
+                        </ul>
+                    </div>
+
+                </li>
+                <li>
+                    <a href="" class="li_1">产品线</a>
+                </li>
+            </ul>
+        </div>
+<div class="clear"></div>
+<div class="content_goods" id="maincontent"></div>
+<!--引入尾部-->
+<div class="clear"></div>
+<%-include('common/footer.ejs')%>
+<script src="js/grocery_banner.js"></script>
+    <script >
+        {
+        var ul_div=document.getElementsByClassName("ul_div")[0];
+        var aller=document.getElementsByClassName("aller")[0];
+        aller.onmouseover=function() {
+             ul_div.style.visibility="visible";
+         }
+        ul_div.onmouseover=function() {
+             ul_div.style.visibility="visible";
+         }
+        aller.onmouseout=function() {
+             ul_div.style.visibility="hidden";
+         }
+        ul_div.onmouseout=function() {
+             ul_div.style.visibility="hidden";
+         }
+        }
+        {
+            var content=document.getElementById("maincontent");
+        function oload() {
+            var data=JSON.parse('<%-data%>');
+                console.log(data)
+            if (data!=""){
+                    if (data.length<15){
+                        for (var i=0;i<data.length;i++){
+                            content.innerHTML+="<a href='/grocery_detail?id="+data[i].proId+"&typeOne=2"+"'><div class='grocery_img'>"+
+                                "  <img src="+data[i].image+">"+
+                                " <div class='grocery_img_after'>"+
+                                " <p><span class='goods_name'>"+data[i].proName+"</span><span class='goods_color'>"+data[i].ci_color+"</span><br>￥<span class='goods_price'>"+data[i].proPrice+"</span></p>"+
+                                " </div>"+
+                                " </div></a>";
+                        }
+                        content.innerHTML+="<div class='clear'></div><div class='no_more'>没有更多了</div>"
+                    }else {
+                        for (var i=0;i<15;i++){
+                            content.innerHTML+=" <a href='/grocery_detail?id="+data[i].proId+"&typeOne=2"+"'><div class='grocery_img'>"+
+                                "  <img src="+data[i].image+">"+
+                                " <div class='grocery_img_after'>"+
+                                " <p><span class='goods_name'>"+data[i].proName+"</span><span class='goods_color'>"+data[i].ci_color+"</span><br>￥<span class='goods_price'>"+data[i].proPrice+"</span></p>"+
+                                " </div>"+
+                                " </div></a>"
+                        }
+                        content.innerHTML+="<div class=' grocery_img grocery_img_more' id='grocery_img_more'>MORE</div>";
+                        document.getElementById("grocery_img_more").onclick=function () {
+                            this.style.display="none";
+                            console.log(111)
+                            for (var i=15;i<data.length;i++){
+                                content.innerHTML+="<a href='/grocery_detail?id="+data[i].proId+"&typeOne=2"+"'><div class='grocery_img'>"+
+                                    "  <img src="+data[i].image+">"+
+                                    " <div class='grocery_img_after'>"+
+                                    " <p><span class='goods_name'>"+data[i].proName+"</span><span class='goods_color'>"+data[i].ci_color+"</span><br>￥<span class='goods_price'>"+data[i].proPrice+"</span></p>"+
+                                    " </div>"+
+                                    " </div></a>";
+                            }
+                        }
+                    }
+
+            }else {
+                content.innerHTML="<div class='no_more'>暂时没有该类别的商品</div>";
+            }
+
+        }
+        oload();
+        }
+    </script>
+
+
+</body>
+</html>

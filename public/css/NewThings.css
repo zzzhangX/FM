@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#Yaer{
+    display: inline-block;
+    position: absolute;
+    left: 150px;
+    top: 150px;
+    width: 190px;
+    height: 500px;
+    /*background-color: rgba(81, 236, 237, 0.68);*/
+}
+#Yaer>ul{
+    height: 155px;
+    /*border: red 1px solid;*/
+}
+#Yaer>ul>li{
+    list-style: none;
+    margin-left: 120px;
+    margin-bottom: 14px;
+    font-style: italic;
+}
+#Yaer>ul>li>a{
+    color: #888888;
+    text-decoration: none;
+}
+#black{
+    position: relative;
+    /*display: inline-block;*/
+    top: 40px;
+    left: 350px;
+    width: 1px;
+    height:5300px;
+    background-color: #8c8066;
+}
+#Things{
+    width: 900px;
+    position: absolute;
+    top: 150px;
+    left: 380px;
+}
+#Things>ul>li{
+    list-style: none;
+}
+#Things>ul>li>a{
+    text-decoration: none;
+}
+.time{
+    color: black;
+    font-style: italic;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+.text{
+    color: black;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+.adress{
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #888888;
+}
+.IT{
+    width: 750px;
+    height: 435px;
+    margin-bottom: 130px;
+}
+
+
+#right\ logo{
+    position: fixed;
+    left: 96%;
+    bottom: 15%;
+}
+.small{
+    width: 43px;
+    height: 43px;
+}

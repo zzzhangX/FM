@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态框测试</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .modal-title{
+            text-align: center;
+        }
+        .modal-dialog>.modal-content{
+            left: 100px;
+        }
+        .modal-content>.modal-header{
+            border-bottom: 1px solid white;
+        }
+        .modal-content>.modal-header>.modal-title{
+            padding-top: 10px;
+        }
+        .modal-content>.modal-body{
+            text-align: center;
+        }
+        .modal-content>.modal-footer{
+            border-top:1px solid white;
+            text-align: center;
+        }
+        .modal-content{
+            width: 400px;
+        }
+        .modal-content>.modal-footer>.btn{
+            background-color: black;
+            width: 150px;
+            height: 40px;
+           margin-bottom: 10px;
+        }
+        /*选择每个启用的input*/
+        input:enabled{
+            width: 80%;
+            outline: none;  /*去掉input自带的样式*/
+            border: none;
+            height: 60px;
+            border-bottom: 1px solid #afafaf;
+        }
+        /*改变地址选择框的大小*/
+        .dome-main{
+            margin-top: 10px;
+        }
+        .dome-main .city-picker-selector .selector-item{
+            width: 100px;
+            outline: none;
+            border-bottom: 1px solid #afafaf;
+        }
+        .dome-main .city-picker-selector .selector-item .selector-name{
+            font-size: 14px;
+        }
+    </style>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/city-picker.css">
+</head>
+<body>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editname">
+    修改昵称
+</button>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#deleteAddress">
+    删除按钮
+</button>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editpwd">
+    修改密码
+</button>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editemail">
+    修改邮箱
+</button>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addAddress">
+    添加新地址
+</button>
+<!-- 修改昵称 -->
+<div class="modal fade" id="editname" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">修改昵称</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="新昵称">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">保存昵称</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 修改密码 -->
+<div class="modal fade" id="editpwd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel1">修改密码</h4>
+            </div>
+            <div class="modal-body">
+                <input type="password" placeholder="原密码">
+                <input type="password" placeholder="新密码">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">保存密码</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 修改邮箱 -->
+<div class="modal fade" id="editemail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel2">修改邮箱</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="新邮箱">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">更新邮箱</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 修改昵称 -->
+<div class="modal fade" id="addAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel3">添加地址</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="姓名">
+                <input type="text" placeholder="联系电话">
+                <input type="text" placeholder="备份电话">
+                <input type="email" placeholder="邮箱">
+                <div class="dome-main">
+                    <div class="city-picker-selector" id="city-picker-search"></div>
+                </div>
+                <input type="text" placeholder="详细地址">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">保存地址</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 删除地址确认按钮 -->
+<div class="modal fade" id="deleteAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel4">删除提示</h4>
+            </div>
+            <div class="modal-body">
+                真的要删掉我吗？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">删除</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script src="../js/citydata.min.js"></script>
+<script src="../js/cityPicker-2.0.0.js"></script>
+<script>
+    // <!--设置输入框获得焦点和失去焦点样式-->
+    $(document).ready(function(){
+        $("input").focus(function(){
+            $("input").css("border-bottom","1px solid #000000");
+        });
+        $("input").blur(function(){
+            $("input").css("border-bottom","1px solid #D5D5D5");
+        });
+    });
+    /* 使模态框垂直居中 */
+    function centerModals() {
+        $('#editname').each(function(i) {
+            var $clone = $(this).clone().css('display', 'block').appendTo('body'); var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
+            top = top > 0 ? top : 0;
+            $clone.remove();
+            $(this).find('.modal-content').css("margin-top", top);
+        });
+    }
+    $('#editname').on('show.bs.modal', centerModals);
+    $(window).on('resize', centerModals);
+    // 模拟城市-联动/搜索/键盘操作
+    var selector3 = $('#city-picker-search').cityPicker({
+        dataJson: cityData,
+        renderMode: true,
+        search: true,
+        autoSelected: true,
+        keyboard: true,
+        level: 3,
+        onChoiceEnd: function () {
+            console.log(this.values)
+        }
+    });
+</script>
+</body>
+</html>

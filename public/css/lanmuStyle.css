@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*板块一*/
+#page-container{
+    padding: 0 0 100px;
+    width: 890px;
+    margin: 0 auto;
+    color: #888;
+    /*overflow: hidden;*/
+}
+#home{
+    position: relative;
+    padding-bottom: 60px;
+    padding-top: 110px;
+    height: 670px;
+    /*border: 1px solid red;*/
+}
+.homeIntro{
+    padding-top: 85px;
+    color: rgb(153, 153, 153);
+    font-size: 13px;
+    line-height: 34px;
+}
+.part-left{
+    float: left;
+    width: 340px;
+}
+.col-s-12{
+    width: 100%;
+}
+#myHome{
+    position: relative;
+    float: right;
+    width: 355px;
+    height: 500px;
+    display: block;
+}
+#home>#myHome>.part-right{
+    position: relative;
+    float: right;
+    width: 355px;
+    height: 500px;
+    background-image: url("../images/lanmu/NO28.jpg");
+}
+.part-right>img{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 40px;
+    vertical-align: middle;
+}
+.part-right:hover{
+    cursor:pointer;
+}
+.home-first{
+    text-align: center;
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 120px;
+    height: 120px;
+    background: #333;
+    color: #fff;
+    padding-top: 20px;
+}
+/*板块二*/
+.fnjihome-list {
+    border-top: 1px solid #eee;
+    padding-top: 60px;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+.fnjihome-list>li{
+    float: left;
+    width: 33.33333%;
+    /*height: auto;*/
+    height: 557px;
+}
+.fnjidrop-list{
+    border-top: 1px solid #eee;
+    padding-top: 60px;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+.col-s-12 {
+    width: 100%;
+}
+.page-container>ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+    list-style: none;
+    overflow: hidden;
+}
+.home-cover{
+    /*background-image: url("images/1.jpg");*/
+    height: 400px;
+    width: 250px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 100%;
+    background-clip: border-box;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    position: relative;
+    min-height: 1px;
+}
+/*.fnjihome-list li.last .home-wrapper {*/
+    /*padding-left: 50px;*/
+/*}*/
+/*.fnjihome-list li.middle .home-wrapper {*/
+    /*padding-left: 25px;*/
+/*}*/
+.myTest{
+    /*outline: 1px solid teal;*/
+    padding-left: 23.33px;
+    /*padding-right: 10px;*/
+    /*margin-left: 1px;*/
+    float: left;
+    width: 33.33333%;
+    /*height: auto;*/
+    height: 557px;
+}
+.homeNumber{
+    font-size: 14px;
+    color: rgb(17, 17, 17);
+    padding-bottom: 20px;
+    padding-top: 20px;
+    line-height: 20px;
+}
+.homeAddress{
+    font-size: 12px;
+}
+.homeTime{
+    font-size: 12px;
+    padding-bottom: 41px;
+}
+/*more*/
+img {
+    border: 0;
+}
+.show-more-wrapper{
+    width: 100%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-bottom: 50px;
+}
+.trans-img {
+    width: 102%;
+    height: 400px;
+    position: absolute;
+    top: -300px;
+    left: 0;
+    z-index: 0;
+}
+.show-more {
+    background: #fff;
+    border: 1px solid #666;
+    color: #666;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    z-index: 33;
+    position: relative;
+}
+/*模块三*/
+#drop{
+    padding-bottom: 50px;
+    padding-top: 150px;
+    position: relative;
+    overflow: hidden;
+    width: 890px;
+    height: 710px;
+}
+#drop>#myDrop{
+    position: relative;
+    width: 340px;
+    height: 500px;
+}
+#drop>#myDrop>.part-left{
+    background-image: url("../images/lanmu/VOL20.jpeg");
+    position: relative;
+    width: 340px;
+    height: 500px;
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+}
+#drop>.part-right>.dropIntro{
+    padding-top: 50px;
+    color: rgb(153, 153, 153);
+    font-size: 13px;
+    line-height: 34px;
+}
+.dropIntro>p{
+    float: right;
+}
+#drop>#myDrop>.part-left>img{
+    position: absolute;
+    left: -5px;
+    top: -43px;
+    z-index: 1;
+    width: 344px;
+    vertical-align: middle;
+}
+#drop>.part-right{
+    width: 352px;
+    overflow: hidden;
+    float: right;
+}
+#drop>.part-right>.col-s-12{
+    float: right;
+    position: relative;
+    min-height: 1px;
+}
+.drop-first{
+    left: 0;
+    right: auto;
+    bottom: auto;
+    top: 0;
+    text-align: center;
+    font-size: 14px;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #333;
+    color: #fff;
+    padding-top: 20px;
+}
+
+/*FNJI ARTSTAGE*/
+#lanmuartist{
+    padding-bottom: 80px;
+    padding-top: 100px;
+}
+#lanmuartist>div{
+    text-align: center;
+}
+.artist-wrapper>img{
+    width: 100%;
+}
+.artistBro{
+    width: 700px;
+    margin: 0 auto;
+}
+.fourIntro{
+    text-align: center;
+    padding: 50px 0;
+    color: rgb(153, 153, 153);
+    font-size: 13px;
+    line-height: 34px;
+}
+.fourIntro1{
+    font-size: 14px;
+    color: rgb(17, 17, 17);
+    padding: 50px 0;
+    line-height: 20px;
+}
+li{
+    list-style: none;
+}

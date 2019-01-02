@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--引入的css-->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/city-picker.css">
+    <!--自己写的css-->
+    <link rel="stylesheet" href="css/personal.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <style>
+        /*<!--设置验证样式-->*/
+        .high{
+            color: red;
+            font-weight: bold;
+        }
+        .msg{
+            font-size: 13px;
+        }
+        .onError{
+            color: red;
+        }
+        .onSuccess{
+            color: green;
+        }
+        /*设置验证样式结束*/
+        .modal-body>.form-control{
+            margin-top: 5px;
+            width: 290px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+<!--引入导航-->
+<%-include('common/nav.ejs')%>
+<div class="allContent">
+    <div class="leftdiv">
+        <div class="avatar">
+        </div>
+        <div class="name" id="uname"><%=userName%></div>
+        <div>
+            <ul class="navul">
+                <li onclick="btnthis(this)"><a href="#"><span class="iconfont">&#xe6c0;&nbsp;&nbsp;</span><span>个人信息</span></a></li>
+                <li onclick="btnthis(this)"><a href="#"><span class="iconfont">&#xe612;&nbsp;&nbsp;</span><span>会员中心</span></a></li>
+                <li onclick="btnthis(this)"><a href="#"><span class="iconfont">&#xe610;&nbsp;&nbsp;</span><span>地址管理</span></a></li>
+                <li onclick="btnthis(this)"><a href="#"><span class="iconfont">&#xe60c;&nbsp;&nbsp;</span><span>我的订单</span></a></li>
+                <li onclick="btnthis(this)"><a href="#"><span class="iconfont">&#xe632;&nbsp;&nbsp;</span><span>我的发票</span></a></li>
+                <li><a href="#"><span class="iconfont">&#xe507;&nbsp;&nbsp;</span><span>购物车</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="rightdiv">
+        <div class="member-info members">
+            <div class="title">
+                个人信息 <br>
+                <small>PERSONAL INFORMATION</small>
+            </div>
+            <div class="form-row">
+                <span>昵称:</span>
+                <span id="username"><%=userName%></span>
+                <div class="btnedit iconfont" onclick="openMotai()">&#xe765;</div>
+            </div>
+            <div class="form-row">
+                <span>密码:</span>
+                <span id="userpwd"><%=userPwd%></span>
+                <div class="btnedit iconfont" onclick="openMotai1()">&#xe765;</div>
+            </div>
+            <div class="form-row">
+                <span>手机:</span>
+                <span id="userphone"><%=phone%></span>
+                <div class="btnedit iconfont" onclick="openMotai2()">&#xe765;</div>
+            </div>
+            <div class="form-row">
+                <span>邮箱:</span>
+                <span id="useremail"><%=email%></span>
+                <div class="btnedit iconfont" onclick="openMotai3()">&#xe765;</div>
+            </div>
+            <div class="form-row">
+                <span>地址:</span>
+                <span></span>
+                <div class="btnedit iconfont">&#xe765;</div>
+            </div>
+        </div>
+        <div class="member-privilege members">
+            <div class="block-level">
+                <div class="levelImg">
+                </div>
+                <div class="viplevel">
+                    <span class="spanlevel">会 | 员 | 等 | 级</span><br>
+                    <span class="mc">MEMBER CENTER</span><br>
+                    <span><strong>-</strong></span><br>
+                    <span class="mc">再累计消费10000即可升级V2</span>
+                </div>
+                <div class="progres">
+                    <span class="v1">V1</span>
+                    <span class="v2">V2</span>
+                </div>
+            </div>
+            <div class="bottomdiv">
+                <div class="viplevel">
+                    <span class="spanlevel">会 | 员 | 特 | 权</span><br>
+                    <span class="mc">MEMBER CENTER</span><br><br>
+                    <span><strong>-</strong></span><br><br>
+                </div>
+                <div class="juandiv">
+                    <span>有效期至2019年10月29日</span><br><br>
+                    <span>壹 <strong> · </strong><span class="tenyuan">10元</span><strong> · </strong>张</span><br><br>
+                    <span>购/物/体/验/券</span><br>
+                </div>
+                <div class="viplevel2">
+                    <span class="mc use">可使用</span><br><br>
+                    <span class="mc"><a href="#">点击了解更多会员制度</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="member-address members">
+            <table class="address-table">
+                <thead>
+                <tr>
+                    <th style="width: 55px"></th>
+                    <th style="width: 80px">收货人</th>
+                    <th style="width: 150px">所在省</th>
+                    <th style="width: 200px">所在市</th>
+                    <th style="width: 120px">详细地址</th>
+                    <th style="width: 100px">手机</th>
+                    <th style="width: 100px">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <button type="button" id="addAddressbtn" onclick="openMotai4()">添加新地址</button>
+        </div>
+        <div class="member-order members">
+            <table class="order-table">
+                <thead>
+                <tr>
+                    <th style="width: 150px">订单号</th>
+                    <th style="width: 100px">收货人</th>
+                    <th style="width: 150px">日期</th>
+                    <th style="width: 80px">金额</th>
+                    <th style="width: 80px">状态</th>
+                    <th style="width: 150px">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        3567678097897
+                    </td>
+                    <td>莉莉</td>
+                    <td>2018-10-22 08:39:57</td>
+                    <td>398.00</td>
+                    <td>杂货</td>
+                    <td>待付款</td>
+                    <td class="seeOrder"><a href="orderPage.html">查看明细/物流</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="member-content members">
+            <div class="contentdiv">
+                <h5><strong>如何获得发票</strong></h5>
+                <p>如需发票，请您点击填写 <span class="btnticket">发票申请表(增值税普通发票)</span> 或 <span class="btnticket">发票申请表(增值税专用发票)</span> ，同时请您提供相应的订单号、发票抬头等信息。 <br>
+                    1. 家具订单：请您在待家具收到一个月内，并无退换货请求使用稳定的情况下提出发票申请。 <br>
+                    2. 小商品及艺术品订单：请您在下单后及时提出发票申请，我们将在确认您签收包裹并无任何退换货请求后对您的发票申请进行审核。 发票将在审核通过后的一个月内为您寄出，若无特别要求，我们将采用平邮的方式邮寄给您。</p>
+            </div>
+            <div class="contentdiv">
+                <h5><strong>开具商品发票的注意事项</strong></h5>
+                <p>1. 发票金额为商品金额，不包含运费、代收货款费、优惠金额；<br>
+                    2. 家具和小商品的发票要分别申请、开具和邮寄；<br>
+                    3. 根据国家相关法律法规，发票一经开出，恕不修改和更换，请慎重填写发票申请。
+            </div>
+            <table class="order-ticket">
+                <thead>
+                <tr>
+                    <th>订单号</th>
+                    <th>类型</th>
+                    <th>日期</th>
+                    <th>抬头</th>
+                    <th>销售方</th>
+                    <th>金额</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tboby>
+                </tboby>
+            </table>
+            <div class="noticket">您还没有发票信息~</div>
+        </div>
+    </div>
+</div>
+
+<!--引入尾部-->
+<%-include('common/footer.ejs')%>
+<!-- 修改昵称模态框 -->
+<div class="modal fade" id="editname" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">修改昵称</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="新昵称" name="newName" class="required">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="edituser()">保存昵称</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 修改密码模态框 -->
+<div class="modal fade" id="editpwd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel1">修改密码</h4>
+            </div>
+            <div class="modal-body">
+                <!--<input type="password" placeholder="原密码">-->
+                <input type="password" placeholder="新密码" name="userpwd" class="required pwd">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" onclick="edituser()">保存密码</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 修改手机模态框 -->
+<div class="modal fade" id="editphone" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel8">修改手机</h4>
+            </div>
+            <div class="modal-body">
+                <!--<input type="button" class="yanzheng" value="验证">-->
+                <input type="text" placeholder="手机" name="userphone" class="required phone">
+                <!--<input type="text" placeholder="验证码" name="validate">-->
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" onclick="edituser()">保存手机</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 修改邮箱 -->
+<div class="modal fade" id="editemail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel2">修改邮箱</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text" placeholder="邮箱" name="useremail" class="required" id="uemail">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" onclick="edituser()">更新邮箱</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 添加地址 -->
+<form id="myaddrform">
+    <div class="modal fade" id="addAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel3">添加地址</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" placeholder="姓名(必填)" name="names"  class="required" id="names">
+                    <input type="text" placeholder="联系电话(必填)" name="phone" class="required phone">
+                    <input type="text" placeholder="备份电话(非必填)" name="phone1" class="required phone">
+                    <select class="form-control" id="cmbProvince" name="cmbProvince" ></select>
+                    <select class="form-control" id="cmbCity" name="cmbCity" ></select>
+                    <select class="form-control" id="cmbArea" name="cmbArea" ></select>
+                    <input type="text" placeholder="详细地址(必填)" name="addresss">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="addDddress()">保存地址</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- 修改地址 -->
+<form id="editaddr">
+    <div class="modal fade" id="editAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel9">修改地址</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" placeholder="姓名" name="rename">
+                    <input type="text" placeholder="联系电话" name="rephone">
+                    <input type="text" placeholder="备份电话" name="rephone1">
+                    <!--<input type="email" placeholder="邮箱">-->
+                    <select class="form-control" id="cmbProvince1" name="cmbProvince1" ></select>
+                    <select class="form-control" id="cmbCity1" name="cmbCity1" ></select>
+                    <select class="form-control" id="cmbArea1" name="cmbArea1" ></select>
+                    <input type="text" placeholder="详细地址" name="readdress">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="editaddress()">保存地址</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- 删除地址确认按钮 -->
+<div class="modal fade" id="deleteAddress" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel4">删除提示</h4>
+            </div>
+            <div class="modal-body">
+                真的要删掉我吗？
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary">删除</input>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//引入的js-->
+<script src="../bootstrap/js/jquery-1.11.3.js"></script>
+<script src="../bootstrap/js/bootstrap.js"></script>
+<script src="../js/citydata.min.js"></script>
+<script src="../js/cityPicker-2.0.0.js"></script>
+<!--自己写的js-->
+<script src="js/personal.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/addressInit.js"></script>
+<script>
+    //获得ejs传过来的用户信息
+    var userId='<%=userId%>';
+    var userName='<%=userName%>';
+    var userPwd='<%=userPwd%>';
+    var phone='<%=phone%>';
+    var email='<%=email%>';
+    //页面加载时
+    $(function () {
+        // <!--设置输入框获得焦点和失去焦点样式-->
+        $("input").focus(function(){
+            $("input").css("border-bottom","1px solid #000000");
+        });
+        $("input").blur(function(){
+            $("input").css("border-bottom","1px solid #D5D5D5");
+        });
+        //修改框里获得用户要修改的信息
+        $("input[name='newName']").val(userName);
+        $("input[name='userpwd']").val(userPwd);
+        $("input[name='userphone']").val(phone);
+        $("input[name='useremail']").val(email);
+        //三级联动地址初始化
+        addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+
+        getAllDddress();   //获得用户全部地址
+        getAllorders();
+    })
+    //为表单的必填文本框添加提示信息（选择form中的所有后代input元素）
+    $("input.required").each(function () {
+        //添加到this对象的父级对象下
+        $(this).after("<br><span class='high'></span><br>");
+    });
+    //为表单元素添加失去焦点事件
+    $("input").blur(function(){
+        var $parent = $(this).next().next();
+        $parent.find(".msg").remove(); //删除以前的提醒元素（find()：查找匹配元素集中元素的所有匹配元素）
+        //验证姓名
+        if($(this).is("#names")){
+            var nameVal = $.trim(this.value); //原生js去空格方式：this.replace(/(^\s*)|(\s*$)/g, "")
+            var regName = /[~#^$@%&!*()<>:;'"{}【】  ]/;
+            if(nameVal == "" || nameVal.length < 2 || regName.test(nameVal)){
+                var errorMsg = " 收货人姓名非空，长度2位以上，不包含特殊字符！";
+                //class='msg onError' 中间的空格是层叠样式的格式
+                $parent.append("<span class='msg onError'>" + errorMsg + "</span>");
+            }
+            else{
+                var okMsg=" 收货人名正确哦";
+                $parent.find(".high").remove();
+                $parent.append("<span class='msg onSuccess'>" + okMsg + "</span>");
+            }
+        }
+        //验证电话号
+        if($(this).is(".phone")){
+            var emailVal = $.trim(this.value);
+            var regEmail = /^[0-9]{11}$/;
+            if(emailVal== "" || (emailVal != "" && !regEmail.test(emailVal))){
+                var errorMsg = " 电话号格式不对";
+                $parent.append("<span class='msg onError'>" + errorMsg + "</span>");
+            }
+            else{
+                var okMsg=" 电话号正确哦";
+                $parent.find(".high").remove();
+                $parent.append("<span class='msg onSuccess'>" + okMsg + "</span>");
+            }
+        }
+        //验证邮箱
+        if($(this).is("#uemail")){
+            var emailVal = $.trim(this.value);
+            var regEmail =/\w+((-w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+/;
+            if(emailVal== "" || (emailVal != "" && !regEmail.test(emailVal))){
+                var errorMsg = " 邮箱格式不正确";
+                $parent.append("<span class='msg onError'>" + errorMsg + "</span>");
+            }
+            else{
+                var okMsg=" 邮箱格式正确哦";
+                $parent.find(".high").remove();
+                $parent.append("<span class='msg onSuccess'>" + okMsg + "</span>");
+            }
+        }
+        //验证密码
+        if($(this).is(".pwd")) {
+            var emailVal = $.trim(this.value);
+            var regEmail = /^[A-Za-z0-9_-]{6,}$/;
+            if (emailVal == "" || (emailVal != "" && !regEmail.test(emailVal))) {
+                var errorMsg = " 密码非空，长度6位以上，可以包含数字，大小写，-";
+                $parent.append("<span class='msg onError'>" + errorMsg + "</span>");
+            }
+            else {
+                var okMsg = " 密码格式正确哦";
+                $parent.find(".high").remove();
+                $parent.append("<span class='msg onSuccess'>" + okMsg + "</span>");
+            }
+        }
+    }).keyup(function(){
+        //triggerHandler 防止事件执行完后，浏览器自动为标签获得焦点
+        $(this).triggerHandler("blur");
+    }).focus(function(){
+        $(this).triggerHandler("blur");
+    });
+    //修改昵称
+    function edituser(){
+        $.ajax({
+            type: "post",//提交类型
+            url: "/edituser.do",//提交地址
+            data: {//传参
+                userId: userId,
+                userName:$("input[name='newName']").val(),
+                userPwd:$("input[name='userpwd']").val(),
+                phone:$("input[name='userphone']").val(),
+                email:$("input[name='useremail']").val()
+            },
+            success: function (data) {
+                $("#username").text(data[0].userName);
+                $("#uname").text(data[0].userName);
+                $("#userpwd").text(data[0].userPwd);
+                $("#useremail").text(data[0].email);
+                $("#userphone").text(data[0].phone);
+            },
+            err: function (data) {
+                console.log(data);
+            }
+        });
+        $("#editname").modal('hide');
+        $("#editemail").modal('hide');
+        $("#editphone").modal('hide');
+        $("#editpwd").modal('hide');
+    }
+    //获得用户全部地址
+    function getAllDddress(){
+        /*$.each:通过$对象调用方法*/
+        $.ajax({
+            type: "get",//提交类型
+            url: "/getAllDddress.do",//提交地址
+            data: {//传参
+                userId: userId
+            },
+            success: function (data) {
+                getDddress(data);
+            },
+            err: function (data) {
+                console.log(data);
+            }
+        })
+    }
+    function getDddress(data) {
+        //先移除页面上的内容
+        $(".address-table>tbody").children().remove();
+        for(var i=0;i<data.length;i++){
+            //是否默认地址
+            // if(data[i].is_default==1){
+            //     $(".addrradio").attr("checked","checked");
+            //     $(".addrradio").removeAttr("checked");
+            // }else {
+            //     $(".addrradio").attr("checked", "checked");
+            //     $(".addrradio").removeAttr("checked");
+            //  }
+
+            $(".address-table>tbody").append(
+                " <tr>\n" +
+                "                    <td>\n" +
+                "                        <input type=\"radio\" class=\"addrradio\"\n" +
+                "                    </td>\n" +
+                "                    <td>"+data[i].name+"</td>\n" +
+                "                    <td>"+data[i].province+"</td>\n" +
+                "                    <td>"+data[i].city+"</td>\n" +
+                "                    <td>"+data[i].address+"</td>\n" +
+                "                    <td>"+data[i].phone+"</td>\n" +
+                "                    <td><span onclick='editthisAddr(" + data[i].id + ")'>修改</span> | " +
+                "<span onclick='delthisAddr(" + data[i].id + ")'>删除</span></td>\n" +
+                "                </tr>"
+            )
+        }
+    }
+    //添加地址
+    function addDddress(){
+        $.ajax({
+            type: "post",//提交类型
+            url: "/addDddress.do",//提交地址
+            data: {//传参
+                userId: userId,
+                //表单序列化，获得表单提交的全部数据
+                alladdr:$("#myaddrform").serialize()
+            },
+            success: function (data) {
+                console.log("addDddressdata:"+data);
+                getAllDddress();
+            },
+            err: function (data) {
+                console.log(data);
+            }
+        });
+        $("#addAddress").modal('hide');
+    }
+    var addrid1;
+    //获得单个地址信息
+    function editthisAddr(addrid) {
+        addrid1=addrid;
+        $.ajax({
+            type: "post",//提交类型
+            url: "/editthisAddr.do",//提交地址
+            data: {//传参
+                addrid:addrid1
+            },
+            success: function (data) {
+                openMotaieditaddr();
+                console.log("data[0]:"+data[0].city);
+                $("input[name='rename']").val(data[0].name);
+                $("input[name='rephone']").val(data[0].phone);
+                $("input[name='rephone1']").val(data[0].phone1);
+                // $("#cmbProvince1").val(data[0].province);
+                //设置地址的默认选中
+                var defaultProvince=data[0].province;
+                var defaultCity=data[0].city;
+                var defaultArea=data[0].district;
+                addressInit('cmbProvince1', 'cmbCity1', 'cmbArea1',defaultProvince,defaultCity,defaultArea);
+                // $("#cmbCity1").val(city);
+                // $("#cmbArea1").val(data[0].district);
+                $("input[name='readdress']").val(data[0].address);
+            },
+            err: function (data) {
+                console.log(data);
+            }
+        });
+
+    }
+    //调用修改模态框
+    function openMotaieditaddr(){
+        console.log("openMotaieditaddr()");
+        $("#editAddress").modal({backdrop: 'static', keyboard: false});  //手动开启
+    }
+    //修改地址
+    function editaddress(){
+        $.ajax({
+            type: "post",//提交类型
+            url: "/editadrress.do",//提交地址
+            data: {//传参
+                userId: userId,
+                addrid1:addrid1,
+                // //表单序列化，获得表单提交的全部数据
+                // alladdr:$("#editaddr").serialize()
+                rename:$("input[name='rename']").val(),
+                rephone:$("input[name='rephone']").val(),
+                rephone1:$("input[name='rephone1']").val(),
+                cmbProvince1:$("#cmbProvince1").val(),
+                cmbCity1:$("#cmbCity1").val(),
+                cmbArea1:$("#cmbArea1").val(),
+                readdress:$("input[name='readdress']").val(),
+            },
+            success: function (data) {
+                console.log(data);
+                getAllDddress();
+            },
+            err: function (data) {
+                console.log(data);
+            }
+        });
+        $("#editAddress").modal('hide');
+    }
+    //删除地址
+    function delthisAddr(addrid){
+        $.ajax({
+            type: "post",//提交类型
+            url: "/delthisAddr.do",//提交地址
+            data: {//传参
+                addrid:addrid
+            },
+            success: function (data) {
+                getAllDddress();
+                console.log(data);
+            },
+            err: function (data) {
+                console.log(data);
+            }
+        })
+    }
+    //获得用户全部订单信息
+    function getAllorders(){
+        /*$.each:通过$对象调用方法*/
+        $.ajax({
+            type: "get",//提交类型
+            url: "/getAllorders.do",//提交地址
+            data: {//传参
+                userId: userId
+            },
+            success: function (data) {
+                getOrders(data);
+            },
+            err: function (data) {
+                console.log(data);
+            }
+        })
+    }
+    function getOrders(data) {
+        //先移除页面上的内容
+        $(".order-table>tbody").children().remove();
+        for(var i=0;i<data.length;i++){
+            $(".order-table>tbody").append(
+                " <tr>\n" +
+                "                    <td>\n" +
+                "                        "+data[i].orderNum+"\n" +
+                "                    </td>\n" +
+                "                    <td>"+data[i].name+"</td>\n" +
+                "                    <td>"+data[i].ordertime+"</td>\n" +
+                "                    <td>"+data[i].total+"</td>\n" +
+                "                    <td>"+data[i].state+"</td>\n" +
+                "                    <td class=\"seeOrder\"><a href='orderPage.do?orderId="+data[i].orderId+"&typeOne=1'>查看明细/物流</a></td>\n" +
+                "                </tr>"
+            )
+        }
+    }
+</script>
+</body>
+</html>
